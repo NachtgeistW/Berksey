@@ -439,7 +439,7 @@ gitalk:
   enable: true
   clientID: df033a643a71a1b609d6
   clientSecret: 1104d026dd2c31fca1807bb7001d18f071b12448
-  repo: https://nachtgeistw.github.io/Berksey/
+  repo: nachtgeistw.github.io/Berksey/
   owner: NachtgeistW
   admin: NachtgeistW
 
