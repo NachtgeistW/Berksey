@@ -1,7 +1,5 @@
 ---
 title: Hello World.
-category: 
-- For a Breath I Tarry
 ---
 ```C++
 #include<iostream>

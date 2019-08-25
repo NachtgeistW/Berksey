@@ -257,8 +257,8 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right
-  #position: left
-  position: right
+  position: left
+  #position: right
 
   # Sidebar Display, available value:
   #  - post    expand on posts automatically. Default.
@@ -286,7 +286,7 @@ links_title: Friends
 #links_layout: block
 links_layout: inline
 links: 
-  Deemo全曲AC巨佬蜗壳er盐酸妹妹的blog: https://chlorie.github.io/ChloroBlog/
+  ChloroBlog: https://chlorie.github.io/ChloroBlog/
 
 
 # ---------------------------------------------------------------
