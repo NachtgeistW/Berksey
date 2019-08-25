@@ -234,7 +234,7 @@ social_icons:
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif
-avatar: https://avatars1.githubusercontent.com/u/35161925
+avatar: http://wx1.sinaimg.cn/mw690/ab45dab6ly8fy8g47o8eaj20an0anta9.jpg
 
 
 # Table Of Contents in the Sidebar
@@ -265,8 +265,8 @@ sidebar:
   #  - always  expand for all pages automatically
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggle.
-  display: post
-  #display: always
+  #display: post
+  display: always
   #display: hide
   #display: remove
 
