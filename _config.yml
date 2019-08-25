@@ -436,12 +436,12 @@ changyan:
 
 # Support for gitalk comments system.
 gitalk:
-  enable: falsse
-  clientID: # 54730ddf7b9420460c03
-  clientSecret: # c05684701b25ff1c19ea0c01ce4d80c125e0707d
-  repo: #https://nachtgeistw.github.io/Berksey/
-  owner: #NachtgeistW
-  admin: #NachtgeistW
+  enable: true
+  clientID: df033a643a71a1b609d6
+  clientSecret: 1104d026dd2c31fca1807bb7001d18f071b12448
+  repo: https://nachtgeistw.github.io/Berksey/
+  owner: NachtgeistW
+  admin: NachtgeistW
 
 # Baidu Share
 # Available value:
