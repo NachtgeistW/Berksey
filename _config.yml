@@ -87,7 +87,7 @@ keywords: "Jekyll, NexT"
 rss:
 
 # Specify the date when the site was setup
-since: 2019
+since: 2018
 
 # icon between year and author @Footer
 authoricon: heart
@@ -151,9 +151,9 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 
 
 # ---------------------------------------------------------------
@@ -436,12 +436,12 @@ changyan:
 
 # Support for gitalk comments system.
 gitalk:
-  enable: false
+  enable: falsse
   clientID: # 54730ddf7b9420460c03
   clientSecret: # c05684701b25ff1c19ea0c01ce4d80c125e0707d
-  repo: # colingpt.github.io
-  owner: # colingpt
-  admin: # colingpt
+  repo: #https://nachtgeistw.github.io/Berksey/
+  owner: #NachtgeistW
+  admin: #NachtgeistW
 
 # Baidu Share
 # Available value:
