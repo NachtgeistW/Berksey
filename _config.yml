@@ -283,11 +283,10 @@ sidebar:
 
 # Blog rolls
 links_title: Friends
-#links_layout: block
+links_layout: block
 #links_layout: inline
 links: 
-  ChloroBlog: https://chlorie.github.io/ChloroBlog/
-  Title: Deemo全曲AC巨佬蜗壳er盐酸妹妹的blog
+  Deemo全曲AC巨佬蜗壳er盐酸妹妹的blog: https://chlorie.github.io/ChloroBlog/
 
 
 # ---------------------------------------------------------------
