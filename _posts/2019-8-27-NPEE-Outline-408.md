@@ -1,10 +1,9 @@
 ---
-title: 2020全国硕士研究生招生考试计算机科学与技术学科联考大纲（408）：数据结构
+title: 2020全国硕士研究生招生考试计算机科学与技术学科联考大纲（408）
 category: 
 - Dream
 tag: 
 - NPEE
-- 数据结构
 ---
 
 考试形式和试卷结构
@@ -14,10 +13,10 @@ tag:
   2. 答题方式  
     答题方式为闭卷、笔试。
   3. 试卷内容结构  
-     - [数据结构 45 分](2019-8-27-408-Data-Structure.md)
-     - [计算机组成原理 45 分](2019-8-27-408-Computer-Organization-And-Architecture.md)
-     - [操作系统 35 分](2019-8-27-408-Operating-Systems.md)
-     - [计算机网络 25 分](2019-8-27-408-Computer-Network.md)
+     - [数据结构 45 分](https://nachtgeistw.github.io/Berksey/dream/2019/08/27/408-Data-Structure/)
+     - [计算机组成原理 45 分](https://nachtgeistw.github.io/Berksey/dream/2019/08/27/408-Computer-Organization/)
+     - [操作系统 35 分](https://nachtgeistw.github.io/Berksey/dream/2019/08/27/408-Operating-Systems/)
+     - [计算机网络 25 分](https://nachtgeistw.github.io/Berksey/dream/2019/08/27/408-Computer-Network/)
   4. 试卷题型结构
      - 单项选择题 80 分（40 小题，每小题 2 分）
      - 综合应用题 70 分
