@@ -24,7 +24,7 @@ only text Weibo 处的正则：``(Repost)|(转发动态)|(\/\/)|(轉發動態)|(
 创建同步微博内容到 Integromat 的 Webhook 触发器：
 
 1. if this：``RSS Feed``，选择 New Feed Item，在 Feed URL 里填 ``https://rsshub.app/bilibili/user/dynamic/UID``，这里的 UID 可以在个人界面找到；
-   ![UID](https://github.com/NachtgeistW/Berksey/blob/master/_posts/image/2019-08-28-165359.jpg)
+   ![UID](https://github.com/NachtgeistW/Berksey/blob/master/_posts/image/2019-08-28-165359.jpg?raw=true)
 2. then that：Webhook，选择 Make a web request，URL 填写设置 Integromat 里面拿到的 Webhook 地址：``https://hook.integromat.com/xxxxxxxxxxxxxxxx``，Method 选择 ``POST``，Content Type 选择 ``application/x-www-form-urlencode``，Body 填写 ``text={{Text}}&image={{PhotoURL}}``；
 3. 点击 Create Action，点击 Finish。
 
