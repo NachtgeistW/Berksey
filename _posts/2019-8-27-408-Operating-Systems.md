@@ -12,6 +12,8 @@ tag:
 2. 掌握操作系统进程、内存、文件和 I/O 惯例的策略、算法、机制以及相互关系。
 3. 能够运用所学的操作系统原理、方法与技术分析问题和解决问题，并能利用 C 语言描述相关算法。
 
+<!-- more -->
+
 ## 操作系统概述
 
 1. 操作系统的概念、特征、功能和提供的服务
@@ -22,16 +24,28 @@ tag:
    3. 系统调用
 4. 操作系统体系结构
 
+---
+
 ## 进程管理
 
 1. 进程与线程
-   1. 进程概念
-   2. 进程的状态与转换
-   3. 进程控制
-   4. 进程组织
-   5. 进程通信  
-   共享存储系统，消息传递系统，管道通信。
-   6. 线程概念与多线程模型
+    1. 进程概念  
+    process（进程）: an abstraction of a running program. A process is just an instance of an executing program, including the current values of the program counter, registers, and variables.  
+    pseudoparallelism（伪并行）  
+    multiprocessor systems（多处理器系统）: which have two or more CPUs sharing the same physical memory.  
+    multiprogramming（多道程序设计）：the real CPU switches back and forth from process to process.  
+    daemon（守护进程）: Processes that stay in the background to handle some activity  
+    2. 进程的状态与转换
+    3. 进程控制  
+    Four principal events cause processes to be created:
+       - System initialization.
+       - Execution of a process-creation system call by a running process.
+       - A user request to create a new process.
+       - Initiation of a batch job.  
+    4. 进程组织
+    5. 进程通信  
+    共享存储系统，消息传递系统，管道通信。
+    6. 线程概念与多线程模型
 2. 处理机调度
    1. 调度的基本概念
    2. 调度时机、切换与过程
@@ -43,9 +57,9 @@ tag:
    1. 进程同步的基本概念
    2. 实现临界区互斥的基本方法
    软件实现方法，硬件实现方法。
-   3. 信号量
-   4. 管程
-   5. 经典同步问题  
+   1. 信号量
+   2. 管程
+   3. 经典同步问题  
    生产者-消费者问题，读者-写者问题，哲学家进餐问题。
 4. 死锁
    1. 死锁的概念
@@ -53,7 +67,7 @@ tag:
    3. 死锁预防
    4. 死锁避免  
    系统安全状态，银行家算法。
-   5. 死锁检测和解除
+   1. 死锁检测和解除
 
 ## 内存管理
 
