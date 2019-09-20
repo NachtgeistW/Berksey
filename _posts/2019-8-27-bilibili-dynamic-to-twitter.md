@@ -7,6 +7,8 @@ tag:
 ---
 想法是利用 [RSSHub](https://rsshub.app/) 将 B 站动态变成可订阅的 RSS 源，然后经 integromat 区分文字动态和带图动态，并过滤掉投票、不带文字转发动态和不带文字分享视频，最后利用 IFTTT 完成同步。获取动态的方法受 [BilibiliEcho - 同步你的 Bilibili 动态到 Typecho！](https://www.pluvet.com/archives/bilibili-echo-publish.html)启发；进阶的同步方式参考了[微博同步至 Twitter，这里有更好的方式](https://sspai.com/post/51942)。
 
+<!-- more -->
+
 ---
 
 ## 操作步骤

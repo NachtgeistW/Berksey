@@ -58,32 +58,54 @@ tag:
 
 ## 进程管理
 
-1. 进程与线程
-    1. 进程概念  
-    process（进程）: an abstraction of a running program. A process is just an instance of an executing program, including the current values of the program counter, registers, and variables.  
-    pseudoparallelism（伪并行）  
-    multiprocessor systems（多处理器系统）: which have two or more CPUs sharing the same physical memory.  
-    multiprogramming（多道程序设计）：the real CPU switches back and forth from process to process.  
-    daemon（守护进程）: Processes that stay in the background to handle some activity  
-    1. 进程的状态与转换
-    2. 进程控制  
-    Four principal events cause processes to be created:
-       - System initialization.
-       - Execution of a process-creation system call by a running process.
-       - A user request to create a new process.
-       - Initiation of a batch job.  
-    1. 进程组织
-    2. 进程通信  
+### 进程与线程
+
+1. 进程概念  
+pseudoparallelism（伪并行）  
+multiprocessor systems（多处理器系统）: which have two or more CPUs sharing the same physical memory.  
+multiprogramming（多道程序设计）：the real CPU switches back and forth from process to process.  
+多道程序系统具有提高资源利用率和增加作业吞吐量的优点。执行时的特征是失去封闭性、并发程序在执行时互相制约和不可再现性。  
+daemon（守护进程）: Processes that stay in the background to handle some activity.  
+process（进程）: an abstraction of a running program. A process is just an instance of an executing program, including the current values of the program counter, registers, and variables.  
+与程序的区别：进程是动态概念，程序是静态概念。程序是指令的有序集合，没有执行含义。进程强调执行过程。  
+进程特征：
+   - 动态性
+   - 并发性
+   - 调度性  
+2. 进程的状态与转换
+   1. Running（运行） (actually using the CPU at that instant).
+   2. Ready（就绪） (runnable; temporarily stopped to let another process run).
+   3. Blocked（阻塞） (unable to run until some external event happens).
+   4. 新建状态（部分系统）：进程刚被创建，尚未放入就绪队列的状态。
+   5. 终止状态：进程完成自己的任务而正常终止或在运行期间由于某些错误和故障而被迫终止时所处的状态。
+   ![A process can be in running, blocked, or ready state. Transitions between these states are as shown.](https://github.com/NachtgeistW/Berksey/blob/master/_posts/image/2019-09-17-114600.jpg?raw=true)
+   - Transition 1 occurs when the operating system discovers that a process cannot continue right now.  
+   - Transition 2 occurs when the scheduler decides that the running process has run long enough, and it is time to let another process have some CPU time.
+   - Transition 3 occurs when all the other processes have had their fair share and it is time for the first process to get the CPU to run again.
+   - Transition 4 occurs when the external event for which a process was waiting (such as the arrival of some input) happens. If no other process is running at that instant, transition 3 will be triggered and the process will start running. Otherwise it may have to wait in ready state for a little while until the CPU is available and its turn comes.  
+3. 进程控制  
+   Four principal events cause processes to be created:
+   - System initialization.
+   - Execution of a process-creation system call by a running process.
+   - A user request to create a new process.
+   - Initiation of a batch job.  
+4. 进程组织
+5. 进程通信  
     共享存储系统，消息传递系统，管道通信。
-    1. 线程概念与多线程模型
-2. 处理机调度
-   1. 调度的基本概念
+6. 线程概念与多线程模型
+
+### 处理机调度
+
+   1. 调度的基本概念  
+   操作系统必须为多个进程的竞争请求分配计算机资源。
    2. 调度时机、切换与过程
    3. 调度的基本准则
    4. 调度方式
    5. 典型调度算法  
    先来先服务调度算法，短作业（短进程、短线程）优先调度算法，时间片轮转调度算法，优先级调度算法，高响应比优先调度算法，多级反馈队列调度算法。
-3. 同步与互斥
+
+### 同步与互斥
+
    1. 进程同步的基本概念
    2. 实现临界区互斥的基本方法
    软件实现方法，硬件实现方法。
@@ -91,7 +113,9 @@ tag:
    2. 管程
    3. 经典同步问题  
    生产者-消费者问题，读者-写者问题，哲学家进餐问题。
-4. 死锁
+
+### 死锁
+
    1. 死锁的概念
    2. 死锁处理策略
    3. 死锁预防
