@@ -3,12 +3,15 @@ title: 想做的事&挖坑
 category: Memoir
 ---
 
-报告  
+~~报告~~  
 ~~B 站动态同步到推特~~  
-课程表导入到 Calendar  
+~~课程表导入到 Calendar~~  
 高等数学复习  
 操作系统  
 NLP 处理里的语言分析  
 算法  
+Jubeat festo memo wiki
+Deenote
 
-orzzzzzz坑还是很多
+~~orzzzzzz坑还是很多~~
+orzzzzzz坑怎么越挖越多了    ——2019.12.3
