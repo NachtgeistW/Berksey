@@ -11,7 +11,8 @@ category: Memoir
 NLP 处理里的语言分析  
 算法  
 Jubeat festo memo wiki
-Deenote
+Deenote 重制
+HDU Rank 排进前 2w
 
-~~orzzzzzz坑还是很多~~
+~~orzzzzzz坑还是很多    ——2019.8.26~~
 orzzzzzz坑怎么越挖越多了    ——2019.12.3
