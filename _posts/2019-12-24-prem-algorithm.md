@@ -9,6 +9,10 @@ tag:
 - 分治与递归
 ---
 
+研究了下维基百科（个人觉得）的牛逼实现。
+
+<!-- more -->
+
 ```C++
 #include <iostream>
 #include <utility>
