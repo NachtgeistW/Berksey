@@ -8,6 +8,64 @@ tag:
 - 排列
 - 分治与递归
 ---
+## 题目
+
+求点对最近距离。
+
+<!-- more -->
+
+Problem Description
+
+Assume that all the toys are points on a plane. A point is encircled by the ring if the distance between the point and the center of the ring is strictly less than the radius of the ring. If two toys are placed at the same point, the radius of the ring is considered to be 0.
+
+Input
+
+The input consists of several test cases. For each case, the first line contains an integer N (2 <= N <= 100,000), the total number of toys in the field. Then N lines follow, each contains a pair of (x, y) which are the coordinates of a toy. The input is terminated by N = 0.
+
+Output
+
+For each test case, print in one line the radius of the ring required by the Cyberground manager, accurate up to 2 decimal places.
+
+Sample Input
+
+```
+2
+0 0
+1 1
+2
+1 1
+1 1
+3
+-1.5 0
+0 0
+0 1.5
+0
+```
+
+Sample Output
+
+```
+0.71
+0.00
+0.75
+```
+
+## 思路
+
+按照《算法导论》，这个算法的时间复杂度应该是 $T(n) = 2T(n/2) + O(n)$，也就是 $O(nlgn)$ 吧。
+
+思路是这样。先定义两个数组 `px` 和 `py`。`px` 里的元素按x坐标单增排序，`py` 里的元素按y坐标单增排序。但是又不能在每个递归里排序，这样时间复杂度就飞到 $T(n) = 2T(n/2) + O(nlgn)$，也就是 $O(nlg^2n)$ 了。那就要做优化。
+
+对于每一次递归，因为每次都会给定左右端点 `left` 和 `right`，所以能把这两点的中点 `mid` 找出来。求 `mid` 左边和右边的最短距离好找，主要是在 $[mid-res, mid+res]$ 里的点的距离难找。这里的 res 是 1 ~ mid 和 mid ~ n 中较小的那个。
+
+>如果说最近点对中的两点都在 1 ~ mid 集合中，或者 mid + 1 ~ n 集合中，则 res 就是最小距离了。但是还有可能的是最近点对中的两点分属这两个集合，所以必须先检测一下这种情况是否会存在，若存在，则把这个最近点对的距离记录下来，去更新 res。这样我们就可以得到最小的距离 res 了。
+>
+>假设有一个点q，坐标是 $(xq, yq)$。可以证明在以 q 为底边中点，长为 2d，宽为 d 的矩形区域内不会有超过 6 个点（详细证明见下）。利用这个结论我们就可以来继续优化比较的过程了。刚刚我们是用 1 号点去和 2 到 p 号的点求一下距离，我们知道以 1 号点构造图中矩形内，不会有超过 6 个点存在。但是我们又不能直接从 1 号求到 6 号，因为这里的 p 个点是按 y 坐标排序而不是按距离排序的，有可能在 y 坐标上，前 10 个点距离 1 号点都很近，但是前 6 个点的 x 坐标很远，而第 10 个点的 x 坐标和 1 号点的 x 坐标很近，这样第 10 个点到 1 号点的距离反而更近。
+>
+>那么我们怎么利用这个结论呢？应该这样：假设 1 号点和 2 到 p 号点比较，由于 y 坐标排序的缘故，假设第 p 个点的 y 坐标距离 1 号点的 y 坐标大于当前能求出的最小值，那么这点以及这点后的所有点距离 1 号点的距离必然大于当前已经获得的最小值，所以直接不用比较后面的了。
+
+## 代码
+
 ```C++
 #include <cmath>
 #include <algorithm>
@@ -89,18 +147,6 @@ int main()
     return 0;
 }
 ```
-
-按照《算法导论》，这个算法的时间复杂度应该是 $T(n) = 2T(n/2) + O(n)$，也就是 $O(nlgn)$ 吧。
-
-思路是这样。先定义两个数组 `px` 和 `py`。`px` 里的元素按x坐标单增排序，`py` 里的元素按y坐标单增排序。但是又不能在每个递归里排序，这样时间复杂度就飞到 $T(n) = 2T(n/2) + O(nlgn)$，也就是 $O(nlg^2n)$ 了。那就要做优化。
-
-对于每一次递归，因为每次都会给定左右端点 `left` 和 `right`，所以能把这两点的中点 `mid` 找出来。求 `mid` 左边和右边的最短距离好找，主要是在 $[mid-res, mid+res]$ 里的点的距离难找。这里的 res 是 1 ~ mid 和 mid ~ n 中较小的那个。
-
->如果说最近点对中的两点都在 1 ~ mid 集合中，或者 mid + 1 ~ n 集合中，则 res 就是最小距离了。但是还有可能的是最近点对中的两点分属这两个集合，所以必须先检测一下这种情况是否会存在，若存在，则把这个最近点对的距离记录下来，去更新 res。这样我们就可以得到最小的距离 res 了。
->
->假设有一个点q，坐标是 $(xq, yq)$。可以证明在以 q 为底边中点，长为 2d，宽为 d 的矩形区域内不会有超过 6 个点（详细证明见下）。利用这个结论我们就可以来继续优化比较的过程了。刚刚我们是用 1 号点去和 2 到 p 号的点求一下距离，我们知道以 1 号点构造图中矩形内，不会有超过 6 个点存在。但是我们又不能直接从 1 号求到 6 号，因为这里的 p 个点是按 y 坐标排序而不是按距离排序的，有可能在 y 坐标上，前 10 个点距离 1 号点都很近，但是前 6 个点的 x 坐标很远，而第 10 个点的 x 坐标和 1 号点的 x 坐标很近，这样第 10 个点到 1 号点的距离反而更近。
->
->那么我们怎么利用这个结论呢？应该这样：假设 1 号点和 2 到 p 号点比较，由于 y 坐标排序的缘故，假设第 p 个点的 y 坐标距离 1 号点的 y 坐标大于当前能求出的最小值，那么这点以及这点后的所有点距离 1 号点的距离必然大于当前已经获得的最小值，所以直接不用比较后面的了。
 
 ## 对文中所用结论的证明
 
