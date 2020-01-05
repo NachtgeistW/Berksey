@@ -96,22 +96,21 @@ int main()
     {
         int n = 0, v = 0;
         cin >> n >> v;
-        //体积，价值，背包解
-        int arr_v[1000] = { 0 }, arr_p[1000] = { 0 }, knapsack[1000][1000] = { {0} };
+        //体积，价值，背包[价值][体积]
+        int arr_v[1000] = { 0 }, arr_p[1000] = { 0 }, knapsack[100][100] = { {0} };
         for (int i = 1; i <= n; i++)
             cin >> arr_p[i];
         for (int i = 1; i <= n; i++)
             cin >> arr_v[i];
         for (int i = 1; i <= n; i++)
         {
-            //j是体积
             for (int j = 0; j <= v; j++)
             {
-                //如果空间还够
+                //表示第 i 个物品将放入大小为 j 的背包中
                 if (arr_v[i] <= j)
                 //j - arr_v[i]是当前体积减去第 i 个物体的体积
                     knapsack[i][j] = max(knapsack[i - 1][j], knapsack[i - 1][j - arr_v[i]] + arr_p[i]);
-                //不够
+                //不够，放不进
                 else
                     knapsack[i][j] = knapsack[i - 1][j];
             }
@@ -122,6 +121,10 @@ int main()
 ```
 
 ## 动态规划的优化
+
+时间就没法优化了。主要是优化空间的。存储背包的最优解用的是一个 1005×1005 的数组，这样实在是很浪费空间。
+
+![knapsack](https://github.com/NachtgeistW/Berksey/blob/master/_posts/image/2020-01-05%20225026.jpg)
 
 代码如下（解释待补充）
 
@@ -276,3 +279,5 @@ int main()
 ```
 
 ## 参考资料
+
+[HDU 2602 Bone Collector（01背包）](https://www.cnblogs.com/Su-Blog/archive/2012/08/28/2659872.html)
