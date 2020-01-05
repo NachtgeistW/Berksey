@@ -109,6 +109,7 @@ int main()
             {
                 //如果空间还够
                 if (arr_v[i] <= j)
+                //j - arr_v[i]是当前体积减去第 i 个物体的体积
                     knapsack[i][j] = max(knapsack[i - 1][j], knapsack[i - 1][j - arr_v[i]] + arr_p[i]);
                 //不够
                 else
@@ -121,6 +122,8 @@ int main()
 ```
 
 ## 动态规划的优化
+
+代码如下（解释待补充）
 
 ```C++
 #include<iostream>
