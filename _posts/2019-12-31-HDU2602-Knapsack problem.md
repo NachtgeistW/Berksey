@@ -24,7 +24,7 @@ tag:
 >
 >10 10
 >
->6 1 0 8 9 0 4 5 9 6 
+>6 1 0 8 9 0 4 5 9 6
 >
 >6 9 7 4 3 7 0 8 1 3
 
@@ -97,11 +97,14 @@ int main()
         int n = 0, v = 0;
         cin >> n >> v;
         //体积，价值，背包[价值][体积]
-        int arr_v[1000] = { 0 }, arr_p[1000] = { 0 }, knapsack[100][100] = { {0} };
+        int arr_v[1000] = { 0 }, arr_p[1000] = { 0 }, dp[100][100] = { {0} };
+        //注意下标是从 1 开始的
         for (int i = 1; i <= n; i++)
             cin >> arr_p[i];
         for (int i = 1; i <= n; i++)
             cin >> arr_v[i];
+
+        //计算
         for (int i = 1; i <= n; i++)
         {
             for (int j = 0; j <= v; j++)
@@ -110,26 +113,28 @@ int main()
                 if (arr_v[i] <= j)
                 //j - arr_v[i]是当前体积减去第 i 个物体的体积
                 //它会取上一行的解来和当前解进行比较
-                    knapsack[i][j] = max(knapsack[i - 1][j], knapsack[i - 1][j - arr_v[i]] + arr_p[i]);
+                    dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - arr_v[i]] + arr_p[i]);
                 //不够，放不进
                 else
-                    knapsack[i][j] = knapsack[i - 1][j];
+                    dp[i][j] = dp[i - 1][j];
             }
         }
-        cout << knapsack[n][v] << '\n';
+        cout << dp[n][v] << '\n';
     }
 }
 ```
 
 ## 动态规划的优化
 
-时间就没法优化了。主要是优化空间的。动态规划会将解存储在一张表格中待查。存储背包的最优解用的是一个 1005×1005 的表格，这样实在是很浪费空间。
+时间就没法优化了。主要是优化空间的。动态规划会将解存储在一张表格中待查。在这道题中，存储背包的最优解用的是一个 1005×1005 的表格，这样实在是很浪费空间。
 
-<!-- ![knapsack](https://github.com/NachtgeistW/Berksey/blob/master/_posts/image/2020-01-05%20225026.jpg?raw=true) -->
+<!-- ![dp](https://github.com/NachtgeistW/Berksey/blob/master/_posts/image/2020-01-05%20225026.jpg?raw=true) -->
 
 先考虑如何实现空间的优化。存在一个循环 `i = 1..n` 计算二维数组 `dp[i][0..v]` 的所有值。那么，如果只用一个数组 `dp[0..v]`，能不能保证第 i 次循环结束后，`dp[j]` 中表示的就是我们定义的状态 `dp[i][j]` 呢？
 
-注意到 `dp[i][j]` 是由 `dp[i-1][j-c[i]]` 和 `dp[i-1][j]` 两个子问题递推而来的。能否在递推计算 `dp[i][j]` 时（也即在第 i 次主循环中递推 `dp[j]` 时），同时得到 `dp[i-1][j]` 和 `dp[i-1][j-c[i]]` 的值呢？事实上，只要在每次主循环中以 `j = v..0` 的顺序递推 `dp[j]`，就能保证计算 `dp[j]` 时 `dp[j-c[i]]` 保存的是状态 `dp[i-1][j-c[i]]` 的值。伪代码如下：
+注意到，求解 `dp[i][0..v]` 时二维数组只用到了 `dp[i-1][0..v]` 这一行。再注意到循环 j 时，dp的改变只依赖于上一行和左侧的状态。这样，只需在每次主循环中以 `j = v..0` 的顺序递推 `dp[j]`，就能保证计算 `dp[j]` 时 `dp[j-c[i]]` 保存的是状态 `dp[i-1][j-arr_v[i]]` 的值。伪代码如下：
+
+<!-- 注意到 `dp[i][j]` 是由 `dp[i-1][j-c[i]]` 和 `dp[i-1][j]` 两个子问题递推而来的。能否在递推计算 `dp[i][j]` 时（也即在第 i 次主循环中递推 `dp[j]` 时），同时得到 `dp[i-1][j]` 和 `dp[i-1][j-c[i]]` 的值呢？事实上，只要在每次主循环中以 `j = v..0` 的顺序递推 `dp[j]`，就能保证计算 `dp[j]` 时 `dp[j-c[i]]` 保存的是状态 `dp[i-1][j-c[i]]` 的值。伪代码如下： -->
 
 ```C++
 for i = 1..n
@@ -155,7 +160,7 @@ int main()
     while (t--)
     {
         int n = 0, v = 0;
-        int arr_v[1005] = { 0 }, arr_p[1005] = { 0 }, knapsack[1005] = { 0 };
+        int arr_v[1005] = { 0 }, arr_p[1005] = { 0 }, dp[1005] = { 0 };
         cin >> n >> v;
         for (int i = 1; i <= n; i++)
             cin >> arr_p[i];
@@ -163,8 +168,8 @@ int main()
             cin >> arr_v[i];
         for (int i = 1; i <= n; i++)
             for (int j = v; j >= arr_v[i]; j--)
-                knapsack[j] = max(knapsack[j], knapsack[j - arr_v[i]] + arr_p[i]);
-        cout << knapsack[v] << '\n';
+                dp[j] = max(dp[j], dp[j - arr_v[i]] + arr_p[i]);
+        cout << dp[v] << '\n';
     }
 }
 ```
