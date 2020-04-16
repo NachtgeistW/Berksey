@@ -1,7 +1,7 @@
 ---
 title: 网易互娱游戏运营管理面试
 category: 
-- 面试
+- interview
 tag: 
 - 面试
 - 网易
