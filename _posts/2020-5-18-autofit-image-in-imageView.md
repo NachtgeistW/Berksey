@@ -30,8 +30,8 @@ tag:
 
 ## 参考链接
 
-[Gravity  |  Android Developers](https://developer.android.google.cn/reference/android/view/Gravity)
+[Gravity  \|  Android Developers](https://developer.android.google.cn/reference/android/view/Gravity)
 
-[imageView  |  Android Developers](https://developer.android.google.cn/reference/android/widget/ImageView)
+[imageView  \|  Android Developers](https://developer.android.google.cn/reference/android/widget/ImageView)
 
-[使用 ConstraintLayout 构建自适应界面  |  Android 开发者  |  Android Developers](https://developer.android.google.cn/training/constraint-layout)
+[使用 ConstraintLayout 构建自适应界面  \|  Android 开发者  \|  Android Developers](https://developer.android.google.cn/training/constraint-layout)
