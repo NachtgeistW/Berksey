@@ -31,7 +31,7 @@ git merge upstream/master  合并
 
 比如说跟 OI-wiki 的上游分支同步。
 
-![配图](image/2020-06-01_15-42-00.jpg)
+![配图](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-06-01_15-42-00.jpg)
 
 ## git 的代理
 
