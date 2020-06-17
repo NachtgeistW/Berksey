@@ -11,6 +11,47 @@ tag:
 
 <!-- more -->
 
+## git 的代理
+
+`git config --global http.proxy http://127.0.0.1:1080`
+
+好像只配置这一个就够用了。
+
+## 强制取消本地更改
+
+### 使用远程分支覆盖本地
+
+这是最佳的方式。
+
+```Bash
+git fetch --all
+（以下两个二选一）
+git reset --hard origin/master
+git reset --hard origin/<branch_name>
+```
+
+### 直接删掉
+
+`git clean -f`
+
+直白点就是把本地乱七八糟的更改全都扬了。比较适合多了很多乱七八糟文件的情况，比如 OneDrive 同步被搞炸的时候：![git clean 示例](image/2020-06-17_19-56-58.png)
+
+有时需要加上 `-d`，把目录下所有未同步的更改全删了。
+
+官方的帮助文档是这样说的：
+
+>usage: `git clean [-d] [-f] [-i] [-n] [-q] [-e <pattern>] [-x | -X] [--] <paths>...`
+>
+>     -q, --quiet           do not print names of files removed
+>     -n, --dry-run         dry run
+>     -f, --force           force
+>     -i, --interactive     interactive cleaning
+>     -d                    remove whole directories
+>     -e, --exclude <pattern>
+>                           add <pattern> to ignore rules
+>     -x                    remove ignored files, too
+>     -X                    remove only ignored files
+
 ## 本地分支与上游分支同步
 
 （其实这种东西完全搜得到……单纯怕忘。）
@@ -33,31 +74,12 @@ git merge upstream/master  合并
 
 ![配图](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-06-01_15-42-00.jpg)
 
-## git 的代理
-
-只说对 GitHub 的。浏览器的话直接挂好代理一般就行了，主要是在终端使用的时候很麻烦。
-
-只对 GitHub 设置 socks5 代理：`git config --global http.https://github.com.proxy socks5://127.0.0.1:1080`
-
-取消代理：`git config --global --unset http.https://github.com.proxy`
-
-设置完代理后 clone 就很快，但是用 https push 的话就会报:
-
-> fatal: NoSupportedException encountered.
->
-> ServicePointManager 不支持具有 socks5 方案的代理。
-
-所以还得在本地也配置一下代理：
-
-`git config --global http.proxy http://127.0.0.1:1080`
-
-`git config --global https.proxy https://127.0.0.1:1080`
-
 ## 参考文档
-
-[Github进行fork后如何与原仓库同步：重新fork很省事，但不如反复练习版本合并
-](https://github.com/selfteaching/the-craft-of-selfteaching/issues/67)
 
 [git 设置和取消代理](https://gist.github.com/laispace/666dd7b27e9116faece6)（作者给的是无效的，但是后面的回复里有有效的）
 
 [Git 代理配置方案](https://wiki.imalan.cn/archives/Git%20%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE%E6%96%B9%E6%A1%88/)
+
+[Github进行fork后如何与原仓库同步：重新fork很省事，但不如反复练习版本合并](https://github.com/selfteaching/the-craft-of-selfteaching/issues/67)
+
+[version control - How do I force "git pull" to overwrite local files? - Stack Overflow](https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files)
