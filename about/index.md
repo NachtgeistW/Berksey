@@ -6,7 +6,7 @@ type: about
 <p style="text-align:center">98-74 Ocean Street, Sky Heights, Berksey.</p>
 <p style="text-align:center">That's where I live in.</p>
 
-</br>
+  
 
 <p style="text-align:center">"Life is a colorful dream"</p>
 <p style="text-align:center">「生活是一场美梦 色彩缤纷」</p>
