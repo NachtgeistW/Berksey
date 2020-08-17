@@ -216,6 +216,8 @@ font:
 social:
   #LinkLabel: Link
   GitHub: https://github.com/NachtgeistW
+  Twitter: https://twitter.com/Nightwheel_C
+  Weibo: https://weibo.com/u/7312904644
 
 
 # Social Links Icons
@@ -286,8 +288,8 @@ links_title: Friends
 #links_layout: block
 links_layout: inline
 links: 
-  Deemo全曲AC巨佬蜗壳er盐酸妹妹的blog: https://chlorie.github.io/ChloroBlog/
-
+  Deemo全曲AC巨佬蜗壳er盐酸妹妹的 blog: https://chlorie.github.io/ChloroBlog/
+  OI Wiki: https://oi-wiki.org/
 
 # ---------------------------------------------------------------
 # Post Settings
