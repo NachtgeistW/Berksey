@@ -8,7 +8,7 @@ tag:
 
 该解决方案是 GitHub CLI 的 TLS handshake timeout issue 下，一位中国老哥给的。
 
-根据[这位老哥给的solution](https://github.com/cli/cli/issues/514#issuecomment-666230820)，只需在 bash 或者 PowerShell 或者别的什么 CLI 的配置里写上如下函数：
+根据[这位老哥给的solution](https://github.com/cli/cli/issues/514#issuecomment-666230820)，只需在终端的配置里写上如下函数：
 
 ```bash
 proxy ()
