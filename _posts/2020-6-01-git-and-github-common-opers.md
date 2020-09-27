@@ -13,9 +13,11 @@ tag:
 
 ## git 的代理
 
-`git config --global http.proxy http://127.0.0.1:1080`
+~~`git config --global http.proxy http://127.0.0.1:1080`~~
 
-好像只配置这一个就够用了。
+~~好像只配置这一个就够用了。~~
+
+有一个更好的做法。
 
 ## 强制取消本地更改
 
@@ -34,7 +36,7 @@ git reset --hard origin/<branch_name>
 
 `git clean -f`
 
-直白点就是把本地乱七八糟的更改全都扬了。比较适合多了很多乱七八糟文件的情况，比如 OneDrive 同步被搞炸的时候：![git clean 示例](image/2020-06-17_19-56-58.png)
+直白点就是把本地乱七八糟的更改全都扬了。比较适合多了很多乱七八糟文件的情况，比如 OneDrive 同步被搞炸的时候：![git clean 示例](/_posts/image/2020-06-17_19-56-58.png)
 
 有时需要加上 `-d`，把目录下所有未同步的更改全删了。
 
