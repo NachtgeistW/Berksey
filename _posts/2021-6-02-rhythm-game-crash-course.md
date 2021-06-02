@@ -21,6 +21,8 @@ tag:
 
 这种游戏类型小众但美妙，祝你在创造它的过程中一切顺利。
 
+<!-- more -->
+
 ## 它应该是有趣的
 
 在这些技术技巧使游戏正确运作之前，让游戏变得有趣的是谱面和游戏设计。我建议你先到[《游戏设计和谱面》](https://exceed7.com/native-audio/rhythm-game-crash-course/game-design-and-notecharting.html)页去看看，然后用本页的信息在技术方面下番苦工。
