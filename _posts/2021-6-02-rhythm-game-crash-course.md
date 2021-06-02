@@ -8,13 +8,6 @@ tag:
 - Unity
 ---
 
-翻译&校对：夜轮
-
-1. 本文译自[《Rhythm Game Crash Course》](https://exceed7.com/native-audio/rhythm-game-crash-course/index.html)，侵删；
-2. Native Audio 是一款 Unity 插件，用于处理依赖即时反馈的音频（如 hitsound 和 key 音，文中的称呼是“响应型音频” (the response sound)）。本文来源于该插件的官方网站；
-3. 限于译者水平，文中难免有错漏之处。有错请指出。
-
----
 我猜，许多对使用 Native Audio 感兴趣的开发者正在用 Unity 制作音乐游戏，所以我不妨提供一些技巧来帮助你节省一些开发时间。
 
 其中有些是与 Native Audio 无关的，即使你来到这个页面，又对 Native Audio 或 Unity 一无所知，或许你也还是能从中得到一些东西！
@@ -147,3 +140,12 @@ Unity 中的音频是“发射后不管”的。当你要求 Unity `AudioSource`
 - 检查你的音频文件，查看文件的开头是否有无声段。像 Audacity 这样的程序有一个命令，可以即时裁掉两端的静音。
 - 一个尖锐、瞬间增高的音频听上去会更有反馈感。缓慢淡入的音频会感觉有延迟，而它实际上是音频的一部分。如果你在编写自己的SFX，那么你可以通过声音设计来改善感知的延迟。
 - 继续上一点，你仍然可以通过修改原生端的触摸处理入口，调用原生端的 Native Audio ，完全不用到 Unity 去，来得到更快、更超离的音频播放。这样一来，你就像在写一个原生的游戏一样! 然而，这个 hack 会非常混乱。你如何在纯原生端检查 Unity 的东西，以检查该触摸的一些条件？ （除非你的游戏只是关于触摸屏幕和播放声音，但毫不关心它在哪儿的……）只是想说，已经没有更快的方法了。(而且连我的插件都不支持那种可怕的优化，但如果你想的话，你可以把它黑掉……)
+
+---
+
+翻译&校对：夜轮
+
+1. 本文译自[《Rhythm Game Crash Course》](https://exceed7.com/native-audio/rhythm-game-crash-course/index.html)，侵删；
+2. Native Audio 是一款 Unity 插件，用于处理依赖即时反馈的音频（如 hitsound 和 key 音，文中的称呼是“响应型音频” (the response sound)）。本文来源于该插件的官方网站；
+3. 限于译者水平，文中难免有错漏之处。有错请指出。
+
