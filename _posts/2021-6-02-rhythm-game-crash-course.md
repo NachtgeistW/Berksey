@@ -4,7 +4,7 @@ category:
 - translation
 tag: 
 - translation
-- RhythmGames
+- Rhythm Games
 - Unity
 ---
 
