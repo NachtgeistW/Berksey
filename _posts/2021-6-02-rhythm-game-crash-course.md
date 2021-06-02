@@ -1,10 +1,10 @@
 ---
 title: 节奏游戏速成班
 category: 
-- 译文
+- translation
 tag: 
-- 译文
-- 音游
+- translation
+- Rhythm Games
 - Unity
 ---
 
