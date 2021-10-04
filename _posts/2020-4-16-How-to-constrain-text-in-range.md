@@ -57,6 +57,6 @@ tag:
         android:layout_height="wrap_content"
         app:barrierDirection="start"
         app:constraint_referenced_ids="guideline_verticalE, text" />
-
+```
 
 这样就可以了。
