@@ -24,7 +24,7 @@ tag:
 
 一切都调好了：建好并将 deploy 分支设成了 `gh-pages` 分支；写好的网页推到了 `master` 分支。然后，依照 [Material for MkDocs 文档给出的方案](https://squidfunk.github.io/mkdocs-material/publishing-your-site/#github-pages)准备实际部署到 GitHub Pages 上，结果问题就来了：
 
-![ci summary](https://github.com/NachtgeistW/Berksey/blob/1eb261e22a6304bd907cad175037a9b0c61f0178/_posts/image/2022-05-13_16-41-05.png)
+![ci summary](https://raw.githubusercontent.com/NachtgeistW/Berksey/1eb261e22a6304bd907cad175037a9b0c61f0178/_posts/image/2022-05-13_16-41-05.png)
 
 怎么回事呢？是啊怎么回事呢？（
 
@@ -74,11 +74,11 @@ jobs:
 
 进入 GitHub 的 setting，拉到最下面，选择 Developer settings，然后申一个新的 Personal access tokens，勾上 workflow 的权限（会自动一起勾上 repo 的全部权限，不过有这两个就已经够了）。等 GitHub 生成新的 PAT 后复制一下这个值。
 
-![generate PAT](https://github.com/NachtgeistW/Berksey/blob/1eb261e22a6304bd907cad175037a9b0c61f0178/_posts/image/2022-05-13_17-12-10.png)
+![generate PAT](https://raw.githubusercontent.com/NachtgeistW/Berksey/1eb261e22a6304bd907cad175037a9b0c61f0178/_posts/image/2022-05-13_17-12-10.png)
 
 然后，进项目里的 Settings，把刚才创建的 PAT 加到它的 Actions secrets 里，起名叫 `GH_TOKEN`。
 
-![add action secrets](https://github.com/NachtgeistW/Berksey/blob/1eb261e22a6304bd907cad175037a9b0c61f0178/_posts/image/2022-05-13_17-14-27.png)
+![add action secrets](https://raw.githubusercontent.com/NachtgeistW/Berksey/1eb261e22a6304bd907cad175037a9b0c61f0178/_posts/image/2022-05-13_17-14-27.png)
 
 最后稍微改一下 workflow 的 ci：
 
