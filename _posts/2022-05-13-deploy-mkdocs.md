@@ -1,7 +1,7 @@
 ---
 title: 配合 Action 在 GitHub Pages 上部署 MkDocs 的坑
 category: 
-- GitHub Action
+- GitHub
 tag: 
 - GitHub Action
 - GitHub Pages
