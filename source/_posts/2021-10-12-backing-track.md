@@ -7,7 +7,7 @@ category:
 tag: 
 - translation
 - Rhythm Games
-- Unity
+- Unity3D
 ---
 
 在这一大节里我们要讨论的是背景音频的播放问题（剧透：这远不是一个简单的 `AudioSource.Play` 就搞定得了的）。这个看似简单的任务会成为一个超绝麻烦的东西，而数学在它面前看上去就像个简单的加减法。希望我能把这些东西讲明白（希望吧）。
