@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="不过 Twitter 现在可能是唯一一家主力 api 还用 1 的（ ——w 君  事件的起因是我一时兴起，准备用 Mirai 做一个推文同步 bot，用来实时同步 Project Sekai 官推的推文。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 C++ 从零实现 Twitter 的 OAuth1.0a 验证">
+<meta property="og:url" content="https://nachtgeistw.github.io/2020-12-08-Implement-Twitter-OAuth-1.0a-in-Cpp/index.html">
+<meta property="og:site_name" content="Berksey">
+<meta property="og:description" content="不过 Twitter 现在可能是唯一一家主力 api 还用 1 的（ ——w 君  事件的起因是我一时兴起，准备用 Mirai 做一个推文同步 bot，用来实时同步 Project Sekai 官推的推文。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://nachtgeistw.github.io/image/2020-12-08-Implement-Twitter-OAuth-1.0a-in-Cpp/Snipaste_2020-12-08_14-56-25.png">
+<meta property="og:image" content="https://nachtgeistw.github.io/image/2020-12-08-Implement-Twitter-OAuth-1.0a-in-Cpp/Snipaste_2020-12-26_17-07-00.png">
+<meta property="article:published_time" content="2020-12-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-07T16:00:00.000Z">
+<meta property="article:author" content="NachtgeistW">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Twitter">
+<meta property="article:tag" content="OAuth">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nachtgeistw.github.io/image/2020-12-08-Implement-Twitter-OAuth-1.0a-in-Cpp/Snipaste_2020-12-08_14-56-25.png">
+
+<link rel="canonical" href="https://nachtgeistw.github.io/2020-12-08-Implement-Twitter-OAuth-1.0a-in-Cpp/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>使用 C++ 从零实现 Twitter 的 OAuth1.0a 验证 | Berksey</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Berksey</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">98-74 Ocean Street, Sky Height</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nachtgeistw.github.io/2020-12-08-Implement-Twitter-OAuth-1.0a-in-Cpp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="NachtgeistW">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Berksey">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用 C++ 从零实现 Twitter 的 OAuth1.0a 验证
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-12-08T00:00:00+08:00">2020-12-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>不过 Twitter 现在可能是唯一一家主力 api 还用 1 的（</p>
+<p>——w 君</p>
+</blockquote>
+<p>事件的起因是我一时兴起，准备用 Mirai 做一个推文同步 bot，用来实时同步 Project Sekai 官推的推文。</p>
+<span id="more"></span>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="查找-API-接口"><a href="#查找-API-接口" class="headerlink" title="查找 API 接口"></a>查找 API 接口</h3><p>我问了一下 Xs! 他是如何实现他的推文同步功能的，得到的答复是可以用官方的 <a target="_blank" rel="noopener" href="https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/overview">Get Tweet timelines</a> API。</p>
+<p>之前跟 Twitter 对线的时候成功拿到的 developer 账号虽然闲置了快一年，但还是可以用。</p>
+<p>打开文档，看到列表里有一个 ：</p>
+<table>
+<thead>
+<tr>
+<th align="left">API endpoint</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET statuses &#x2F; user_timeline</td>
+<td align="left">Returns a collection of the most recent Tweets posted by the indicated by the <code>screen_name</code> or <code>user_id</code> parameters.</td>
+</tr>
+</tbody></table>
+<p>那这个就是我们要的 API 了。</p>
+<p>Twitter 的 API 根据 OAuth 版本相对应地分了两个版本：1.1（对应 1.0a）和 2（对应 2）。1.1 的 API URL 一般是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.twitter.com/1.1/XXX1/XXX2.json</span><br></pre></td></tr></table></figure>
+
+<p>这里，XXX1 填 <code>statuses</code>，XXX2 填 <code>user_timeline</code>。那 URL 就变成了这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.twitter.com/1.1/statuses/user_timeline.json</span><br></pre></td></tr></table></figure>
+
+<p>另外列表里说明了这个 API 要用 GET 来获取数据。嗯，想想也是，毕竟只是用来拉取用户的时间流。</p>
+<h3 id="尝试使用-API"><a href="#尝试使用-API" class="headerlink" title="尝试使用 API"></a>尝试使用 API</h3><p>因为官方文档的 FAQ 里，图片无一幸免全部挂掉了，我有点担心这个 API 已经被弃用了，所以需要写个小程序试试 API 还能不能用。</p>
+<p>首先要去 Twitter Developers 建立一个新的 App，拿到 API key &amp; secret 以及 Access token &amp; secret。后面会用到。至于怎么建立，这里就不详述了，总之不只是发申请那么简单，有可能要用英语跟 Twitter 对线，所以做好准备（</p>
+<p><img src="/image/2020-12-08-Implement-Twitter-OAuth-1.0a-in-Cpp/Snipaste_2020-12-08_14-56-25.png" alt="Twitter Developer Portal"></p>
+<p>众所周知，Python 拥有较快的开发速度，而且拥有丰富的包。所以我用了 Python 来做测试。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> authlib.integrations.requests_client <span class="keyword">import</span> OAuth1Session</span><br><span class="line"><span class="keyword">from</span> authlib.integrations.requests_client <span class="keyword">import</span> OAuth1Auth</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"></span><br><span class="line">proxies = &#123;</span><br><span class="line">    <span class="string">&#x27;http&#x27;</span>: <span class="string">&#x27;127.0.0.1:1080&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;https&#x27;</span>: <span class="string">&#x27;127.0.0.1:1080&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">api_key = <span class="string">&quot;api_key&quot;</span></span><br><span class="line">api_key_secret = <span class="string">&quot;api_key_secret&quot;</span></span><br><span class="line"></span><br><span class="line">access_token = <span class="string">&quot;access_token&quot;</span></span><br><span class="line">access_token_secret = <span class="string">&quot;nRmLq53U6jx6dhpDmHyTbdQUws2i6CjZB0aASzKwco4m2&quot;</span></span><br><span class="line">auth = OAuth1Auth(</span><br><span class="line">    client_id=api_key,</span><br><span class="line">    client_secret=api_key_secret,</span><br><span class="line">    token=access_token,</span><br><span class="line">    token_secret=access_token_secret,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">url = <span class="string">&quot;https://api.twitter.com/1.1/statuses/user_timeline.json&quot;</span></span><br><span class="line">payload = &#123;<span class="string">&#x27;screen_name&#x27;</span>: <span class="string">&#x27;pj_sekai&#x27;</span>&#125;</span><br><span class="line">r = requests.get(url, auth=auth, proxies=proxies, params=payload)</span><br><span class="line"></span><br><span class="line">pprint(r.json()[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<p>由于人在国内，所以额外加了一个 <code>proxies</code> 设置。</p>
+<p>结果如下。</p>
+<p><img src="/image/2020-12-08-Implement-Twitter-OAuth-1.0a-in-Cpp/Snipaste_2020-12-26_17-07-00.png" alt="Twitter API 测试结果"></p>
+<p>还算幸运，这个 API 还能用。</p>
+<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><p>既然能用，那就可以尝试用 C++ 调用它了。</p>
+<h3 id="通信需要的参数"><a href="#通信需要的参数" class="headerlink" title="通信需要的参数"></a>通信需要的参数</h3><p>根据 Twitter 的 <a target="_blank" rel="noopener" href="https://developer.twitter.com/en/docs/authentication/oauth-1-0a/authorizing-a-request">Authorizing a request</a> 页，我们需要的参数除了 oauth_consumer_key、oauth_consumer_secret、oauth_token 和 oauth_token_secret 之外，还需要一些别的东西：</p>
+<ul>
+<li>oauth_timestamp：这个是发起 oauth 验证时的时间戳。</li>
+<li>oauth_nonce：这个是一个长度为 32 的，随机生成的，并使用 Base64 加密过后的字符串。</li>
+<li>oauth_signature_method：签名用的方法。写 <code>HMAC-SHA1</code> 就行。</li>
+<li>oauth_version：OAuth 版本。这里是 <code>1.0</code>。</li>
+</ul>
+<p>timestamp 的获取方法十分简单，使用 C++ 自带的 <code>&lt;chrono&gt;</code> 就可以了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="keyword">auto</span> ms = std::chrono::<span class="built_in">duration_cast</span>&lt;std::chrono::seconds&gt;(</span><br><span class="line">    std::chrono::system_clock::<span class="built_in">now</span>().</span><br><span class="line">    <span class="built_in">time_since_epoch</span>());</span><br><span class="line"><span class="keyword">return</span> std::<span class="built_in">to_string</span>(ms.<span class="built_in">count</span>());</span><br></pre></td></tr></table></figure>
+
+<p>oauth_nonce 的获取有点困难。为了安全要求，这串字符必须是强随机、不可预测的。这里我用了 sodium 库的 <code>randombytes_buf()</code> 方法来生成 32 位的字节流。<a target="_blank" rel="noopener" href="https://doc.libsodium.org/generating_random_data#usage">^ref1</a>生成完之后再用 Base64 加密。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>从动念头到程序正式跑通，前前后后总计花了两个星期还多。期间的过程虽然非常折腾，但是学到了很多东西。我觉得这不算亏。</p>
+<p>特别感谢 w 君。没有他陪着我折腾，这个程序根本写不出来。</p>
+<h2 id="参考资料与注释"><a href="#参考资料与注释" class="headerlink" title="参考资料与注释"></a>参考资料与注释</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/Twitter/" rel="tag"># Twitter</a>
+              <a href="/tags/OAuth/" rel="tag"># OAuth</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020-10-24-bilibili-ctf-sequel/" rel="prev" title="哔哩哔哩 1024 安全挑战赛解题思路（后篇）">
+      <i class="fa fa-chevron-left"></i> 哔哩哔哩 1024 安全挑战赛解题思路（后篇）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021-1-6-2020-summary/" rel="next" title="2020 年总结">
+      2020 年总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE-API-%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.</span> <span class="nav-text">查找 API 接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8-API"><span class="nav-number">1.2.</span> <span class="nav-text">尝试使用 API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">实现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E9%9C%80%E8%A6%81%E7%9A%84%E5%8F%82%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">通信需要的参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99%E4%B8%8E%E6%B3%A8%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text">参考资料与注释</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">NachtgeistW</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NachtgeistW</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

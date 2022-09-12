@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="简单讲一下如何修正修改时间全部为 git 拉取时间的问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从 Jekyll 迁移到 hexo 时的博客创建和更新日期问题">
+<meta property="og:url" content="https://nachtgeistw.github.io/post-poblem-on-create-and-update-time/index.html">
+<meta property="og:site_name" content="Berksey">
+<meta property="og:description" content="简单讲一下如何修正修改时间全部为 git 拉取时间的问题。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-11T16:00:00.000Z">
+<meta property="article:author" content="NachtgeistW">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="Jekyll">
+<meta property="article:tag" content="PowerShell">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://nachtgeistw.github.io/post-poblem-on-create-and-update-time/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>从 Jekyll 迁移到 hexo 时的博客创建和更新日期问题 | Berksey</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Berksey</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">98-74 Ocean Street, Sky Height</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nachtgeistw.github.io/post-poblem-on-create-and-update-time/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="NachtgeistW">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Berksey">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          从 Jekyll 迁移到 hexo 时的博客创建和更新日期问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-09-12T00:00:00+08:00">2022-09-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>简单讲一下如何修正修改时间全部为 git 拉取时间的问题。</p>
+<span id="more"></span>
+
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>决定从我的博客 Berksey 框架从 Jekyll 迁到 hexo 了。在转移时发现，因为本地的 Berksey 项目被我删掉了，所以从 GitHub 上重新拉取了一份，但这也导致本地文件的创建和修改日期全部变成了拉取时的那天。</p>
+<h2 id="解决的过程"><a href="#解决的过程" class="headerlink" title="解决的过程"></a>解决的过程</h2><p>参考了《<a target="_blank" rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun/issues/60">升级主题后，文章会刷新更新日期，时间为刚才的部署时间 #60</a>》后，将 <code>_config.yml</code> 里的 <code>updated_option:</code> 改为了 <code>date</code>。但并没有真正解决问题。</p>
+<p>继续以“hexo 修改时间”为关键字搜索，搜到了《<a target="_blank" rel="noopener" href="https://www.voidking.com/dev-hexo-next-update-time/">Hexo Next主题显示文章更新时间</a>》一文。文中提供了两个信息：</p>
+<ul>
+<li>在文章头部 YAML 定义中添加 <code>updated</code> 字段就会显示自定义更新时间。添加 <code>date</code> 字段会显示自定义创建时间。</li>
+<li>用脚本批量解决这种问题。</li>
+</ul>
+<p>另外，Jekyll 的 post 有个要求，就是文件名要以 <code>YY-MM-DD-title</code> 的格式命名。最后修改时间已经记不得了（虽然可以去翻 git 提交记录，但那也太烦了），那就直接把创建时间和最后修改时间都设置成文件名里标的时间好了。</p>
+<p>虽然我的博文不多，算上这篇也只有 24 篇，但一个个改还是很麻烦；再加上我用的电脑是 Windows 设备，那么自然就该选择用 PowerShell 了。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>有两个方法可以解决。</p>
+<h3 id="直接改文件源数据"><a href="#直接改文件源数据" class="headerlink" title="直接改文件源数据"></a>直接改文件源数据</h3><p>第一个想法是“既然你读的是文件源数据，那我去修改源数据不就可以了吗？”</p>
+<p>那就可以这么做：</p>
+<ol>
+<li>获取当前路径下所有的 <code>.md</code> 文件；</li>
+<li>用正则表达式提取出它们的创建日期；</li>
+<li>将提取出的创建日期写入文件的创建日期和修改日期。</li>
+</ol>
+<p>PowerShell 脚本如下：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> *.md | <span class="built_in">foreach-object</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$_</span> <span class="operator">-match</span> <span class="string">&#x27;(?&lt;year&gt;\d&#123;4&#125;)-(?&lt;month&gt;\d&#123;1,2&#125;)-(?&lt;day&gt;\d&#123;1,2&#125;)&#x27;</span>; </span><br><span class="line">    <span class="variable">$_</span>.LastWriteTime = <span class="variable">$Matches</span>.month + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.day + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.year + <span class="string">&#x27; 00:00:00&#x27;</span>; </span><br><span class="line">    <span class="variable">$_</span>.CreationTime = <span class="variable">$Matches</span>.month + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.day + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.year + <span class="string">&#x27; 00:00:00&#x27;</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>子序列 <code>?&lt;year&gt;</code> 之类是用来提取数据的，提取出来的数据用 <code>$Matches</code> 就可以调用了。</p>
+<h3 id="在文件的-YAML-段添加-date-和-update-字段"><a href="#在文件的-YAML-段添加-date-和-update-字段" class="headerlink" title="在文件的 YAML 段添加 date 和 update 字段"></a>在文件的 YAML 段添加 <code>date</code> 和 <code>update</code> 字段</h3><p>但上面的办法治标不治本。以后再使用 git 拉取时文件日期还是会变成 git 拉取时的日期。所以还是得在文件头部手动写入 <code>date</code> 和 <code>update</code> 字段。</p>
+<p>步骤大概是这样：</p>
+<ol>
+<li>获取当前路径下所有的 <code>.md</code> 文件；</li>
+<li>用正则表达式提取出它们的创建日期；</li>
+<li>获取文件的文本；</li>
+<li>因为文件的第一行是 <code>---</code>，第二行是标题，所以在文本的第二行后插入两个日期；</li>
+<li>把修改后的文本写入文件中。</li>
+</ol>
+<p>PowerShell 脚本如下：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> *.md | <span class="built_in">Foreach-object</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$_</span> <span class="operator">-match</span> <span class="string">&#x27;(?&lt;year&gt;\d&#123;4&#125;)-(?&lt;month&gt;\d&#123;1,2&#125;)-(?&lt;day&gt;\d&#123;1,2&#125;)&#x27;</span>;</span><br><span class="line">    <span class="variable">$textToAdd</span> = <span class="string">&quot;`n&quot;</span> </span><br><span class="line">        + <span class="string">&#x27;date: &#x27;</span> + <span class="variable">$Matches</span>.year + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.month + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.day + <span class="string">&quot;`n&quot;</span> </span><br><span class="line">        + <span class="string">&#x27;updated: &#x27;</span> + <span class="variable">$Matches</span>.year + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.month + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.day;</span><br><span class="line">    <span class="variable">$fileContent</span> = <span class="built_in">Get-Content</span> <span class="variable">$_</span> <span class="literal">-Encoding</span> utf8;</span><br><span class="line">    <span class="variable">$fileContent</span>[<span class="number">1</span>] += <span class="variable">$textToAdd</span>;</span><br><span class="line">    <span class="variable">$fileContent</span> | <span class="built_in">Set-Content</span> <span class="variable">$_</span> <span class="literal">-Encoding</span> utf8</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>&quot;`n&quot;</code> 是用来在 PowerShell 文本中换行的。使用 <code>Get-Content</code> 和 <code>Set-Content</code> 前都得指定一下编码，不然在写文件的时候有些地方会乱码。</p>
+<p>这样就能批量完成了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/Jekyll/" rel="tag"># Jekyll</a>
+              <a href="/tags/PowerShell/" rel="tag"># PowerShell</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022-09-10-replay-animation-from-frame-0/" rel="prev" title="从 ObjectPool 复用 GameObject 时从头开始播放 Animation">
+      <i class="fa fa-chevron-left"></i> 从 ObjectPool 复用 GameObject 时从头开始播放 Animation
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">解决的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%94%B9%E6%96%87%E4%BB%B6%E6%BA%90%E6%95%B0%E6%8D%AE"><span class="nav-number">3.1.</span> <span class="nav-text">直接改文件源数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%96%87%E4%BB%B6%E7%9A%84-YAML-%E6%AE%B5%E6%B7%BB%E5%8A%A0-date-%E5%92%8C-update-%E5%AD%97%E6%AE%B5"><span class="nav-number">3.2.</span> <span class="nav-text">在文件的 YAML 段添加 date 和 update 字段</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">NachtgeistW</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NachtgeistW</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

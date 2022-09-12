@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="题目求点对最近距离。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDU 1007 Quoit Design（套圈设计）">
+<meta property="og:url" content="https://nachtgeistw.github.io/2019-12-24-HDU1007-Quoit-Design/index.html">
+<meta property="og:site_name" content="Berksey">
+<meta property="og:description" content="题目求点对最近距离。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-12-23T16:00:00.000Z">
+<meta property="article:author" content="NachtgeistW">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="排列">
+<meta property="article:tag" content="分治与递归">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://nachtgeistw.github.io/2019-12-24-HDU1007-Quoit-Design/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>HDU 1007 Quoit Design（套圈设计） | Berksey</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Berksey</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">98-74 Ocean Street, Sky Height</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nachtgeistw.github.io/2019-12-24-HDU1007-Quoit-Design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="NachtgeistW">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Berksey">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HDU 1007 Quoit Design（套圈设计）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-24 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-24T00:00:00+08:00">2019-12-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OJ/" itemprop="url" rel="index"><span itemprop="name">OJ</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>求点对最近距离。</p>
+<span id="more"></span>
+
+<p>Problem Description</p>
+<p>Assume that all the toys are points on a plane. A point is encircled by the ring if the distance between the point and the center of the ring is strictly less than the radius of the ring. If two toys are placed at the same point, the radius of the ring is considered to be 0.</p>
+<p>Input</p>
+<p>The input consists of several test cases. For each case, the first line contains an integer N (2 &lt;&#x3D; N &lt;&#x3D; 100,000), the total number of toys in the field. Then N lines follow, each contains a pair of (x, y) which are the coordinates of a toy. The input is terminated by N &#x3D; 0.</p>
+<p>Output</p>
+<p>For each test case, print in one line the radius of the ring required by the Cyberground manager, accurate up to 2 decimal places.</p>
+<p>Sample Input</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">0 0</span><br><span class="line">1 1</span><br><span class="line">2</span><br><span class="line">1 1</span><br><span class="line">1 1</span><br><span class="line">3</span><br><span class="line">-1.5 0</span><br><span class="line">0 0</span><br><span class="line">0 1.5</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<p>Sample Output</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0.71</span><br><span class="line">0.00</span><br><span class="line">0.75</span><br></pre></td></tr></table></figure>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>按照《算法导论》，这个算法的时间复杂度应该是 $T(n) &#x3D; 2T(n&#x2F;2) + O(n)$，也就是 $O(nlgn)$ 吧。</p>
+<p>思路是这样。先定义两个数组 <code>px</code> 和 <code>py</code>。<code>px</code> 里的元素按x坐标单增排序，<code>py</code> 里的元素按y坐标单增排序。但是又不能在每个递归里排序，这样时间复杂度就飞到 $T(n) &#x3D; 2T(n&#x2F;2) + O(nlgn)$，也就是 $O(nlg^2n)$ 了。那就要做优化。</p>
+<p>对于每一次递归，因为每次都会给定左右端点 <code>left</code> 和 <code>right</code>，所以能把这两点的中点 <code>mid</code> 找出来。求 <code>mid</code> 左边和右边的最短距离好找，主要是在 $[mid-res, mid+res]$ 里的点的距离难找。这里的 res 是 1 ~ mid 和 mid ~ n 中较小的那个。</p>
+<blockquote>
+<p>如果说最近点对中的两点都在 1 ~ mid 集合中，或者 mid + 1 ~ n 集合中，则 res 就是最小距离了。但是还有可能的是最近点对中的两点分属这两个集合，所以必须先检测一下这种情况是否会存在，若存在，则把这个最近点对的距离记录下来，去更新 res。这样我们就可以得到最小的距离 res 了。</p>
+<p>假设有一个点q，坐标是 $(xq, yq)$。可以证明在以 q 为底边中点，长为 2d，宽为 d 的矩形区域内不会有超过 6 个点（详细证明见下）。利用这个结论我们就可以来继续优化比较的过程了。刚刚我们是用 1 号点去和 2 到 p 号的点求一下距离，我们知道以 1 号点构造图中矩形内，不会有超过 6 个点存在。但是我们又不能直接从 1 号求到 6 号，因为这里的 p 个点是按 y 坐标排序而不是按距离排序的，有可能在 y 坐标上，前 10 个点距离 1 号点都很近，但是前 6 个点的 x 坐标很远，而第 10 个点的 x 坐标和 1 号点的 x 坐标很近，这样第 10 个点到 1 号点的距离反而更近。</p>
+<p>那么我们怎么利用这个结论呢？应该这样：假设 1 号点和 2 到 p 号点比较，由于 y 坐标排序的缘故，假设第 p 个点的 y 坐标距离 1 号点的 y 坐标大于当前能求出的最小值，那么这点以及这点后的所有点距离 1 号点的距离必然大于当前已经获得的最小值，所以直接不用比较后面的了。</p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAXN 100005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">point</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">double</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//py是用来存放符合条件的点的x坐标的</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">point</span> p[MAXN], * px[MAXN], * py[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">get_dis</span><span class="params">(point* p1, point* p2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>((p1-&gt;x - p2-&gt;x) * (p1-&gt;x - p2-&gt;x) + (p1-&gt;y - p2-&gt;y) * (p1-&gt;y - p2-&gt;y));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">compare_x</span><span class="params">(point* p1, point* p2)</span> </span>&#123; <span class="keyword">return</span> p1-&gt;x &lt; p2-&gt;x; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">compare_y</span><span class="params">(point* p1, point* p2)</span> </span>&#123; <span class="keyword">return</span> p1-&gt;y &lt; p2-&gt;y; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//核心代码</span></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">closest</span><span class="params">(<span class="type">const</span> <span class="type">int</span> left, <span class="type">const</span> <span class="type">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//如果是相邻的两个点</span></span><br><span class="line">    <span class="keyword">if</span> (left + <span class="number">1</span> == right)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">get_dis</span>(px[left], px[right]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果是相隔一个点的两个点</span></span><br><span class="line">    <span class="keyword">if</span> (left + <span class="number">2</span> == right)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(<span class="built_in">get_dis</span>(px[left], px[left + <span class="number">1</span>]),</span><br><span class="line">            <span class="built_in">min</span>(<span class="built_in">get_dis</span>(px[left + <span class="number">1</span>], px[right]),</span><br><span class="line">                <span class="built_in">get_dis</span>(px[left], px[right])));</span><br><span class="line"></span><br><span class="line">    <span class="comment">//相隔多于两个点的通常情况</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">    <span class="type">double</span> res = <span class="built_in">min</span>(<span class="built_in">closest</span>(left, mid), <span class="built_in">closest</span>(mid + <span class="number">1</span>, right));<span class="comment">//折半递归求解</span></span><br><span class="line">    <span class="type">int</span> i, count = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//把x坐标在px[mid].x-ans~px[mid].x+ans范围内的点取出来</span></span><br><span class="line">    <span class="keyword">for</span> (i = left; i &lt;= right; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//如果x在[mid-ans, mid+ans]内</span></span><br><span class="line">        <span class="keyword">if</span> (px[i]-&gt;x &gt;= px[mid]-&gt;x - res &amp;&amp; px[i]-&gt;x &lt;= px[mid]-&gt;x + res)</span><br><span class="line">            <span class="comment">//将符合条件的点放到py里</span></span><br><span class="line">            py[count++] = px[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(py, py + count, compare_y);<span class="comment">//按y坐标排序</span></span><br><span class="line">    <span class="comment">//遍历py数组找最小的y坐标差</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; count; j++)<span class="comment">//py数组中的点是按照y坐标升序的</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//如果光是y坐标的距离就已经比res大了，那就直接跳过去找下一个</span></span><br><span class="line">            <span class="keyword">if</span> (py[j]-&gt;y - py[i]-&gt;y &gt;= res)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            res = <span class="built_in">min</span>(res, <span class="built_in">get_dis</span>(py[i], py[j]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%lf%lf&quot;</span>, &amp;p[i].x, &amp;p[i].y);</span><br><span class="line">            px[i] = &amp;p[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//先按x坐标的大小排好序</span></span><br><span class="line">        <span class="built_in">sort</span>(px, px + n, compare_x);</span><br><span class="line">        <span class="type">const</span> <span class="type">double</span> distance = <span class="built_in">closest</span>(<span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%.2lf\n&quot;</span>, distance / <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对文中所用结论的证明"><a href="#对文中所用结论的证明" class="headerlink" title="对文中所用结论的证明"></a>对文中所用结论的证明</h2><blockquote>
+<p>可以证明在以 q 为底边中点，长为 2d，宽为 d 的矩形区域内不会有超过 6 个点。</p>
+</blockquote>
+<p>以下为《算法导论》证明部分的自译。</p>
+<p>假设算法已经找到了 res。接下来要找 $[mid-res, mid+res]$ 里两点间的最小值。</p>
+<p>假设在几层递归里，最近的点对是 $p_l\in P_L$ 和 $p_L\in P_R$（$P_L$ 为 $[res&#x2F;2]$ 的左半边，$P_R$ 为 $[res&#x2F;2]$ 的右半边)。因此 $p_L$ 和 $p_R$ 之间的距离 $res1$ 必定小于 $right - left$。而且，$p_L$ 和 $p_R$ 垂直方向距离在 $res$ 个单位之内。<br>。所以就像图 33.11(a) 所示，它们落在以线 $l$ 为中心的 $res \times 2res$ 矩阵内。</p>
+<p>接下来将证明在 $res \times 2res$ 矩阵内至多有 <strong>8</strong> 个点。先考虑左边的半个 $res \times res$ 矩阵。由于P_L内的所有点至少相隔 res 个单位，因此此正方形内最多有 4 个点。图 33.11(b) 展示了它们是怎么分布的。同样，右边半个矩阵也是同样的分布。所以一个矩阵内最多有 8 个点（注意，由于线 $l$ 上的点可能位于 $P_L$ 或 $P_R$ 中，因此 $l$ 上最多可能有 4 个点。如果存在两对重合点，使得每一对都包含 $P_L$ 中的一个点和 $P_R$ 中的一个点，则可以达到此限制，一对位于 $l$ 与矩形顶部的交点，另一对位于 $l$ 与矩形底部相交的位置。）。</p>
+<p>既然已知“在 $res \times 2res$ 矩阵内至多有 8 个点”，那就知道为什么只需检查数组 <code>py</code> 接下来的 7 个点。事实上是 6 个，因为程序是从第 2 个点开始的。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+              <a href="/tags/%E6%8E%92%E5%88%97/" rel="tag"># 排列</a>
+              <a href="/tags/%E5%88%86%E6%B2%BB%E4%B8%8E%E9%80%92%E5%BD%92/" rel="tag"># 分治与递归</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019-12-24-prem-algorithm/" rel="prev" title="Perm 算法">
+      <i class="fa fa-chevron-left"></i> Perm 算法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019-12-31-HDU2602-Knapsack%20problem/" rel="next" title="HDU 2602 Bone Collector——0-1背包问题的多种解法">
+      HDU 2602 Bone Collector——0-1背包问题的多种解法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%96%87%E4%B8%AD%E6%89%80%E7%94%A8%E7%BB%93%E8%AE%BA%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">对文中所用结论的证明</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">NachtgeistW</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NachtgeistW</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
