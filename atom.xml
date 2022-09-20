@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Berksey</title>
+  <icon>https://nachtgeistw.github.io/Berksey/icon.png</icon>
+  <subtitle>98-74 Ocean Street, Sky Height</subtitle>
+  <link href="https://nachtgeistw.github.io/Berksey/atom.xml" rel="self"/>
+  
+  <link href="https://nachtgeistw.github.io/Berksey/"/>
+  <updated>2022-09-11T16:00:00.000Z</updated>
+  <id>https://nachtgeistw.github.io/Berksey/</id>
+  
+  <author>
+    <name>NachtgeistW</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从 Jekyll 迁移到 hexo 时的博客创建和更新日期问题</title>
+    <link href="https://nachtgeistw.github.io/Berksey/post-poblem-on-create-and-update-time/"/>
+    <id>https://nachtgeistw.github.io/Berksey/post-poblem-on-create-and-update-time/</id>
+    <published>2022-09-11T16:00:00.000Z</published>
+    <updated>2022-09-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;简单讲一下如何修正修改时间全部为 git 拉取时间的问题。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="hexo" scheme="https://nachtgeistw.github.io/Berksey/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="https://nachtgeistw.github.io/Berksey/tags/hexo/"/>
+    
+    <category term="Jekyll" scheme="https://nachtgeistw.github.io/Berksey/tags/Jekyll/"/>
+    
+    <category term="PowerShell" scheme="https://nachtgeistw.github.io/Berksey/tags/PowerShell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://nachtgeistw.github.io/Berksey/hello-world/"/>
+    <id>https://nachtgeistw.github.io/Berksey/hello-world/</id>
+    <published>2022-09-09T16:00:00.000Z</published>
+    <updated>2022-09-09T16:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>从 ObjectPool 复用 GameObject 时从头开始播放 Animation</title>
+    <link href="https://nachtgeistw.github.io/Berksey/replay-animation-from-frame-0/"/>
+    <id>https://nachtgeistw.github.io/Berksey/replay-animation-from-frame-0/</id>
+    <published>2022-09-09T16:00:00.000Z</published>
+    <updated>2022-09-09T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我在写音游里的一个功能。&lt;/p&gt;
+&lt;p&gt;音游里有很多音符，游戏里借助了 Unity 原生的 &lt;a href=&quot;https://docs.unity3d.com/ScriptReference/Pool.ObjectPool_1.html&quot;&gt;&lt;code&gt;ObjectPool&lt;/code&gt;&lt;/a&gt; 实现了它们的生成与回收。我希望当游戏中的音符落下来，播放光效后，再让 ObjectPool 回收它们。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Unity3D" scheme="https://nachtgeistw.github.io/Berksey/categories/Unity3D/"/>
+    
+    
+    <category term="Unity3D" scheme="https://nachtgeistw.github.io/Berksey/tags/Unity3D/"/>
+    
+    <category term="C#" scheme="https://nachtgeistw.github.io/Berksey/tags/C/"/>
+    
+    <category term="Animator" scheme="https://nachtgeistw.github.io/Berksey/tags/Animator/"/>
+    
+    <category term="Animation" scheme="https://nachtgeistw.github.io/Berksey/tags/Animation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配合 Action 在 GitHub Pages 上部署 MkDocs 的坑</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2022-05-13-deploy-mkdocs/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2022-05-13-deploy-mkdocs/</id>
+    <published>2022-05-12T16:00:00.000Z</published>
+    <updated>2022-05-12T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;主要讲一下那些没写在 Material for MkDocs 文档上有关部署的坑。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="GitHub" scheme="https://nachtgeistw.github.io/Berksey/categories/GitHub/"/>
+    
+    
+    <category term="GitHub Action" scheme="https://nachtgeistw.github.io/Berksey/tags/GitHub-Action/"/>
+    
+    <category term="GitHub Pages" scheme="https://nachtgeistw.github.io/Berksey/tags/GitHub-Pages/"/>
+    
+    <category term="MkDocs" scheme="https://nachtgeistw.github.io/Berksey/tags/MkDocs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>背景音频</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2021-10-12-backing-track/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2021-10-12-backing-track/</id>
+    <published>2021-10-11T16:00:00.000Z</published>
+    <updated>2021-10-11T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在这一大节里我们要讨论的是背景音频的播放问题（剧透：这远不是一个简单的 &lt;code&gt;AudioSource.Play&lt;/code&gt; 就搞定得了的）。这个看似简单的任务会成为一个超绝麻烦的东西，而数学在它面前看上去就像个简单的加减法。希望我能把这些东西讲明白（希望吧）。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="translation" scheme="https://nachtgeistw.github.io/Berksey/categories/translation/"/>
+    
+    
+    <category term="Unity3D" scheme="https://nachtgeistw.github.io/Berksey/tags/Unity3D/"/>
+    
+    <category term="translation" scheme="https://nachtgeistw.github.io/Berksey/tags/translation/"/>
+    
+    <category term="Rhythm Games" scheme="https://nachtgeistw.github.io/Berksey/tags/Rhythm-Games/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>节奏游戏速成班</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2021-6-02-rhythm-game-crash-course/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2021-6-02-rhythm-game-crash-course/</id>
+    <published>2021-06-01T16:00:00.000Z</published>
+    <updated>2021-06-01T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我猜，许多对使用 Native Audio 感兴趣的开发者正在用 Unity 写音游，所以，我不如提供一些技巧，帮你节省一些开发时间。&lt;/p&gt;
+&lt;p&gt;其中，有些是与 Native Audio 无关的。即使你来到这个页面，又对 Native Audio 或 Unity 一无所知，或许你还是能从这篇文里得到些什么！&lt;/p&gt;
+&lt;p&gt;这种游戏类型小众但美妙，祝你在创造它的过程中一切顺利。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="translation" scheme="https://nachtgeistw.github.io/Berksey/categories/translation/"/>
+    
+    
+    <category term="Unity3D" scheme="https://nachtgeistw.github.io/Berksey/tags/Unity3D/"/>
+    
+    <category term="translation" scheme="https://nachtgeistw.github.io/Berksey/tags/translation/"/>
+    
+    <category term="Rhythm Games" scheme="https://nachtgeistw.github.io/Berksey/tags/Rhythm-Games/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 年总结</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2021-1-6-2020-summary/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2021-1-6-2020-summary/</id>
+    <published>2021-01-05T16:00:00.000Z</published>
+    <updated>2021-01-05T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;认真的 2020 年的总结。本来应该在 2020 年写的。考完了大学所有的试，也一鼓作气写完了留学申请需要的所有文书，现在终于能抽空写写总结了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Memoir" scheme="https://nachtgeistw.github.io/Berksey/categories/Memoir/"/>
+    
+    
+    <category term="Memoir" scheme="https://nachtgeistw.github.io/Berksey/tags/Memoir/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 C++ 从零实现 Twitter 的 OAuth1.0a 验证</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2020-12-08-Implement-Twitter-OAuth-1.0a-in-Cpp/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2020-12-08-Implement-Twitter-OAuth-1.0a-in-Cpp/</id>
+    <published>2020-12-07T16:00:00.000Z</published>
+    <updated>2020-12-07T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;不过 Twitter 现在可能是唯一一家主力 api 还用 1 的（&lt;/p&gt;
+&lt;p&gt;——w 君&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;事件的起因是我一时兴起，准备用 Mirai 做一个推文同步 bot，用来实时同步 Project Sekai 官推的推文。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C++" scheme="https://nachtgeistw.github.io/Berksey/categories/C/"/>
+    
+    
+    <category term="C++" scheme="https://nachtgeistw.github.io/Berksey/tags/C/"/>
+    
+    <category term="Python" scheme="https://nachtgeistw.github.io/Berksey/tags/Python/"/>
+    
+    <category term="Twitter" scheme="https://nachtgeistw.github.io/Berksey/tags/Twitter/"/>
+    
+    <category term="OAuth" scheme="https://nachtgeistw.github.io/Berksey/tags/OAuth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>哔哩哔哩 1024 安全挑战赛解题思路（后篇）</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2020-10-24-bilibili-ctf-sequel/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2020-10-24-bilibili-ctf-sequel/</id>
+    <published>2020-10-23T16:00:00.000Z</published>
+    <updated>2020-10-23T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;又名 bilibili 猜谜竞赛。被 W 拖来玩了。还挺有意思的。&lt;/p&gt;
+&lt;p&gt;这里是第六到第十题的题解。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CTF" scheme="https://nachtgeistw.github.io/Berksey/categories/CTF/"/>
+    
+    
+    <category term="CTF" scheme="https://nachtgeistw.github.io/Berksey/tags/CTF/"/>
+    
+    <category term="哔哩哔哩" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>哔哩哔哩 1024 安全挑战赛解题思路（前篇）</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2020-10-24-bilibili-ctf-prequel/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2020-10-24-bilibili-ctf-prequel/</id>
+    <published>2020-10-23T16:00:00.000Z</published>
+    <updated>2020-10-23T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;又名 bilibili 猜谜竞赛。被 W 拖来玩了。还挺有意思的。&lt;/p&gt;
+&lt;p&gt;这里是第一到第五题的题解。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CTF" scheme="https://nachtgeistw.github.io/Berksey/categories/CTF/"/>
+    
+    
+    <category term="CTF" scheme="https://nachtgeistw.github.io/Berksey/tags/CTF/"/>
+    
+    <category term="哔哩哔哩" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 下为各类 CLI 设置代理</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2020-9-26-set-proxy-for-cli/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2020-9-26-set-proxy-for-cli/</id>
+    <published>2020-09-25T16:00:00.000Z</published>
+    <updated>2020-09-25T16:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;该解决方案是 GitHub CLI 的 TLS handshake timeout issue 下，一位中国老哥给的。&lt;/p&gt;
+&lt;p&gt;根据&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="代理" scheme="https://nachtgeistw.github.io/Berksey/categories/%E4%BB%A3%E7%90%86/"/>
+    
+    
+    <category term="代理" scheme="https://nachtgeistw.github.io/Berksey/tags/%E4%BB%A3%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>与 Unity3D 和 C# 有关的碎碎念</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2020-7-19-something-about-unity/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2020-7-19-something-about-unity/</id>
+    <published>2020-07-18T16:00:00.000Z</published>
+    <updated>2020-07-18T16:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_36946274/article/details/82054023&quot;&gt;C#脚本</summary>
+        
+      
+    
+    
+    
+    <category term="Unity3D" scheme="https://nachtgeistw.github.io/Berksey/categories/Unity3D/"/>
+    
+    <category term="C#" scheme="https://nachtgeistw.github.io/Berksey/categories/Unity3D/C/"/>
+    
+    
+    <category term="Unity3D" scheme="https://nachtgeistw.github.io/Berksey/tags/Unity3D/"/>
+    
+    <category term="C#" scheme="https://nachtgeistw.github.io/Berksey/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些与 git 和 GitHub 相关的常用操作</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2020-6-01-git-and-github-common-opers/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2020-6-01-git-and-github-common-opers/</id>
+    <published>2020-05-31T16:00:00.000Z</published>
+    <updated>2020-05-31T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;主要是脑子越来越不好使了，写下来防止忘记。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="git" scheme="https://nachtgeistw.github.io/Berksey/categories/git/"/>
+    
+    
+    <category term="git" scheme="https://nachtgeistw.github.io/Berksey/tags/git/"/>
+    
+    <category term="GitHub" scheme="https://nachtgeistw.github.io/Berksey/tags/GitHub/"/>
+    
+    <category term="代理" scheme="https://nachtgeistw.github.io/Berksey/tags/%E4%BB%A3%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在 Android 里如何设置 imageView 的图片自适应</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2020-5-18-autofit-image-in-imageView/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2020-5-18-autofit-image-in-imageView/</id>
+    <published>2020-05-17T16:00:00.000Z</published>
+    <updated>2020-05-17T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;假设我要在屏幕上显示一张图片，要求它左侧对齐、自适应图片宽高，且宽度不能超过屏幕左右两侧的 5% 。如何实现？&lt;/p&gt;
+&lt;p&gt;与上篇关于 Android 的 blog 有着差不多的范围限定需求，但是有更多的杂七杂八的需求了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Android" scheme="https://nachtgeistw.github.io/Berksey/categories/Android/"/>
+    
+    
+    <category term="Android" scheme="https://nachtgeistw.github.io/Berksey/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网易互娱游戏运营管理面试</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2020-4-16-NetEast-interview/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2020-4-16-NetEast-interview/</id>
+    <published>2020-04-15T16:00:00.000Z</published>
+    <updated>2020-04-15T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;用掉了一次内推的名额换来了直接进入面试的机会。感觉就是灾难。&lt;/p&gt;
+&lt;p&gt;稍稍列一下我还记得的问题。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="interview" scheme="https://nachtgeistw.github.io/Berksey/categories/interview/"/>
+    
+    
+    <category term="面试" scheme="https://nachtgeistw.github.io/Berksey/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="网易" scheme="https://nachtgeistw.github.io/Berksey/tags/%E7%BD%91%E6%98%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何将 Android UI 的元素限定在某个范围内</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2020-4-16-How-to-constrain-text-in-range/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2020-4-16-How-to-constrain-text-in-range/</id>
+    <published>2020-04-15T16:00:00.000Z</published>
+    <updated>2020-04-15T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;假设我要在屏幕上显示一段文本，要求它左侧对齐，且宽度不能超过屏幕左右两侧的 5% 。如何实现？&lt;/p&gt;
+&lt;p&gt;方法过于神奇，以至于我都不知道我当时是怎么想出来的。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Android" scheme="https://nachtgeistw.github.io/Berksey/categories/Android/"/>
+    
+    
+    <category term="Android" scheme="https://nachtgeistw.github.io/Berksey/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HDU 2602 Bone Collector——0-1背包问题的多种解法</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2019-12-31-HDU2602-Knapsack%20problem/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2019-12-31-HDU2602-Knapsack%20problem/</id>
+    <published>2019-12-30T16:00:00.000Z</published>
+    <updated>2019-12-30T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;0-1 背包有三种解法你知道吗？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;题目：给定背包的体积 V，N 个骨头的体积和价值，求能装进背包的骨头的最大价值。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="OJ" scheme="https://nachtgeistw.github.io/Berksey/categories/OJ/"/>
+    
+    
+    <category term="动态规划" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="回溯" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%9B%9E%E6%BA%AF/"/>
+    
+    <category term="分支限界法" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%88%86%E6%94%AF%E9%99%90%E7%95%8C%E6%B3%95/"/>
+    
+    <category term="BFS" scheme="https://nachtgeistw.github.io/Berksey/tags/BFS/"/>
+    
+    <category term="剪枝" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%89%AA%E6%9E%9D/"/>
+    
+    <category term="0-1背包" scheme="https://nachtgeistw.github.io/Berksey/tags/0-1%E8%83%8C%E5%8C%85/"/>
+    
+    <category term="Online Judge" scheme="https://nachtgeistw.github.io/Berksey/tags/Online-Judge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HDU 1007 Quoit Design（套圈设计）</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2019-12-24-HDU1007-Quoit-Design/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2019-12-24-HDU1007-Quoit-Design/</id>
+    <published>2019-12-23T16:00:00.000Z</published>
+    <updated>2019-12-23T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;求点对最近距离。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="OJ" scheme="https://nachtgeistw.github.io/Berksey/categories/OJ/"/>
+    
+    
+    <category term="C++" scheme="https://nachtgeistw.github.io/Berksey/tags/C/"/>
+    
+    <category term="algorithm" scheme="https://nachtgeistw.github.io/Berksey/tags/algorithm/"/>
+    
+    <category term="排列" scheme="https://nachtgeistw.github.io/Berksey/tags/%E6%8E%92%E5%88%97/"/>
+    
+    <category term="分治与递归" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%88%86%E6%B2%BB%E4%B8%8E%E9%80%92%E5%BD%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Perm 算法</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2019-12-24-prem-algorithm/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2019-12-24-prem-algorithm/</id>
+    <published>2019-12-23T16:00:00.000Z</published>
+    <updated>2019-12-23T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;研究了下维基百科（个人觉得）的牛逼实现。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="algorithm" scheme="https://nachtgeistw.github.io/Berksey/categories/algorithm/"/>
+    
+    
+    <category term="C++" scheme="https://nachtgeistw.github.io/Berksey/tags/C/"/>
+    
+    <category term="algorithm" scheme="https://nachtgeistw.github.io/Berksey/tags/algorithm/"/>
+    
+    <category term="排列" scheme="https://nachtgeistw.github.io/Berksey/tags/%E6%8E%92%E5%88%97/"/>
+    
+    <category term="分治与递归" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%88%86%E6%B2%BB%E4%B8%8E%E9%80%92%E5%BD%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>盐酸的C++基础知识小讲堂——lambda表达式入门</title>
+    <link href="https://nachtgeistw.github.io/Berksey/2019-12-22-lambda/"/>
+    <id>https://nachtgeistw.github.io/Berksey/2019-12-22-lambda/</id>
+    <published>2019-12-21T16:00:00.000Z</published>
+    <updated>2019-12-21T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;真实基础知识，真实讲堂。&lt;/p&gt;
+&lt;p&gt;以下笔记摘自 D.N.Code 群聊天记录。&lt;/p&gt;
+&lt;p&gt;如有错误请指出。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C++" scheme="https://nachtgeistw.github.io/Berksey/categories/C/"/>
+    
+    
+    <category term="C++" scheme="https://nachtgeistw.github.io/Berksey/tags/C/"/>
+    
+    <category term="lambda表达式" scheme="https://nachtgeistw.github.io/Berksey/tags/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    <category term="Python" scheme="https://nachtgeistw.github.io/Berksey/tags/Python/"/>
+    
+  </entry>
+  
+</feed>
