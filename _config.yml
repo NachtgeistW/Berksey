@@ -130,3 +130,22 @@ feed:
   icon: icon.png
   autodiscovery: true
   template:
+
+giscus:
+  enable: true
+  repo: NachtgeistW/Berksey # Github repository name
+  repo_id: MDEwOlJlcG9zaXRvcnkyMDI5Mjk5OTA= # Github repository id
+  category: General # Github discussion category
+  category_id: DIC_kwDODBh3Rs4CSQh1 # Github discussion category id
+  # Available values: pathname | url | title | og:title
+  mapping: pathname
+  # Available values: 0 | 1 
+  reactions_enabled: 1
+   # Available values: 0 | 1 
+  emit_metadata: 0
+  # Available values: light | dark | dark_high_contrast | transparent_dark | preferred-color-scheme
+  theme: preferred_color_scheme
+  # Available values: en | zh-C
+  lang: zh-C
+  # Available value: anonymous
+  crossorigin: anonymous
