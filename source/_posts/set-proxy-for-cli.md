@@ -3,9 +3,9 @@ title: Windows 下为各类 CLI 设置代理
 date: 2020/9/26
 updated: 2020/9/26
 category: 
-- 代理
+- proxy
 tag: 
-- 代理
+- proxy
 ---
 
 该解决方案是 GitHub CLI 的 TLS handshake timeout issue 下，一位中国老哥给的。

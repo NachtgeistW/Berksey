@@ -8,7 +8,9 @@ subtitle: '98-74 Ocean Street, Sky Height'
 description: ''
 keywords:
 author: NachtgeistW
-language: zh-CN
+language: 
+  - zh-CN
+  - en
 timezone: ''
 
 # URL

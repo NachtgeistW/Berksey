@@ -1,13 +1,13 @@
 ﻿---
 title: 一些与 git 和 GitHub 相关的常用操作
-date: 2020/6/01
-updated: 2020/6/01
+date: 2020/6/1
+updated: 2022/10/29
 category: 
 - git
 tag: 
 - git
 - GitHub
-- 代理
+- proxy
 ---
 主要是脑子越来越不好使了，写下来防止忘记。
 
@@ -19,7 +19,7 @@ tag:
 
 ~~好像只配置这一个就够用了。~~
 
-有一个更好的做法。参见[Windows 下为各类 CLI 设置代理](2020-9-26-set-proxy-for-cli.md)。
+有一个更好的做法。参见[Windows 下为各类 CLI 设置代理](set-proxy-for-cli.md)。
 
 ## 强制取消本地更改
 
@@ -38,7 +38,7 @@ git reset --hard origin/<branch_name>
 
 `git clean -f`
 
-直白点就是把本地乱七八糟的更改全都扬了。比较适合多了很多乱七八糟文件的情况，比如 OneDrive 同步被搞炸的时候：![git clean 示例](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-06-17_19-56-58.png)
+直白点就是把本地乱七八糟的更改全都扬了。比较适合多了很多乱七八糟文件的情况，比如 OneDrive 同步被搞炸的时候：[![git clean 示例](image/2020-06-17_19-56-58.png)](image/2020-06-17_19-56-58.png)
 
 有时需要加上 `-d`，把目录下所有未同步的更改全删了。
 
@@ -62,23 +62,17 @@ git reset --hard origin/<branch_name>
 
 ```Bash
 git remote -v               # 查看有无上游代码库
-
 git remote add upstream url #（如果没有 upstream）添加 upstream
-
 git remote -v               # 再次检查
-
 git fetch upstream          # 拉取上游代码库的更新
-
 git checkout master         # 切换到 master 分支
-
 git merge upstream/master   # 合并
-
 git pull upstream master    # 上面三条可以合成一条
 ```
 
 比如说跟 OI-wiki 的上游分支同步。
 
-![配图](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-06-01_15-42-00.jpg)
+[![配图](image/2020-06-01_15-42-00.jpg)](image/2020-06-01_15-42-00.jpg)
 
 ## 参考文档
 

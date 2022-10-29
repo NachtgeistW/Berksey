@@ -29,7 +29,8 @@ tag:
     /// Called when the note animation is finished.
     /// </summary>
     public static event Action<> ExecuteActionAfterNoteAnimate;
-    public static void CallExecuteActionAfterNoteAnimate() => ExecuteActionAfterNoteAnimate?.Invoke();
+    public static void CallExecuteActionAfterNoteAnimate() 
+        => ExecuteActionAfterNoteAnimate?.Invoke();
 ```
 
 其中，播放光效的函数放在了 HitNoteEvent 的实现 `OnHitNoteEvent` 内；回收音符 GameObject 的函数则放在了 `ExecuteActionAfterNoteAnimate` 的实现内。这样，当光效播放完毕后，再调用 `CallExecuteActionAfterNoteAnimate()` 就可以将其回收。另外，在之前的开发中我发现，如果在 HitNoteEvent 里就将音符回收了，那音符的光效根本就不会播放（因为已经被 `SetActive(false)` 了），所以这么做了。
@@ -92,7 +93,7 @@ private void OnHitNoteEvent()
 
 但是，写完后发现了一个问题：当再次从 ObjectPool 里复用的时候，音符光效还是保持在动画的最后一帧，保持着光效已经播放完毕的样子，而不是我希望的“回到未被击中”的第一帧的状态。
 
-![音符光效还是保持在动画的最后一帧](post-poblem-on-create-and-update-time/1.jpg)
+[![音符光效还是保持在动画的最后一帧](post-poblem-on-create-and-update-time/1.jpg)](post-poblem-on-create-and-update-time/1.jpg)
 
 猜测大概是因为每次回收音符后没有对 Animator 做复原处理。
 

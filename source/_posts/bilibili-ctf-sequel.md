@@ -32,13 +32,13 @@ tag:
 
 打开网站。
 
-![](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-10-24-bilibili-ctf/2020-10-26_10-59-51.png)
+[![](image/2020-10-24-bilibili-ctf/2020-10-26_10-59-51.png)](image/2020-10-24-bilibili-ctf/2020-10-26_10-59-51.png)
 
 ……？blog？？？
 
 转了一圈什么都没找到。在百无聊赖的时候我顺手把网站里的 single 改成了 test。
 
-![](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-10-24-bilibili-ctf/2020-10-26_11-36-24.png)
+[![](image/2020-10-24-bilibili-ctf/2020-10-26_11-36-24.png)](image/2020-10-24-bilibili-ctf/2020-10-26_11-36-24.png)
 
 草。是 JSFuck。
 
@@ -58,7 +58,7 @@ console.log()
 
 打开 GitHub，直接搜索 `bilibili1024havefun`。
 
-![](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-10-24-bilibili-ctf/2020-10-26_11-50-50.png)
+[![](image/2020-10-24-bilibili-ctf/2020-10-26_11-50-50.png)](image/2020-10-24-bilibili-ctf/2020-10-26_11-50-50.png)
 
 成功找到了一个 php [interesting-1024/end](https://github.com/interesting-1024/end)。点开看看。
 
@@ -97,13 +97,13 @@ if(!is_numeric($_GET['id']) and $reg !== 1 and $str === 1){
 
 curl 传过去发现不对。那继续猜。随便加个后缀什么的，比如 `.txt`，把它变成文件路径。
 
-![](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-10-24-bilibili-ctf/2020-10-26_16-48-48.png)
+[![](image/2020-10-24-bilibili-ctf/2020-10-26_16-48-48.png)](image/2020-10-24-bilibili-ctf/2020-10-26_16-48-48.png)
 
 拿到一张图片。存到本地的时候发现文件里带了串奇怪的字符串。估计八成跟 flag 有关。
 
 用 `cat` 命令看一下这张图片。果然文件最后跟了串字符串。
 
-![](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-10-24-bilibili-ctf/2020-10-26_16-58-48.png)
+[![](image/2020-10-24-bilibili-ctf/2020-10-26_16-48-48.png)](image/2020-10-24-bilibili-ctf/2020-10-26_16-48-48.png)
 
 提交到第六题……居然不对？一个个试过去发现居然是第十题的……草。
 
@@ -115,11 +115,11 @@ curl 传过去发现不对。那继续猜。随便加个后缀什么的，比如
 
 反正也没什么事情做了，用 nmap 扫一遍它开启的端口与服务。
 
-![](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-10-24-bilibili-ctf/2020-10-26_16-18-05.png)
+[![](image/2020-10-24-bilibili-ctf/2020-10-26_16-18-05.png)](image/2020-10-24-bilibili-ctf/2020-10-26_16-18-05.png)
 
 扫出来一个 redis。直接用 IP 地址和端口登上去。
 
-![](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-10-24-bilibili-ctf/2020-10-26_16-18-26.png)
+[![](image/2020-10-24-bilibili-ctf/2020-10-26_16-18-26.png)](image/2020-10-24-bilibili-ctf/2020-10-26_16-18-26.png)
 
 第八题结束。
 
@@ -154,7 +154,7 @@ for i in range(1, 100):
 
 运行结果如图。
 
-![](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-10-24-bilibili-ctf/2020-10-26_19-28-11.png)
+[![](image/2020-10-24-bilibili-ctf/2020-10-26_19-28-11.png)](image/2020-10-24-bilibili-ctf/2020-10-26_19-28-11.png)
 
 ## 七、九
 
@@ -162,7 +162,7 @@ for i in range(1, 100):
 
 ## 插曲
 
-![](https://raw.githubusercontent.com/NachtgeistW/Berksey/master/_posts/image/2020-10-24-bilibili-ctf/2020-10-26_17-06-31.png)
+[![](image/2020-10-24-bilibili-ctf/2020-10-26_17-06-31.png)](image/2020-10-24-bilibili-ctf/2020-10-26_17-06-31.png)
 
 还是免了吧。
 
