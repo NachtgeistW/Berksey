@@ -146,6 +146,6 @@ giscus:
   # Available values: light | dark | dark_high_contrast | transparent_dark | preferred-color-scheme
   theme: preferred_color_scheme
   # Available values: en | zh-C
-  lang: zh-C
+  lang: en
   # Available value: anonymous
   crossorigin: anonymous
