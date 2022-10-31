@@ -133,6 +133,7 @@ feed:
   autodiscovery: true
   template:
 
+# giscus
 giscus:
   enable: true
   repo: NachtgeistW/Berksey # Github repository name

@@ -5,6 +5,7 @@ updated: 2019/12/3
 category: 
 - algorithm
 tag: 
+- algorithm
 - 动态规划
 - 递推
 - HDU
