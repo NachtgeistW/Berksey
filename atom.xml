@@ -6,7 +6,7 @@
   <link href="https://nachtgeistw.github.io/Berksey/atom.xml" rel="self"/>
   
   <link href="https://nachtgeistw.github.io/Berksey/"/>
-  <updated>2022-09-11T16:00:00.000Z</updated>
+  <updated>2022-10-30T08:17:01.000Z</updated>
   <id>https://nachtgeistw.github.io/Berksey/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>笔记 from《【A.I.VOICE生技术部】第1回：NEUTRINO入门 讲师：くろ州＝多刀流P》</title>
+    <link href="https://nachtgeistw.github.io/Berksey/NEUTRINO-101/"/>
+    <id>https://nachtgeistw.github.io/Berksey/NEUTRINO-101/</id>
+    <published>2022-10-30T08:17:01.000Z</published>
+    <updated>2022-10-30T08:17:01.000Z</updated>
+    
+    
+    <summary type="html">96 州的亲妈喂饭级 NEUTRINO 101 课程</summary>
+    
+    
+    
+    <category term="调声" scheme="https://nachtgeistw.github.io/Berksey/categories/%E8%B0%83%E5%A3%B0/"/>
+    
+    <category term="NEUTRINO" scheme="https://nachtgeistw.github.io/Berksey/categories/%E8%B0%83%E5%A3%B0/NEUTRINO/"/>
+    
+    
+    <category term="NEUTRINO" scheme="https://nachtgeistw.github.io/Berksey/tags/NEUTRINO/"/>
+    
+  </entry>
   
   <entry>
     <title>从 Jekyll 迁移到 hexo 时的博客创建和更新日期问题</title>
@@ -156,15 +177,15 @@
   </entry>
   
   <entry>
-    <title>哔哩哔哩 1024 安全挑战赛解题思路（后篇）</title>
-    <link href="https://nachtgeistw.github.io/Berksey/bilibili-ctf-sequel/"/>
-    <id>https://nachtgeistw.github.io/Berksey/bilibili-ctf-sequel/</id>
+    <title>哔哩哔哩 1024 安全挑战赛解题思路（前篇）</title>
+    <link href="https://nachtgeistw.github.io/Berksey/bilibili-ctf-prequel/"/>
+    <id>https://nachtgeistw.github.io/Berksey/bilibili-ctf-prequel/</id>
     <published>2020-10-23T16:00:00.000Z</published>
     <updated>2020-10-23T16:00:00.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;又名 bilibili 猜谜竞赛。被 W 拖来玩了。还挺有意思的。&lt;/p&gt;
-&lt;p&gt;这里是第六到第十题的题解。&lt;/p&gt;</summary>
+&lt;p&gt;这里是第一到第五题的题解。&lt;/p&gt;</summary>
     
     
     
@@ -178,15 +199,15 @@
   </entry>
   
   <entry>
-    <title>哔哩哔哩 1024 安全挑战赛解题思路（前篇）</title>
-    <link href="https://nachtgeistw.github.io/Berksey/bilibili-ctf-prequel/"/>
-    <id>https://nachtgeistw.github.io/Berksey/bilibili-ctf-prequel/</id>
+    <title>哔哩哔哩 1024 安全挑战赛解题思路（后篇）</title>
+    <link href="https://nachtgeistw.github.io/Berksey/bilibili-ctf-sequel/"/>
+    <id>https://nachtgeistw.github.io/Berksey/bilibili-ctf-sequel/</id>
     <published>2020-10-23T16:00:00.000Z</published>
     <updated>2020-10-23T16:00:00.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;又名 bilibili 猜谜竞赛。被 W 拖来玩了。还挺有意思的。&lt;/p&gt;
-&lt;p&gt;这里是第一到第五题的题解。&lt;/p&gt;</summary>
+&lt;p&gt;这里是第六到第十题的题解。&lt;/p&gt;</summary>
     
     
     
@@ -355,6 +376,8 @@
     <category term="algorithm" scheme="https://nachtgeistw.github.io/Berksey/categories/algorithm/"/>
     
     
+    <category term="algorithm" scheme="https://nachtgeistw.github.io/Berksey/tags/algorithm/"/>
+    
     <category term="HDU" scheme="https://nachtgeistw.github.io/Berksey/tags/HDU/"/>
     
     <category term="动态规划" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
@@ -379,7 +402,8 @@
     <updated>2019-12-23T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;求点对最近距离。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;题目&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#题目&quot;&gt;&lt;/a&gt; 题目&lt;/h2&gt;
+&lt;p&gt;求点对最近距离。&lt;/p&gt;</summary>
     
     
     
@@ -442,9 +466,9 @@
     
     <category term="C++" scheme="https://nachtgeistw.github.io/Berksey/tags/C/"/>
     
-    <category term="Python" scheme="https://nachtgeistw.github.io/Berksey/tags/Python/"/>
-    
     <category term="lambda表达式" scheme="https://nachtgeistw.github.io/Berksey/tags/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    <category term="Python" scheme="https://nachtgeistw.github.io/Berksey/tags/Python/"/>
     
   </entry>
   
@@ -456,39 +480,20 @@
     <updated>2019-12-02T16:00:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;题目：给出一个整数 n，将其分解成 $2^i$ 相加的形式，求共有多少种分法。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;题目：给出一个整数 n，将其分解成 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;2^i&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.824664em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.824664em;&quot;&gt;&lt;span style=&quot;top:-3.063em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mathnormal mtight&quot;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 相加的形式，求共有多少种分法。&lt;/p&gt;</summary>
     
     
     
     <category term="algorithm" scheme="https://nachtgeistw.github.io/Berksey/categories/algorithm/"/>
     
     
+    <category term="algorithm" scheme="https://nachtgeistw.github.io/Berksey/tags/algorithm/"/>
+    
     <category term="HDU" scheme="https://nachtgeistw.github.io/Berksey/tags/HDU/"/>
     
     <category term="动态规划" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
     <category term="递推" scheme="https://nachtgeistw.github.io/Berksey/tags/%E9%80%92%E6%8E%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>哔哩哔哩动态同步到推特的方法</title>
-    <link href="https://nachtgeistw.github.io/Berksey/bilibili-dynamic-to-twitter/"/>
-    <id>https://nachtgeistw.github.io/Berksey/bilibili-dynamic-to-twitter/</id>
-    <published>2019-08-26T16:00:00.000Z</published>
-    <updated>2019-08-26T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;想法是利用 &lt;a href=&quot;https://rsshub.app/&quot;&gt;RSSHub&lt;/a&gt; 将 B 站动态变成可订阅的 RSS 源，然后经 integromat 区分文字动态和带图动态，并过滤掉投票、不带文字转发动态和不带文字分享视频，最后利用 IFTTT 完成同步。获取动态的方法受 &lt;a href=&quot;https://www.pluvet.com/archives/bilibili-echo-publish.html&quot;&gt;BilibiliEcho - 同步你的 Bilibili 动态到 Typecho！&lt;/a&gt;启发；进阶的同步方式参考了&lt;a href=&quot;https://sspai.com/post/51942&quot;&gt;微博同步至 Twitter，这里有更好的方式&lt;/a&gt;。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="WhiteTech" scheme="https://nachtgeistw.github.io/Berksey/categories/WhiteTech/"/>
-    
-    
-    <category term="IFTTT" scheme="https://nachtgeistw.github.io/Berksey/tags/IFTTT/"/>
-    
-    <category term="Webhook" scheme="https://nachtgeistw.github.io/Berksey/tags/Webhook/"/>
     
   </entry>
   

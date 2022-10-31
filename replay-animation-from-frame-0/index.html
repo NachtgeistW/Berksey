@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/Berksey/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/Berksey/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="我在写音游里的一个功能。 音游里有很多音符，游戏里借助了 Unity 原生的 ObjectPool 实现了它们的生成与回收。我希望当游戏中的音符落下来，播放光效后，再让 ObjectPool 回收它们。">
@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="Berksey">
 <meta property="og:description" content="我在写音游里的一个功能。 音游里有很多音符，游戏里借助了 Unity 原生的 ObjectPool 实现了它们的生成与回收。我希望当游戏中的音符落下来，播放光效后，再让 ObjectPool 回收它们。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://nachtgeistw.github.io/Berksey/post-poblem-on-create-and-update-time/1.jpg">
+<meta property="og:image" content="https://nachtgeistw.github.io/Berksey/replay-animation-from-frame-0/post-poblem-on-create-and-update-time/1.jpg">
 <meta property="article:published_time" content="2022-09-09T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-09-09T16:00:00.000Z">
 <meta property="article:author" content="NachtgeistW">
@@ -36,7 +36,7 @@
 <meta property="article:tag" content="Animator">
 <meta property="article:tag" content="Animation">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://nachtgeistw.github.io/Berksey/post-poblem-on-create-and-update-time/1.jpg">
+<meta name="twitter:image" content="https://nachtgeistw.github.io/Berksey/replay-animation-from-frame-0/post-poblem-on-create-and-update-time/1.jpg">
 
 <link rel="canonical" href="https://nachtgeistw.github.io/Berksey/replay-animation-from-frame-0/">
 
@@ -213,21 +213,7 @@
                 </span>
             </span>
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
+          
 
         </div>
       </header>
@@ -241,41 +227,39 @@
         <p>我在写音游里的一个功能。</p>
 <p>音游里有很多音符，游戏里借助了 Unity 原生的 <a target="_blank" rel="noopener" href="https://docs.unity3d.com/ScriptReference/Pool.ObjectPool_1.html"><code>ObjectPool</code></a> 实现了它们的生成与回收。我希望当游戏中的音符落下来，播放光效后，再让 ObjectPool 回收它们。</p>
 <span id="more"></span>
-
-<h2 id="初始的实现"><a href="#初始的实现" class="headerlink" title="初始的实现"></a>初始的实现</h2><p>为了实现它，在游戏的事件管理器里我注册了两个事件（删去了事件的参数）：</p>
+<h2 id="初始的实现"><a class="markdownIt-Anchor" href="#初始的实现"></a> 初始的实现</h2>
+<p>为了实现它，在游戏的事件管理器里我注册了两个事件（删去了事件的参数）：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action&lt;&gt; HitNoteEvent;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CallHitNoteEvent</span>()</span> =&gt; HitNoteEvent?.Invoke();</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> Called when the note animation is finished.</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action&lt;&gt; ExecuteActionAfterNoteAnimate;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CallExecuteActionAfterNoteAnimate</span>()</span> </span><br><span class="line">    =&gt; ExecuteActionAfterNoteAnimate?.Invoke();</span><br></pre></td></tr></table></figure>
-
 <p>其中，播放光效的函数放在了 HitNoteEvent 的实现 <code>OnHitNoteEvent</code> 内；回收音符 GameObject 的函数则放在了 <code>ExecuteActionAfterNoteAnimate</code> 的实现内。这样，当光效播放完毕后，再调用 <code>CallExecuteActionAfterNoteAnimate()</code> 就可以将其回收。另外，在之前的开发中我发现，如果在 HitNoteEvent 里就将音符回收了，那音符的光效根本就不会播放（因为已经被 <code>SetActive(false)</code> 了），所以这么做了。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnHitNoteEvent</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    explosionAnim = note.GetComponent&lt;Animator&gt;();</span><br><span class="line">    explosionAnim.SetBool(<span class="string">&quot;IsHit&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>播放光效的动画是依赖 <code>IsHit</code> 触发的，在它前面还有个空白的状态（为了避免自动播放），只要将其设为 <code>true</code> 就能让它切换到光效播放状态开始播放了。</p>
 <p><code>ExecuteAfterNoteAnimate</code> 的实现则很简单，只有一行：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ExecuteAfterNoteAnimate</span>(<span class="params">Note note</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    EventHandler.CallExecuteActionAfterNoteAnimate(note);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>直接呼叫事件就可以了，NoteController 那边实现了这个方法，它会处理回收音符的事情。</p>
-<h2 id="实现真正的延迟回收"><a href="#实现真正的延迟回收" class="headerlink" title="实现真正的延迟回收"></a>实现真正的延迟回收</h2><p>但是光这样做是不行的。实际跑起来发现，只是这样的话，音符还是会被立刻回收。于是开始思考：有没有一个方法，能够延迟播放，或者让动画等待一段时间后再播放？</p>
+<h2 id="实现真正的延迟回收"><a class="markdownIt-Anchor" href="#实现真正的延迟回收"></a> 实现真正的延迟回收</h2>
+<p>但是光这样做是不行的。实际跑起来发现，只是这样的话，音符还是会被立刻回收。于是开始思考：有没有一个方法，能够延迟播放，或者让动画等待一段时间后再播放？</p>
 <p>在群里问了一下，残像给了 <code>AnimationEvent</code> 的帮助文档。</p>
 <p>读了文档。它说可以将 AnimationEvent 附加在 AnimationClip 上，并可以为其传递参数、设置事件触发前的等待时间。而且示例代码演示的刚好就是我需要的功能。于是思路大概就明确下来了：</p>
 <ol>
-<li>为音符的 Animator 添加一个 &#96;nimationEvent</li>
+<li>为音符的 Animator 添加一个 `nimationEvent</li>
 <li>将回收函数 <code>ExecuteAfterNoteAnimate</code> 添加到这个 AnimationEvent 上，为其添加 fire off 的时间。</li>
 </ol>
 <p>修改后的 <code>OnHitNoteEvent()</code> 如下：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnHitNoteEvent</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> explosionAnimEvent = <span class="keyword">new</span> AnimationEvent</span><br><span class="line">    &#123;</span><br><span class="line">        functionName = <span class="keyword">nameof</span>(ExecuteAfterNoteAnimate),</span><br><span class="line">        objectReferenceParameter = note,</span><br><span class="line">        time = Settings.noteAnimationPlayingTime</span><br><span class="line">    &#125;;</span><br><span class="line">    explosionAnim = note.GetComponent&lt;Animator&gt;();</span><br><span class="line">    <span class="keyword">var</span> clip = explosionAnim.runtimeAnimatorController.animationClips[<span class="number">0</span>];</span><br><span class="line">    clip.AddEvent(explosionAnimEvent);</span><br><span class="line">    explosionAnim.SetBool(<span class="string">&quot;IsHit&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>函数内定义了一个 <code>AnimationEvent</code>，初始化的时候就一并定义了它 fire off 的时间、要传递的参数以及要启动的函数的名字。</p>
 <p>考虑到以后有变更动画播放时间的可能，所以把 <code>noteAnimationPlayingTime</code> 的详细数值写在了 <code>Setting.cs</code> 里。给 fire off 的函数名字套一个 <code>nameof</code> 是盐酸教的，也是考虑到以后有更改它名字的可能。（小吐槽一下，<code>functionName</code> 这里居然只能用函数名的 <code>string</code> 调用也太草了……）</p>
-<h2 id="修-bug"><a href="#修-bug" class="headerlink" title="修 bug"></a>修 bug</h2><p>但是，写完后发现了一个问题：当再次从 ObjectPool 里复用的时候，音符光效还是保持在动画的最后一帧，保持着光效已经播放完毕的样子，而不是我希望的“回到未被击中”的第一帧的状态。</p>
-<p><a href="post-poblem-on-create-and-update-time/1.jpg"><img src="/Berksey/post-poblem-on-create-and-update-time/1.jpg" alt="音符光效还是保持在动画的最后一帧"></a></p>
+<h2 id="修-bug"><a class="markdownIt-Anchor" href="#修-bug"></a> 修 bug</h2>
+<p>但是，写完后发现了一个问题：当再次从 ObjectPool 里复用的时候，音符光效还是保持在动画的最后一帧，保持着光效已经播放完毕的样子，而不是我希望的“回到未被击中”的第一帧的状态。</p>
+<p><a href="post-poblem-on-create-and-update-time/1.jpg"><img src="post-poblem-on-create-and-update-time/1.jpg" alt="音符光效还是保持在动画的最后一帧" /></a></p>
 <p>猜测大概是因为每次回收音符后没有对 Animator 做复原处理。</p>
 <p>在 Unity Answers 和 Stackoverflow 上翻阅大量问答后，我采用的做法是修改 <code>ExecuteAfterNoteAnimate()</code>，让其直接 reset Animator。</p>
 <p>另外，修改一下动画的逻辑。原本它只有一个从空状态转向播放动画的状态，在 <code>IsHit</code> 为 <code>true</code> 的时候触发。现在为其多添加一个从播放动画的状态转回空状态的状态，将 <code>IsHit</code> 设为 <code>false</code> 的时候触发。</p>
 <p>修改过后的 <code>ExecuteAfterNoteAnimate()</code> 的实现变成了这样：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ExecuteAfterNoteAnimate</span>(<span class="params">Note note</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    explosionAnim.Rebind();</span><br><span class="line">    explosionAnim.SetBool(<span class="string">&quot;IsHit&quot;</span>, <span class="literal">false</span>);</span><br><span class="line">    EventHandler.CallExecuteActionAfterNoteAnimate(note);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>重新绑定一下 <code>Animator</code>，然后将 <code>IsHit</code> 设置成 <code>false</code>，这样动画就能跳回到未播放前的状态。</p>
 <p>另外也有尝试将 <code>Rebind()</code> 和 <code>SetBool()</code> 对调、分别删除这两句留下另一句，但都不成功。总之就是非常奇怪。</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<h2 id="参考文章"><a class="markdownIt-Anchor" href="#参考文章"></a> 参考文章</h2>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://docs.unity3d.com/ScriptReference/AnimationEvent.html">Unity - Scripting API: AnimationEvent</a></li>
 <li><a target="_blank" rel="noopener" href="https://answers.unity.com/questions/1490688/how-to-restart-animator-controller.html">How to reset animator controller ?</a></li>
 <li><a target="_blank" rel="noopener" href="https://answers.unity.com/questions/623878/how-to-restart-mecanim-state-animation-or-play-it.html">（找到了但没有用×1）how to restart mecanim state animation or play it from random position [SOLVED]</a></li>
@@ -406,7 +390,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.</span> <span class="nav-text">初始的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%BB%B6%E8%BF%9F%E5%9B%9E%E6%94%B6"><span class="nav-number">2.</span> <span class="nav-text">实现真正的延迟回收</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE-bug"><span class="nav-number">3.</span> <span class="nav-text">修 bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">4.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.</span> <span class="nav-text"> 初始的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%BB%B6%E8%BF%9F%E5%9B%9E%E6%94%B6"><span class="nav-number">2.</span> <span class="nav-text"> 实现真正的延迟回收</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE-bug"><span class="nav-number">3.</span> <span class="nav-text"> 修 bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">4.</span> <span class="nav-text"> 参考文章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -422,20 +406,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/Berksey/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Berksey/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Berksey/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -515,16 +499,6 @@
     <i class="fa fa-code"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">NachtgeistW</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-    <span title="站点总字数">57k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="站点阅读时长">52 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
@@ -544,6 +518,7 @@
 
   
   <script src="/Berksey/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
   <script src="/Berksey/lib/velocity/velocity.min.js"></script>
   <script src="/Berksey/lib/velocity/velocity.ui.min.js"></script>
 
@@ -575,6 +550,8 @@
 
 
 
+
+  
 
   
 

@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/Berksey/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/Berksey/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="简单讲一下如何修正修改时间全部为 git 拉取时间的问题。">
@@ -210,21 +210,7 @@
                 </span>
             </span>
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
+          
 
         </div>
       </header>
@@ -237,9 +223,10 @@
       
         <p>简单讲一下如何修正修改时间全部为 git 拉取时间的问题。</p>
 <span id="more"></span>
-
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>决定从我的博客 Berksey 框架从 Jekyll 迁到 hexo 了。在转移时发现，因为本地的 Berksey 项目被我删掉了，所以从 GitHub 上重新拉取了一份，但这也导致本地文件的创建和修改日期全部变成了拉取时的那天。</p>
-<h2 id="解决的过程"><a href="#解决的过程" class="headerlink" title="解决的过程"></a>解决的过程</h2><p>参考了《<a target="_blank" rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun/issues/60">升级主题后，文章会刷新更新日期，时间为刚才的部署时间 #60</a>》后，将 <code>_config.yml</code> 里的 <code>updated_option:</code> 改为了 <code>date</code>。但并没有真正解决问题。</p>
+<h2 id="背景"><a class="markdownIt-Anchor" href="#背景"></a> 背景</h2>
+<p>决定从我的博客 Berksey 框架从 Jekyll 迁到 hexo 了。在转移时发现，因为本地的 Berksey 项目被我删掉了，所以从 GitHub 上重新拉取了一份，但这也导致本地文件的创建和修改日期全部变成了拉取时的那天。</p>
+<h2 id="解决的过程"><a class="markdownIt-Anchor" href="#解决的过程"></a> 解决的过程</h2>
+<p>参考了《<a target="_blank" rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun/issues/60">升级主题后，文章会刷新更新日期，时间为刚才的部署时间 #60</a>》后，将 <code>_config.yml</code> 里的 <code>updated_option:</code> 改为了 <code>date</code>。但并没有真正解决问题。</p>
 <p>继续以“hexo 修改时间”为关键字搜索，搜到了《<a target="_blank" rel="noopener" href="https://www.voidking.com/dev-hexo-next-update-time/">Hexo Next主题显示文章更新时间</a>》一文。文中提供了两个信息：</p>
 <ul>
 <li>在文章头部 YAML 定义中添加 <code>updated</code> 字段就会显示自定义更新时间。添加 <code>date</code> 字段会显示自定义创建时间。</li>
@@ -247,8 +234,10 @@
 </ul>
 <p>另外，Jekyll 的 post 有个要求，就是文件名要以 <code>YY-MM-DD-title</code> 的格式命名。最后修改时间已经记不得了（虽然可以去翻 git 提交记录，但那也太烦了），那就直接把创建时间和最后修改时间都设置成文件名里标的时间好了。</p>
 <p>虽然我的博文不多，算上这篇也只有 24 篇，但一个个改还是很麻烦；再加上我用的电脑是 Windows 设备，那么自然就该选择用 PowerShell 了。</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>有两个方法可以解决。</p>
-<h3 id="直接改文件源数据"><a href="#直接改文件源数据" class="headerlink" title="直接改文件源数据"></a>直接改文件源数据</h3><p>第一个想法是“既然你读的是文件源数据，那我去修改源数据不就可以了吗？”</p>
+<h2 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法</h2>
+<p>有两个方法可以解决。</p>
+<h3 id="直接改文件源数据"><a class="markdownIt-Anchor" href="#直接改文件源数据"></a> 直接改文件源数据</h3>
+<p>第一个想法是“既然你读的是文件源数据，那我去修改源数据不就可以了吗？”</p>
 <p>那就可以这么做：</p>
 <ol>
 <li>获取当前路径下所有的 <code>.md</code> 文件；</li>
@@ -257,9 +246,9 @@
 </ol>
 <p>PowerShell 脚本如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> *.md | <span class="built_in">foreach-object</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$_</span> <span class="operator">-match</span> <span class="string">&#x27;(?&lt;year&gt;\d&#123;4&#125;)-(?&lt;month&gt;\d&#123;1,2&#125;)-(?&lt;day&gt;\d&#123;1,2&#125;)&#x27;</span>; </span><br><span class="line">    <span class="variable">$_</span>.LastWriteTime = <span class="variable">$Matches</span>.month + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.day + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.year + <span class="string">&#x27; 00:00:00&#x27;</span>; </span><br><span class="line">    <span class="variable">$_</span>.CreationTime = <span class="variable">$Matches</span>.month + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.day + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.year + <span class="string">&#x27; 00:00:00&#x27;</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
 <p>子序列 <code>?&lt;year&gt;</code> 之类是用来提取数据的，提取出来的数据用 <code>$Matches</code> 就可以调用了。</p>
-<h3 id="在文件的-YAML-段添加-date-和-update-字段"><a href="#在文件的-YAML-段添加-date-和-update-字段" class="headerlink" title="在文件的 YAML 段添加 date 和 update 字段"></a>在文件的 YAML 段添加 <code>date</code> 和 <code>update</code> 字段</h3><p>但上面的办法治标不治本。以后再使用 git 拉取时文件日期还是会变成 git 拉取时的日期。所以还是得在文件头部手动写入 <code>date</code> 和 <code>update</code> 字段。</p>
+<h3 id="在文件的-yaml-段添加-date-和-update-字段"><a class="markdownIt-Anchor" href="#在文件的-yaml-段添加-date-和-update-字段"></a> 在文件的 YAML 段添加 <code>date</code> 和 <code>update</code> 字段</h3>
+<p>但上面的办法治标不治本。以后再使用 git 拉取时文件日期还是会变成 git 拉取时的日期。所以还是得在文件头部手动写入 <code>date</code> 和 <code>update</code> 字段。</p>
 <p>步骤大概是这样：</p>
 <ol>
 <li>获取当前路径下所有的 <code>.md</code> 文件；</li>
@@ -270,7 +259,6 @@
 </ol>
 <p>PowerShell 脚本如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> *.md | <span class="built_in">Foreach-object</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$_</span> <span class="operator">-match</span> <span class="string">&#x27;(?&lt;year&gt;\d&#123;4&#125;)-(?&lt;month&gt;\d&#123;1,2&#125;)-(?&lt;day&gt;\d&#123;1,2&#125;)&#x27;</span>;</span><br><span class="line">    <span class="variable">$textToAdd</span> = <span class="string">&quot;`n&quot;</span> </span><br><span class="line">        + <span class="string">&#x27;date: &#x27;</span> + <span class="variable">$Matches</span>.year + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.month + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.day + <span class="string">&quot;`n&quot;</span> </span><br><span class="line">        + <span class="string">&#x27;updated: &#x27;</span> + <span class="variable">$Matches</span>.year + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.month + <span class="string">&#x27;/&#x27;</span> + <span class="variable">$Matches</span>.day;</span><br><span class="line">    <span class="variable">$fileContent</span> = <span class="built_in">Get-Content</span> <span class="variable">$_</span> <span class="literal">-Encoding</span> utf8;</span><br><span class="line">    <span class="variable">$fileContent</span>[<span class="number">1</span>] += <span class="variable">$textToAdd</span>;</span><br><span class="line">    <span class="variable">$fileContent</span> | <span class="built_in">Set-Content</span> <span class="variable">$_</span> <span class="literal">-Encoding</span> utf8</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><code>&quot;`n&quot;</code> 是用来在 PowerShell 文本中换行的。使用 <code>Get-Content</code> 和 <code>Set-Content</code> 前都得指定一下编码，不然在写文件的时候有些地方会乱码。</p>
 <p>这样就能批量完成了。</p>
 
@@ -309,7 +297,10 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/Berksey/NEUTRINO-101/" rel="prev" title="笔记 from《【A.I.VOICE生技术部】第1回：NEUTRINO入门 讲师：くろ州＝多刀流P》">
+      <i class="fa fa-chevron-left"></i> 笔记 from《【A.I.VOICE生技术部】第1回：NEUTRINO入门 讲师：くろ州＝多刀流P》
+    </a></div>
       <div class="post-nav-item">
     <a href="/Berksey/replay-animation-from-frame-0/" rel="next" title="从 ObjectPool 复用 GameObject 时从头开始播放 Animation">
       从 ObjectPool 复用 GameObject 时从头开始播放 Animation <i class="fa fa-chevron-right"></i>
@@ -393,7 +384,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">解决的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%94%B9%E6%96%87%E4%BB%B6%E6%BA%90%E6%95%B0%E6%8D%AE"><span class="nav-number">3.1.</span> <span class="nav-text">直接改文件源数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%96%87%E4%BB%B6%E7%9A%84-YAML-%E6%AE%B5%E6%B7%BB%E5%8A%A0-date-%E5%92%8C-update-%E5%AD%97%E6%AE%B5"><span class="nav-number">3.2.</span> <span class="nav-text">在文件的 YAML 段添加 date 和 update 字段</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text"> 背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text"> 解决的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text"> 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%94%B9%E6%96%87%E4%BB%B6%E6%BA%90%E6%95%B0%E6%8D%AE"><span class="nav-number">3.1.</span> <span class="nav-text"> 直接改文件源数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%96%87%E4%BB%B6%E7%9A%84-yaml-%E6%AE%B5%E6%B7%BB%E5%8A%A0-date-%E5%92%8C-update-%E5%AD%97%E6%AE%B5"><span class="nav-number">3.2.</span> <span class="nav-text"> 在文件的 YAML 段添加 date 和 update 字段</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -409,20 +400,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/Berksey/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Berksey/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Berksey/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -502,16 +493,6 @@
     <i class="fa fa-code"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">NachtgeistW</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-    <span title="站点总字数">57k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="站点阅读时长">52 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
@@ -531,6 +512,7 @@
 
   
   <script src="/Berksey/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
   <script src="/Berksey/lib/velocity/velocity.min.js"></script>
   <script src="/Berksey/lib/velocity/velocity.ui.min.js"></script>
 
@@ -562,6 +544,8 @@
 
 
 
+
+  
 
   
 

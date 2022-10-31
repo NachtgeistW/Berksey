@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/Berksey/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/Berksey/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta property="og:type" content="website">
@@ -167,6 +167,80 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
+    <link itemprop="mainEntityOfPage" href="https://nachtgeistw.github.io/Berksey/bilibili-dynamic-to-twitter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Berksey/images/avatar.jpg">
+      <meta itemprop="name" content="NachtgeistW">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Berksey">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Berksey/bilibili-dynamic-to-twitter/" class="post-title-link" itemprop="url">哔哩哔哩动态同步到推特的方法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-27 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-27T00:00:00+08:00">2019-08-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Berksey/categories/WhiteTech/" itemprop="url" rel="index"><span itemprop="name">WhiteTech</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>想法是利用 <a target="_blank" rel="noopener" href="https://rsshub.app/">RSSHub</a> 将 B 站动态变成可订阅的 RSS 源，然后经 integromat 区分文字动态和带图动态，并过滤掉投票、不带文字转发动态和不带文字分享视频，最后利用 IFTTT 完成同步。获取动态的方法受 <a target="_blank" rel="noopener" href="https://www.pluvet.com/archives/bilibili-echo-publish.html">BilibiliEcho - 同步你的 Bilibili 动态到 Typecho！</a>启发；进阶的同步方式参考了<a target="_blank" rel="noopener" href="https://sspai.com/post/51942">微博同步至 Twitter，这里有更好的方式</a>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Berksey/bilibili-dynamic-to-twitter/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN,en,default">
     <link itemprop="mainEntityOfPage" href="https://nachtgeistw.github.io/Berksey/Things-want-to-do/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -203,21 +277,7 @@
                 </span>
             </span>
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>139</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
+          
 
         </div>
       </header>
@@ -228,8 +288,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><del>报告</del><br><del>B 站动态同步到推特</del><br><del>课程表导入到 Calendar</del><br>高等数学复习<br>操作系统<br>NLP 处理里的语言分析<br>算法<br>Jubeat festo memo wiki<br>Deenote 重制<br>HDU Rank 排进前 2w  </p>
-<p><del>orzzzzzz坑还是很多    ——2019.8.26</del><br>orzzzzzz坑怎么越挖越多了    ——2019.12.3</p>
+          <p><s>报告</s><br />
+<s>B 站动态同步到推特</s><br />
+<s>课程表导入到 Calendar</s><br />
+高等数学复习<br />
+操作系统<br />
+NLP 处理里的语言分析<br />
+算法<br />
+Jubeat festo memo wiki<br />
+Deenote 重制<br />
+HDU Rank 排进前 2w</p>
+<p><s>orzzzzzz坑还是很多    ——2019.8.26</s><br />
+orzzzzzz坑怎么越挖越多了    ——2019.12.3</p>
 
       
     </div>
@@ -285,21 +355,7 @@
                 </span>
             </span>
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>145</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
+          
 
         </div>
       </header>
@@ -311,9 +367,10 @@
 
       
           <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>从自建服务器迁移到 GitHub 的开始。<br>你好世界。这里是 Berksey。</p>
-<p>夜轮<br>2019.8.25</p>
+<p>从自建服务器迁移到 GitHub 的开始。<br />
+你好世界。这里是 Berksey。</p>
+<p>夜轮<br />
+2019.8.25</p>
 
       
     </div>
@@ -400,20 +457,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/Berksey/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Berksey/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Berksey/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -493,16 +550,6 @@
     <i class="fa fa-code"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">NachtgeistW</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-    <span title="站点总字数">57k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="站点阅读时长">52 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
@@ -522,6 +569,7 @@
 
   
   <script src="/Berksey/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
   <script src="/Berksey/lib/velocity/velocity.min.js"></script>
   <script src="/Berksey/lib/velocity/velocity.ui.min.js"></script>
 
@@ -553,6 +601,8 @@
 
 
 
+
+  
 
   
 

@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/Berksey/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/Berksey/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="我猜，许多对使用 Native Audio 感兴趣的开发者正在用 Unity 写音游，所以，我不如提供一些技巧，帮你节省一些开发时间。 其中，有些是与 Native Audio 无关的。即使你来到这个页面，又对 Native Audio 或 Unity 一无所知，或许你还是能从这篇文里得到些什么！ 这种游戏类型小众但美妙，祝你在创造它的过程中一切顺利。">
@@ -210,21 +210,7 @@
                 </span>
             </span>
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>8.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
-            </span>
+          
 
         </div>
       </header>
@@ -239,70 +225,81 @@
 <p>其中，有些是与 Native Audio 无关的。即使你来到这个页面，又对 Native Audio 或 Unity 一无所知，或许你还是能从这篇文里得到些什么！</p>
 <p>这种游戏类型小众但美妙，祝你在创造它的过程中一切顺利。</p>
 <span id="more"></span>
-<hr>
+<hr />
 <p>翻译&amp;校对：夜轮</p>
 <ol>
 <li>本文译自<a target="_blank" rel="noopener" href="https://exceed7.com/native-audio/rhythm-game-crash-course/index.html">《Rhythm Game Crash Course》</a>，侵删；</li>
 <li>Native Audio 是一款 Unity 插件，用于处理依赖即时反馈的音频（如 hitsound 和 key 音，文中的称呼是“响应型音频” (the response sound)）。本文来源于该插件的官方网站；</li>
 <li>限于译者水平，文中难免有错漏之处。有错请指出。</li>
 </ol>
-<hr>
-<h2 id="它应该是有趣的"><a href="#它应该是有趣的" class="headerlink" title="它应该是有趣的"></a>它应该是有趣的</h2><p>在这些技巧使游戏正确运作之前，你得先让游戏变好玩，而给游戏增添乐趣的是谱面和游戏设计。我建议你先到<a target="_blank" rel="noopener" href="https://exceed7.com/native-audio/rhythm-game-crash-course/game-design-and-notecharting.html">《游戏设计和谱面》</a>页去看看，然后用本页的信息在技术方面下番苦工。</p>
+<hr />
+<h2 id="它应该是有趣的"><a class="markdownIt-Anchor" href="#它应该是有趣的"></a> 它应该是有趣的</h2>
+<p>在这些技巧使游戏正确运作之前，你得先让游戏变好玩，而给游戏增添乐趣的是谱面和游戏设计。我建议你先到<a target="_blank" rel="noopener" href="https://exceed7.com/native-audio/rhythm-game-crash-course/game-design-and-notecharting.html">《游戏设计和谱面》</a>页去看看，然后用本页的信息在技术方面下番苦工。</p>
 <p>我个人的想法是，我不会发布一个没有意思的游戏。当然，这不必多言。但信不信由你，当你真的有一款游戏时，你免不了会想去发布这游戏，而你的内心却不这么认为。更不用说你朋友和亲戚“就先发布一个最简可行产品，然后再改进”，或者“发布总比不发布好”的意见风暴。找到你的“最低”标准，告诉他们只有可玩性是不够的。如果你有更多玩音游的经验，你会听到你内心更强烈的呼喊：你的游戏远不如其他游戏那么有趣。</p>
-<h2 id="播放背景音"><a href="#播放背景音" class="headerlink" title="播放背景音"></a>播放背景音</h2><p>除非你正在制作一个从零开始创造音乐的游戏，否则游戏中一定会有一些背景音频。你并不需要 Native Audio 来播放这个背景音乐，因为它<strong>不是响应型音频</strong>，使用普通的 Unity <code>AudioSource</code> + <code>AudioClip</code> 就完全可以了。</p>
+<h2 id="播放背景音"><a class="markdownIt-Anchor" href="#播放背景音"></a> 播放背景音</h2>
+<p>除非你正在制作一个从零开始创造音乐的游戏，否则游戏中一定会有一些背景音频。你并不需要 Native Audio 来播放这个背景音乐，因为它<strong>不是响应型音频</strong>，使用普通的 Unity <code>AudioSource</code> + <code>AudioClip</code> 就完全可以了。</p>
 <p>接下来，你必须使用一些技巧，使它尽可能地与 Unity 的任何时间值“粘”在一起，这样你就能将其用作判断玩家行为的精确参考。这个后面会再提。</p>
 <p>举例来说，有这么一个打鼓的游戏，你敲鼓的时候会播放压缩音频。你可以用 Native Audio 的鼓声，它仅需少量空间就能快速响应。Native Audio 用于解决在播放瞬时响应型音频时的延迟问题，这种音频<strong>无法预测</strong>它自己是否会播放，且在你希望<strong>它应该播放的时候</strong>，它能尽可能快地播放。</p>
 <p>这意味着，在这个打鼓游戏里，如果你没有敲击屏幕，就不会播放鼓声。在硬币收集游戏里，如果玩家错过了硬币，它就不会播放硬币收集声。</p>
-<p>不过，如果你的游戏中只有背景音乐（它肯定会播放），那么这个问题<strong>无需 Native Audio 就能解决，但是要有固定的偏移&#x2F;校准</strong>。</p>
-<h2 id="背景音乐的延迟问题"><a href="#背景音乐的延迟问题" class="headerlink" title="背景音乐的延迟问题"></a>背景音乐的延迟问题</h2><p>在音游中，首先，你必须让背景音频轨与第一个“音符”（这由你的游戏决定）保持一致，这样剩下的部分将自动对准，除非游戏或音频出现了延迟。90% 的情况是游戏出现了延迟，音频先于游戏，因为在播放命令之后，音频与游戏不在同一个处理单元中了。滞后问题另外解决，现在先暂时不谈这个问题。</p>
+<p>不过，如果你的游戏中只有背景音乐（它肯定会播放），那么这个问题<strong>无需 Native Audio 就能解决，但是要有固定的偏移/校准</strong>。</p>
+<h2 id="背景音乐的延迟问题"><a class="markdownIt-Anchor" href="#背景音乐的延迟问题"></a> 背景音乐的延迟问题</h2>
+<p>在音游中，首先，你必须让背景音频轨与第一个“音符”（这由你的游戏决定）保持一致，这样剩下的部分将自动对准，除非游戏或音频出现了延迟。90% 的情况是游戏出现了延迟，音频先于游戏，因为在播放命令之后，音频与游戏不在同一个处理单元中了。滞后问题另外解决，现在先暂时不谈这个问题。</p>
 <p>Unity 中的音频是“发射后不管（英文：Fire-and-forget）”的。当你要求 Unity <code>AudioSource</code> 播放音频时，它将花费<strong>不等的</strong>时间，在它觉得合适的时候播放。这至少要在当前帧结束后，因为 Unity 有一种混合和确定播放优先级高的源的机制，这意味着它必须得首先收集播放命令，而不是<em>在该行代码处</em>立即播放。</p>
 <p>在该帧结束后，设备获得数据振动扬声器的速度是由设备自己决定的。每个设备——尤其是 Android 系统——有不同的音频延迟。</p>
 <p>如果没有适当的设备（如 audio loopback cable）或一些高难度技巧（比如手机记录自己扬声器的自动校准），我们是无法轻松地计算游戏延迟的。</p>
 <p>因此，Android 上的背景音频问题通常通过让用户自己校准的方式来解决，因为 Android 的音频延迟因设备而异。如果只有背景音频，没有响应型音频，我认为这是最好的方法。</p>
 <p>在用户得到设备的正确偏移量后，接下来是<em>你的工作</em>：维持正确的偏移量，在每次开始游玩时保持不变。有些音游甚至在手动校准后也会有延迟问题，因为每次重启游戏后，偏移量都不一样了。虽然这是程序员的错误，但用户可能会因这个错误怀疑人生，思考他有没有调好延迟，并一次又一次地回到校准页面——即使这不是他的错。</p>
-<h2 id="让音乐精准地开始"><a href="#让音乐精准地开始" class="headerlink" title="让音乐精准地开始"></a>让音乐精准地开始</h2><p>就如在上一章提到的，当玩家为你解决了设备上的延迟之后，现在就是你的工作了，你要让这个值每次都保持正确无误（即使是重开之后，推分党会“重试”很多次）。</p>
+<h2 id="让音乐精准地开始"><a class="markdownIt-Anchor" href="#让音乐精准地开始"></a> 让音乐精准地开始</h2>
+<p>就如在上一章提到的，当玩家为你解决了设备上的延迟之后，现在就是你的工作了，你要让这个值每次都保持正确无误（即使是重开之后，推分党会“重试”很多次）。</p>
 <ol>
 <li>对应地预加载音频。怎么个“预”法？这由你的音频类型进一步决定！更多信息请参见<a target="_blank" rel="noopener" href="https://exceed7.com/native-audio/rhythm-game-crash-course/import-settings.html">《音频导入设置》</a>；</li>
 <li><strong>立即播放（字面意思上的立即播放）是不可能的。</strong> 唯一的解决方法是使用 <a target="_blank" rel="noopener" href="https://docs.unity3d.com/ScriptReference/AudioSource.PlayScheduled.html"><code>audioSource.PlayScheduled</code></a>，它可以指定<strong>未来</strong>的一个精确时间点。你的音频现在故意推迟了，但会更精确地在那个时间点开始播放。这比要求音频现在就播放，但又得不到真正的“现在”要好。这个函数使用 <code>dspTime</code>，要注意你调用 <code>AudioSettings.dspTime</code> 的<strong>地方</strong>，因为即使在代码行之间，这个值也有可能变动（或者不变）。唯一要确保的是这个时间应该足够长，以便它能“准备”。如果你说“现在”（确切地说是 <code>AudioSettings.dspTime</code> 或更低的值，一个不可能的要求），那么这个函数跟 <code>audioSource.Play</code> 相比没有好处。它会哭出来的，因为它没有办法满足你“现在”的要求；</li>
 <li>根据你在这里使用的未来的时间点，把你的游戏事件（音符、第一个小节，叫啥都好，反正就是你的游戏里跟这个相关的）尽可能地接近这个时间。因为 Unity 是基于帧循环和游戏循环的，所以把未来的某一帧精确地放在预定的时间上也是不可能的。因此，你的逻辑必须有某种方法将“超时”（实际落地的帧和你制定的预定时间之间的时间差）包括在计算中，这样才会出现你的帧正好落地的情况。</li>
 </ol>
 <p>关于处理背景音频问题的<strong>完整</strong>章节，<a href="https://nachtgeistw.github.io/Berksey/translation/2021/10/12/backing-track/">请访问本页面</a>。（需要<strong>很多很多</strong>时间来消化。）</p>
-<h2 id="响应型音频的问题"><a href="#响应型音频的问题" class="headerlink" title="响应型音频的问题"></a>响应型音频的问题</h2><p>（……终于轮到 Native Audio 了！）</p>
-<p>搞定背景音频后，剩下的唯一问题是：你的游戏有没有任何类型的响应型音频，如不同的 perfect&#x2F;great&#x2F;bad 的声音或硬币收集的声音。响应型音频不能被校准&#x2F;补偿，所以最好是使用一种方法，以尽可能短的延迟播放声音。<a target="_blank" rel="noopener" href="https://exceed7.com/native-audio/rhythm-game-crash-course/classes-of-audio-apps.html">请看《四类音频应用》</a>，认识一下，为什么音乐游戏这类响应型音频的问题是最难解决的。</p>
+<h2 id="响应型音频的问题"><a class="markdownIt-Anchor" href="#响应型音频的问题"></a> 响应型音频的问题</h2>
+<p>（……终于轮到 Native Audio 了！）</p>
+<p>搞定背景音频后，剩下的唯一问题是：你的游戏有没有任何类型的响应型音频，如不同的 perfect/great/bad 的声音或硬币收集的声音。响应型音频不能被校准/补偿，所以最好是使用一种方法，以尽可能短的延迟播放声音。<a target="_blank" rel="noopener" href="https://exceed7.com/native-audio/rhythm-game-crash-course/classes-of-audio-apps.html">请看《四类音频应用》</a>，认识一下，为什么音乐游戏这类响应型音频的问题是最难解决的。</p>
 <p>终于该让 Native Audio 干活了。它并不难……使用，还能尽可能地获得最即时的播放。</p>
 <p>请认识到一点，<strong>即时播放总是不如正确的校准准确</strong>。但校准不能适用于响应型音频，因为你必须把背景音频的时间“往前”移动，以补偿使声音“延后”的延迟。但你不能把响应型音频“往前”移动到发出声音的输入端。除非你有神通，或者使用神经网络预测到玩家一定会敲击屏幕，并激活响应型音频。</p>
 <p>实际上，你可以预测或避免一些有意思的情况（取决于你的游戏）。例如，如果你的游戏有一个长音符的音效，它会在按下长音符头时播放，那么也许稍晚一点也没关系，因为它会一直播放，不会过多地妨碍游戏体验。（所以你可能不需要 Native Audio。）又或者，假设有这么一种音符，如果你<strong>漏掉</strong>了，就播放一种声音；如果你击中了，就播放另一种声音呢？在这种情况下，你可以在确认输入之前就预先播放失误音效，并设计出与失误音效相融合的击中音效。如果玩家打中了，总会播放的失误音效就可以与稍有延迟的击中音效融为一体。它能起效的原因是失误音效不需要任何操作也能播放。我相信还有其他基于你游戏的巧妙设计。</p>
-<h2 id="一些时值的数值"><a href="#一些时值的数值" class="headerlink" title="一些时值的数值"></a>一些时值的数值</h2><p>如果你的背景音频或响应型音频只晚了 10-20ms，这真的很重要吗？为了了解这个问题的观点，这里列出了一些游戏的最高判定区间，它是由一位音游玩家从各种游戏中整理出来的。</p>
+<h2 id="一些时值的数值"><a class="markdownIt-Anchor" href="#一些时值的数值"></a> 一些时值的数值</h2>
+<p>如果你的背景音频或响应型音频只晚了 10-20ms，这真的很重要吗？为了了解这个问题的观点，这里列出了一些游戏的最高判定区间，它是由一位音游玩家从各种游戏中整理出来的。</p>
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Dynamix 59ms<br>Deemo 50ms<br>ユビート 41ms?<br>ガルパ 40ms<br>ボルテ 33ms<br>Arcaea 25ms<br>ポップン 25ms</p>&mdash; StaLight 🏳️‍⚧️ (@Sta_Light_) <a target="_blank" rel="noopener" href="https://twitter.com/Sta_Light_/status/1020704143231500289?ref_src=twsrc%5Etfw">July 21, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ウニ、太鼓も 33ms<br>VOEZは 30ms<br>弐寺は 20msで<br>DDR ＞＞＞15ms＜＜＜<br>Cytusは 70msです</p>&mdash; StaLight 🏳️‍⚧️ (@Sta_Light_) <a target="_blank" rel="noopener" href="https://twitter.com/Sta_Light_/status/1020879071222292480?ref_src=twsrc%5Etfw">July 22, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 <p>请注意，这些数字不是随机的，而是帧率时间的倍数（例如 60 FPS 是 16.666ms，120 FPS 是 8.3333ms），所以它们可以基于帧内时间检查而不是真正的“硬件输入时间”。</p>
 <p>看一下 DDR，比如，Marvelous 的判定区间只是 60FPS 下的 1 帧。(不确定框体是否以 120 FPS 运行？你可以“看到”箭头在这个区间内移动了 2 步），有的玩家可以 MFC（Marvelous Full Combo）像嘆きの樹这样离谱的歌曲。</p>
 <p>这意味着人类肯定可以连续 2 分钟全神贯注于 16.67 毫秒这一个区间。这个小数字实际上是相当重要的。</p>
-<h2 id="音频滞后是很罕见的"><a href="#音频滞后是很罕见的" class="headerlink" title="音频滞后是很罕见的"></a>音频滞后是很罕见的</h2><p>有一点很重要，虽然它可能不是很明显：你游戏中的所有东西都是和游戏循环一起更新的（这个更新可能是基于每一帧的 <code>deltaTime</code>）。音频总是向前进的，与你使用 <code>deltaTime</code> 的方式完全独立，也不会与你的游戏一起滞后。如果游戏滞后，有可能是你的游戏现在“落后于”音频了。这种情况出现时，就需要“重新同步”。(否则玩家就会按重试按钮……)</p>
-<h2 id="音频真的滞后了……缓冲区不足"><a href="#音频真的滞后了……缓冲区不足" class="headerlink" title="音频真的滞后了……缓冲区不足"></a>音频真的滞后了……缓冲区不足</h2><p>根据你的选择（最佳延迟 Best Latency、良好延迟 Good Latency、最佳性能 Best Performance），Unity 会给你 256、512 或 1024 大小的音频缓冲区。（我以为这由手机决定，但就我的尝试而言，情况并非如此。不过以后也不能确定了。）</p>
+<h2 id="音频滞后是很罕见的"><a class="markdownIt-Anchor" href="#音频滞后是很罕见的"></a> 音频滞后是很罕见的</h2>
+<p>有一点很重要，虽然它可能不是很明显：你游戏中的所有东西都是和游戏循环一起更新的（这个更新可能是基于每一帧的 <code>deltaTime</code>）。音频总是向前进的，与你使用 <code>deltaTime</code> 的方式完全独立，也不会与你的游戏一起滞后。如果游戏滞后，有可能是你的游戏现在“落后于”音频了。这种情况出现时，就需要“重新同步”。(否则玩家就会按重试按钮……)</p>
+<h2 id="音频真的滞后了缓冲区不足"><a class="markdownIt-Anchor" href="#音频真的滞后了缓冲区不足"></a> 音频真的滞后了……缓冲区不足</h2>
+<p>根据你的选择（最佳延迟 Best Latency、良好延迟 Good Latency、最佳性能 Best Performance），Unity 会给你 256、512 或 1024 大小的音频缓冲区。（我以为这由手机决定，但就我的尝试而言，情况并非如此。不过以后也不能确定了。）</p>
 <p>你希望尽可能地小，以获得最小的延迟，但是太小的话，CPU 就不能及时地把音频位抽出来，扬声器就不知道该怎么做了，就会产生人们所说的滞后、故障、吓人、尖叫、减速、出 bug、蜂鸣、僵尸、结巴、乱码（说实话，我收到过很多不同的情况 report，形容词从来没有相同过）。重点是，你的游戏现在将比音频快。而这并不容易通过程序检测到，最佳做法应该是首先确保缓冲区的大小是最低的，但又足够大。</p>
-<p>可悲的是有些手机无法处理 256 甚至 512 的大小。例如，我听说华为 P20&#x2F;P20 Pro&#x2F;Mate 20&#x2F;Mate 20 Pro&#x2F;Mate 20X 就不能（即使它们是旗舰机！）。你准备在 Unity 内播放的非 Native Audio 音频（如 BGM）现在成了一堆噪音，不能用了。怎么办？我认为最好的解决办法是在你的选项菜单中加入一个滑块，让玩家在发现音频问题时进行调整。这个滑块可以与 <a target="_blank" rel="noopener" href="https://docs.unity3d.com/ScriptReference/AudioSettings.Reset.html"><code>AudioSettings.Reset</code></a> 关联起来。我收到过一份报告，说前面提到的设备需要 1024 大小的缓冲区。震惊的是，Native Audio 在这些设备上使用的大小远低于 1024（大约是 240），而且没有缓冲区不足的情况。唯一的结论是， Unity 的音频处理在这些手机上投入了太多的工作，导致任何更低的尺寸都无法处理了。这个“bug”早在 5.5.5 版本中就被发现了，而且直到今天它<a target="_blank" rel="noopener" href="https://issuetracker.unity3d.com/issues/android-sound-stuttering-issue-on-huawei-mate-20-pro">还没被修复</a>。我的天啊！</p>
+<p>可悲的是有些手机无法处理 256 甚至 512 的大小。例如，我听说华为 P20/P20 Pro/Mate 20/Mate 20 Pro/Mate 20X 就不能（即使它们是旗舰机！）。你准备在 Unity 内播放的非 Native Audio 音频（如 BGM）现在成了一堆噪音，不能用了。怎么办？我认为最好的解决办法是在你的选项菜单中加入一个滑块，让玩家在发现音频问题时进行调整。这个滑块可以与 <a target="_blank" rel="noopener" href="https://docs.unity3d.com/ScriptReference/AudioSettings.Reset.html"><code>AudioSettings.Reset</code></a> 关联起来。我收到过一份报告，说前面提到的设备需要 1024 大小的缓冲区。震惊的是，Native Audio 在这些设备上使用的大小远低于 1024（大约是 240），而且没有缓冲区不足的情况。唯一的结论是， Unity 的音频处理在这些手机上投入了太多的工作，导致任何更低的尺寸都无法处理了。这个“bug”早在 5.5.5 版本中就被发现了，而且直到今天它<a target="_blank" rel="noopener" href="https://issuetracker.unity3d.com/issues/android-sound-stuttering-issue-on-huawei-mate-20-pro">还没被修复</a>。我的天啊！</p>
 <p>由于某些原因，在 Windows 下生成项目时，选择最佳延迟<strong>总是</strong>会导致缓冲区大小不可用。Unity，为什么？</p>
-<h2 id="开始时的校准问题"><a href="#开始时的校准问题" class="headerlink" title="开始时的校准问题"></a>开始时的校准问题</h2><p>如果你在意 Android 系统，那你必须将校准选项纳入你的设置界面。但是，想象一下，一个新玩家，新到甚至不知道怎么玩你的游戏，也找不到你的设置界面在哪里。他们入坑，游玩教程，因为延迟而失败，然后退坑。你肯定不希望这样。</p>
+<h2 id="开始时的校准问题"><a class="markdownIt-Anchor" href="#开始时的校准问题"></a> 开始时的校准问题</h2>
+<p>如果你在意 Android 系统，那你必须将校准选项纳入你的设置界面。但是，想象一下，一个新玩家，新到甚至不知道怎么玩你的游戏，也找不到你的设置界面在哪里。他们入坑，游玩教程，因为延迟而失败，然后退坑。你肯定不希望这样。</p>
 <p>许多游戏会在教程之后显示一个弹窗，说如果你感觉刚才玩的东西不太对劲，请到设置界面，因为把这个提示放在教程之前会打断“入坑流程”，并搞懵一些像我妈妈这样的非技术用户。</p>
 <p>更好的办法是预先设定一个校准值，这样即使是新玩家也可以享受教程和一些简单的歌曲，直到他意识到错误的校准拖了他后腿。到那个时候，你的玩家已经入坑了，不太可能退坑。</p>
 <p>最简单的方法是使用一些你确信没有任何 Android 设备能表现得更好的“幻数”。但更好的是以某种方式“估计”每个设备的延迟，然后用这个延迟开始游戏。问题是，要怎么做呢？像 Criware 的 adx2 这样的一些中间件确实有一个估计功能，可以用黑科技做出令人信服的估计，而无需像 audio loopback cable 这样的特殊校准工具，也不需要麦克风输入。（它是闭源的！）我希望我的 Native Audio 也能做到这一点，不过现在嘛……把它处理好就行了。</p>
 <p>你的“0 ms”是多少？你可以在游戏内部给校准一个偏移量，然后在起始校准的 UI 上将它显示成“0 ms”。这能让玩家觉得“0 ms 就已经准了”。如果你的 0 ms 真的就是 0 ms，那它更有可能总是错的。即使认为手机没有延迟，如果你的玩家不使用耳机，那么声音通过空气传播也需要时间。用你的 0 ms 把这点时间占掉仍然是个好主意。比如说，0 ms 其实等于提前 5-10 ms。</p>
 <p>你可能会有这样的想法：查询“延迟数据库”，这样每个设备就能以正确的偏移量开始游戏。<a target="_blank" rel="noopener" href="https://superpowered.com/latency">Superpowered 的网页</a>上的确有一个，不过我现在还没找到一个能在运行时将设备映射到这个数据库的好方法。祝你好运！</p>
-<h2 id="判定问题"><a href="#判定问题" class="headerlink" title="判定问题"></a>判定问题</h2><p>玩家依据音乐击打屏幕。但你的代码是如何判定这一击的？当你有机会运行你的判断逻辑时（一帧来了），它<strong>已经比那个音频时刻晚了</strong>，这是 100% 的事实。如果你使用这一帧开始的时间，它仍然比实际时间晚，因为玩家必须在上一帧触摸到屏幕，才能在这一帧被检测到。如果你用这个时间来判断，早打的玩家会有优势，因为时间会偏后一点；晚打的玩家会受到惩罚，可能会得到较低的判定。</p>
-<p>正确的解决方案是<strong>触摸时间戳</strong>。所有的 iOS 和原生 Android 都提供了时间戳，但 Unity 把它们都抛弃了，然后把帧时间设成了最正确的时间。如果你对提高判断的准确性感兴趣，那你可以试试<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=hw3Gk5PoZ6A&ab_channel=Unity">新的输入系统（The new Input System）</a>。</p>
-<h2 id="“敲击音”玩家"><a href="#“敲击音”玩家" class="headerlink" title="“敲击音”玩家"></a>“敲击音”玩家</h2><p>我相信现在的玩家都学会了在手机延迟不好的情况下关闭敲击音，所以要确保为他们提供一个关闭响应型音频的选项。</p>
-<p>但是！有经验的玩家甚至会故意关闭敲击音，全然不理手机的延迟（即使他们有一台最初也是最棒的低延迟设备——iOS）。因为直接传到他们耳朵里的敲击音会是最准确的反馈声音。这些玩家会对游戏进行校准，然后，如果通过空气传播的敲击音与通过硬件延迟的音频相匹配，那么他们应该得到一个 Perfect。因此，校准选项旁边也应该提供一个打开&#x2F;关闭敲击音的功能，这样玩家就可以自行调整。这点也是非常重要的。</p>
+<h2 id="判定问题"><a class="markdownIt-Anchor" href="#判定问题"></a> 判定问题</h2>
+<p>玩家依据音乐击打屏幕。但你的代码是如何判定这一击的？当你有机会运行你的判断逻辑时（一帧来了），它<strong>已经比那个音频时刻晚了</strong>，这是 100% 的事实。如果你使用这一帧开始的时间，它仍然比实际时间晚，因为玩家必须在上一帧触摸到屏幕，才能在这一帧被检测到。如果你用这个时间来判断，早打的玩家会有优势，因为时间会偏后一点；晚打的玩家会受到惩罚，可能会得到较低的判定。</p>
+<p>正确的解决方案是<strong>触摸时间戳</strong>。所有的 iOS 和原生 Android 都提供了时间戳，但 Unity 把它们都抛弃了，然后把帧时间设成了最正确的时间。如果你对提高判断的准确性感兴趣，那你可以试试<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=hw3Gk5PoZ6A&amp;ab_channel=Unity">新的输入系统（The new Input System）</a>。</p>
+<h2 id="敲击音玩家"><a class="markdownIt-Anchor" href="#敲击音玩家"></a> “敲击音”玩家</h2>
+<p>我相信现在的玩家都学会了在手机延迟不好的情况下关闭敲击音，所以要确保为他们提供一个关闭响应型音频的选项。</p>
+<p>但是！有经验的玩家甚至会故意关闭敲击音，全然不理手机的延迟（即使他们有一台最初也是最棒的低延迟设备——iOS）。因为直接传到他们耳朵里的敲击音会是最准确的反馈声音。这些玩家会对游戏进行校准，然后，如果通过空气传播的敲击音与通过硬件延迟的音频相匹配，那么他们应该得到一个 Perfect。因此，校准选项旁边也应该提供一个打开/关闭敲击音的功能，这样玩家就可以自行调整。这点也是非常重要的。</p>
 <p>这就是即使 DDR 有这么严格的判定区间，但玩家仍然能设法击中音符的原因。玩家能合上<strong>鞋子的脚步声</strong>与音乐，并切身地感受到节奏（你的身体甚至在玩游戏的时候同时振动，这是不需要硬件就能做到的额外反馈）。这款游戏是少数几款不允许在游戏中以任何方式校准判断的游戏之一。这并不是因为他们确定框体没有延迟（不可能），而是因为，框体已经精确地校准过了。如果你的鞋子在空气中传播的声音与你从框体听到的音乐相匹配，从垫子和扬声器的站立距离来看，你会得到 Marvelous 的判定（16 ms，60 FPS 的 1 帧）。这样想一下：在 DDR 的源码里，他们必须提早播放音频，使之穿过硬件和空气的延迟之后还能与没有硬件延迟的脚步声完美合上；与此同时，箭头也刚好对上指示器。（声音在空气中传播的速度也会随温度的变化而<a target="_blank" rel="noopener" href="https://www.nde-ed.org/EducationResources/HighSchool/Sound/tempandspeed.php">变化</a>！但是，不要因为你拿不到 Perfect，就要求工作人员把空调温度调低。）</p>
-<h2 id="不要将游戏状态与音频时间-x2F-dspTime同步"><a href="#不要将游戏状态与音频时间-x2F-dspTime同步" class="headerlink" title="不要将游戏状态与音频时间&#x2F;dspTime同步"></a>不要将游戏状态与音频时间&#x2F;dspTime同步</h2><p>你可能会这么想：播放音乐。不断询问当前歌曲的时间，然后根据这个时间，决定屏幕上的一切（与速度修改结合，诸如此类）。通过这种方法，游戏将始终与音频保持同步。</p>
+<h2 id="不要将游戏状态与音频时间dsptime同步"><a class="markdownIt-Anchor" href="#不要将游戏状态与音频时间dsptime同步"></a> 不要将游戏状态与音频时间/dspTime同步</h2>
+<p>你可能会这么想：播放音乐。不断询问当前歌曲的时间，然后根据这个时间，决定屏幕上的一切（与速度修改结合，诸如此类）。通过这种方法，游戏将始终与音频保持同步。</p>
 <p>这并不是一个好主意。首先，那个音频时间是 <code>dspTime</code>。<code>dspTime</code> <strong>不是实时的</strong>，它以一定的步骤更新。你<strong>没有办法</strong>知道音频现在在哪里。这听起来可能很荒谬，但你这样想：音频是一个“发射后不管”的东西，就像你发射火箭一样。当你想知道火箭的位置时，你可以测量一下。但当你完成测量时，它自己移动得是如此之快，以至于测量已经没有用了。在技术上的解释是，音频在自己的线程上运行，测量无法阻塞它。你所听到的东西来自一连串的管线，这些管线不断地将音频字节灌输到扬声器中。这个“管线”不是简单的“播放头在这里，你听到的就是它”，而是一些已经在排队等待播放的音频位（这不是你要问的当前位置）。因此，你通过询问音频时间得到的表示不是你听到的正确表示。或许在 iOS 上你能避免这个问题，但在 Android 上你会注意到时间的返回不够流畅（无论是从 Unity 的 API 还是从 Native Audio 的 API 都一样）。即使游戏“在技术上”一直紧贴音频，这种贴也是不顺畅的，还会造成比原本流畅的游戏因滞后而不断偏离音频更恼人的体验。</p>
 <p>相反，将你的游戏建立在你自己的 <code>float</code>（浮点数）上，让它逐帧递增。与这个 <code>float</code> 一起，以一种总是可靠地询问你自己的 <code>float</code> 的方式来播放音频，并将其解释为音频时间。这样一来，你必须希望它在一段时间后仍然与音频一起增长。但在希望之前，先把开头弄好，比如安排播放在<strong>精确的未来</strong>开始一段音频，然后用你的 <code>float</code> 来“锚定”一个未来的时间，这个浮动就是音频的“零秒”。记住，立即播放永远不会是立即的，推迟的未来总是更好的。</p>
 <p>如果你的游戏运行得很好，<code>float</code> 应该是可靠的。如果游戏滞后了，正如前面解释的那样，“发射后不管”的音频可能不会与游戏一起滞后，导致你的 <code>float</code> 落后，那么你可能不得不重新同步，使音频跳到你的 <code>float</code> 上，或将你的 <code>float</code> 跳到音频上。（但这将导致游戏的跳跃，因为你的游戏状态是以 <code>float</code> 为基础的）。如果音频因缓冲区不足或其他原因滞后——不幸的是这种情况很难解决——你只能希望玩家重开这首歌并再次尝试。</p>
-<h2 id="还有其他提示吗？"><a href="#还有其他提示吗？" class="headerlink" title="还有其他提示吗？"></a>还有其他提示吗？</h2><ul>
-<li>2019.1 改进了 Android 上普通 Unity 音频的延迟。现在有更多设备可以收到更快的音频源。<a target="_blank" rel="noopener" href="https://gametorrahod.com/unitys-android-audio-latency-improvement-in-2019-1-0-ebcffc31a947">请看这里。</a>如果你的游戏一部分用的是 Native Audio，但较长的声音&#x2F;需要混音器或效果的声音用的是 Unity，这很有用。</li>
-<li>在 iOS 上使用 Native Audio 的话，不要忘记在 Project Settings &#x2F; Audio 中设置 Best Latency。在 Android 上，这并不重要，因为这个设置只会影响 Unity 分配的音源，我们会用自己的设置分配一个新的音源。但是在 iOS 上，这个设置会修改设备的缓冲区大小，这个缓冲区是 Unity 音频和 Native Audio 共用的。Native Audio 并不试图影响 Unity 目前的设置。举例来说，选择最佳性能也会降低 iOS 上 Native Audio 的速度。（你仍然可以通过跳过 Unity 混音器的方式获得时间差，同时也可以获得即时帧内播放的优势，而不必等到帧结束）。</li>
+<h2 id="还有其他提示吗"><a class="markdownIt-Anchor" href="#还有其他提示吗"></a> 还有其他提示吗？</h2>
+<ul>
+<li>2019.1 改进了 Android 上普通 Unity 音频的延迟。现在有更多设备可以收到更快的音频源。<a target="_blank" rel="noopener" href="https://gametorrahod.com/unitys-android-audio-latency-improvement-in-2019-1-0-ebcffc31a947">请看这里。</a>如果你的游戏一部分用的是 Native Audio，但较长的声音/需要混音器或效果的声音用的是 Unity，这很有用。</li>
+<li>在 iOS 上使用 Native Audio 的话，不要忘记在 Project Settings / Audio 中设置 Best Latency。在 Android 上，这并不重要，因为这个设置只会影响 Unity 分配的音源，我们会用自己的设置分配一个新的音源。但是在 iOS 上，这个设置会修改设备的缓冲区大小，这个缓冲区是 Unity 音频和 Native Audio 共用的。Native Audio 并不试图影响 Unity 目前的设置。举例来说，选择最佳性能也会降低 iOS 上 Native Audio 的速度。（你仍然可以通过跳过 Unity 混音器的方式获得时间差，同时也可以获得即时帧内播放的优势，而不必等到帧结束）。</li>
 <li>如果你的设备在充电，你的触摸会因为静电而随机变慢。由于输入时间会影响对音频延迟的感知，它可能会骗你，让你认为音频有时候变慢了。</li>
 <li>检查你的音频文件，查看文件的开头是否有无声段。像 Audacity 这样的程序有一个命令，可以即时裁掉两端的静音。</li>
 <li>一个尖锐、瞬间增高的音频听上去会更有反馈感。缓慢淡入的音频会感觉有延迟，而它实际上是音频的一部分。如果你在编写自己的 SFX，那么你可以通过声音设计来改善感知的延迟。</li>
@@ -431,7 +428,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%83%E5%BA%94%E8%AF%A5%E6%98%AF%E6%9C%89%E8%B6%A3%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text">它应该是有趣的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3"><span class="nav-number">2.</span> <span class="nav-text">播放背景音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90%E7%9A%84%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">背景音乐的延迟问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A9%E9%9F%B3%E4%B9%90%E7%B2%BE%E5%87%86%E5%9C%B0%E5%BC%80%E5%A7%8B"><span class="nav-number">4.</span> <span class="nav-text">让音乐精准地开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%9E%8B%E9%9F%B3%E9%A2%91%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">响应型音频的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%97%B6%E5%80%BC%E7%9A%84%E6%95%B0%E5%80%BC"><span class="nav-number">6.</span> <span class="nav-text">一些时值的数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9F%B3%E9%A2%91%E6%BB%9E%E5%90%8E%E6%98%AF%E5%BE%88%E7%BD%95%E8%A7%81%E7%9A%84"><span class="nav-number">7.</span> <span class="nav-text">音频滞后是很罕见的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9F%B3%E9%A2%91%E7%9C%9F%E7%9A%84%E6%BB%9E%E5%90%8E%E4%BA%86%E2%80%A6%E2%80%A6%E7%BC%93%E5%86%B2%E5%8C%BA%E4%B8%8D%E8%B6%B3"><span class="nav-number">8.</span> <span class="nav-text">音频真的滞后了……缓冲区不足</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E6%97%B6%E7%9A%84%E6%A0%A1%E5%87%86%E9%97%AE%E9%A2%98"><span class="nav-number">9.</span> <span class="nav-text">开始时的校准问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E5%AE%9A%E9%97%AE%E9%A2%98"><span class="nav-number">10.</span> <span class="nav-text">判定问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%80%9C%E6%95%B2%E5%87%BB%E9%9F%B3%E2%80%9D%E7%8E%A9%E5%AE%B6"><span class="nav-number">11.</span> <span class="nav-text">“敲击音”玩家</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E8%A6%81%E5%B0%86%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E4%B8%8E%E9%9F%B3%E9%A2%91%E6%97%B6%E9%97%B4-x2F-dspTime%E5%90%8C%E6%AD%A5"><span class="nav-number">12.</span> <span class="nav-text">不要将游戏状态与音频时间&#x2F;dspTime同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%98%E6%9C%89%E5%85%B6%E4%BB%96%E6%8F%90%E7%A4%BA%E5%90%97%EF%BC%9F"><span class="nav-number">13.</span> <span class="nav-text">还有其他提示吗？</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%83%E5%BA%94%E8%AF%A5%E6%98%AF%E6%9C%89%E8%B6%A3%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text"> 它应该是有趣的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3"><span class="nav-number">2.</span> <span class="nav-text"> 播放背景音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90%E7%9A%84%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text"> 背景音乐的延迟问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A9%E9%9F%B3%E4%B9%90%E7%B2%BE%E5%87%86%E5%9C%B0%E5%BC%80%E5%A7%8B"><span class="nav-number">4.</span> <span class="nav-text"> 让音乐精准地开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%9E%8B%E9%9F%B3%E9%A2%91%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text"> 响应型音频的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%97%B6%E5%80%BC%E7%9A%84%E6%95%B0%E5%80%BC"><span class="nav-number">6.</span> <span class="nav-text"> 一些时值的数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9F%B3%E9%A2%91%E6%BB%9E%E5%90%8E%E6%98%AF%E5%BE%88%E7%BD%95%E8%A7%81%E7%9A%84"><span class="nav-number">7.</span> <span class="nav-text"> 音频滞后是很罕见的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9F%B3%E9%A2%91%E7%9C%9F%E7%9A%84%E6%BB%9E%E5%90%8E%E4%BA%86%E7%BC%93%E5%86%B2%E5%8C%BA%E4%B8%8D%E8%B6%B3"><span class="nav-number">8.</span> <span class="nav-text"> 音频真的滞后了……缓冲区不足</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E6%97%B6%E7%9A%84%E6%A0%A1%E5%87%86%E9%97%AE%E9%A2%98"><span class="nav-number">9.</span> <span class="nav-text"> 开始时的校准问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E5%AE%9A%E9%97%AE%E9%A2%98"><span class="nav-number">10.</span> <span class="nav-text"> 判定问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B2%E5%87%BB%E9%9F%B3%E7%8E%A9%E5%AE%B6"><span class="nav-number">11.</span> <span class="nav-text"> “敲击音”玩家</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E8%A6%81%E5%B0%86%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%E4%B8%8E%E9%9F%B3%E9%A2%91%E6%97%B6%E9%97%B4dsptime%E5%90%8C%E6%AD%A5"><span class="nav-number">12.</span> <span class="nav-text"> 不要将游戏状态与音频时间&#x2F;dspTime同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%98%E6%9C%89%E5%85%B6%E4%BB%96%E6%8F%90%E7%A4%BA%E5%90%97"><span class="nav-number">13.</span> <span class="nav-text"> 还有其他提示吗？</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -447,20 +444,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/Berksey/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Berksey/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Berksey/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -540,16 +537,6 @@
     <i class="fa fa-code"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">NachtgeistW</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-    <span title="站点总字数">57k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="站点阅读时长">52 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
@@ -569,6 +556,7 @@
 
   
   <script src="/Berksey/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
   <script src="/Berksey/lib/velocity/velocity.min.js"></script>
   <script src="/Berksey/lib/velocity/velocity.ui.min.js"></script>
 
@@ -600,6 +588,8 @@
 
 
 
+
+  
 
   
 

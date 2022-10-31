@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/Berksey/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"nachtgeistw.github.io","root":"/Berksey/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="该解决方案是 GitHub CLI 的 TLS handshake timeout issue 下，一位中国老哥给的。 根据这位老哥给的solution，只需在终端的配置里写上如下函数： 123456789101112131415proxy ()&amp;#123;    export http_proxy&#x3D;&quot;http:&#x2F;&#x2F;127.0.0.1:port&quot;;    export no_p">
@@ -208,21 +208,7 @@
                 </span>
             </span>
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>880</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
+          
 
         </div>
       </header>
@@ -236,7 +222,6 @@
         <p>该解决方案是 GitHub CLI 的 TLS handshake timeout issue 下，一位中国老哥给的。</p>
 <p>根据<a target="_blank" rel="noopener" href="https://github.com/cli/cli/issues/514#issuecomment-666230820">这位老哥给的solution</a>，只需在终端的配置里写上如下函数：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">proxy</span></span> ()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">export</span> http_proxy=<span class="string">&quot;http://127.0.0.1:port&quot;</span>;</span><br><span class="line">    <span class="built_in">export</span> no_proxy=<span class="string">&quot;localhost,127.0.0.0/0,192.168.0.0/16,10.0.0.0/0,kubernetes.docker.internal&quot;</span>;</span><br><span class="line">    <span class="built_in">export</span> NO_PROXY=<span class="variable">$no_proxy</span>;</span><br><span class="line">    <span class="built_in">export</span> HTTP_PROXY=<span class="variable">$http_proxy</span> https_proxy=<span class="variable">$http_proxy</span> HTTPS_PROXY=<span class="variable">$http_proxy</span> NO_PROXY=<span class="variable">$no_proxy</span>;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;HTTP Proxy on&quot;</span>;</span><br><span class="line">    <span class="built_in">env</span> | grep --color=auto -i proxy</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">noproxy</span></span> ()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">unset</span> http_proxy https_proxy HTTP_PROXY HTTPS_PROXY no_proxy NO_PROXY FTP_PROXY ftp_proxy ALL_PROXY all_proxy;</span><br><span class="line">    <span class="built_in">env</span> | grep --color=auto -i proxy;</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;Proxy environment variable removed.&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>每次启动的时候都加载这两个函数就可以了。</p>
 <blockquote>
 <p>no need to set proxy in git config, a proxy() and a noproxy() function in your bash_rc or bash_profile would be easier if you’re a developer in china. most cli(eg. git,curl,wget,go,brew …) respects http_proxy, https_proxy, HTTP_PROXY, HTTPS_PROXY.</p>
@@ -276,8 +261,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/Berksey/bilibili-ctf-prequel/" rel="prev" title="哔哩哔哩 1024 安全挑战赛解题思路（前篇）">
-      <i class="fa fa-chevron-left"></i> 哔哩哔哩 1024 安全挑战赛解题思路（前篇）
+    <a href="/Berksey/bilibili-ctf-sequel/" rel="prev" title="哔哩哔哩 1024 安全挑战赛解题思路（后篇）">
+      <i class="fa fa-chevron-left"></i> 哔哩哔哩 1024 安全挑战赛解题思路（后篇）
     </a></div>
       <div class="post-nav-item">
     <a href="/Berksey/something-about-unity/" rel="next" title="与 Unity3D 和 C# 有关的碎碎念">
@@ -377,20 +362,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/Berksey/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/Berksey/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/Berksey/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -470,16 +455,6 @@
     <i class="fa fa-code"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">NachtgeistW</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-    <span title="站点总字数">57k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="站点阅读时长">52 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
@@ -499,6 +474,7 @@
 
   
   <script src="/Berksey/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
   <script src="/Berksey/lib/velocity/velocity.min.js"></script>
   <script src="/Berksey/lib/velocity/velocity.ui.min.js"></script>
 
@@ -530,6 +506,8 @@
 
 
 
+
+  
 
   
 
