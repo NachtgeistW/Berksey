@@ -42,18 +42,6 @@ tags:
   - [2:05:20 DYNAMICS 页的操作](#20520-dynamics-页的操作)
 - [第四部分 调声](#第四部分-调声)
   - [2:13:09 修改乐谱的填词，调整有违和感的地方](#21309-修改乐谱的填词调整有违和感的地方)
-    - [2:13:19 めんどうくさいや的调整](#21319-めんどうくさいや的调整)
-    - [元音无声化（清化）](#元音无声化清化)
-    - [2:17:39 其他行的无声化处理](#21739-其他行的无声化处理)
-    - [2:20:22 きゅう的调整](#22022-きゅう的调整)
-    - [2:20:56 ちょ与きゅ间的调整](#22056-ちょ与きゅ间的调整)
-    - [2:22:04 つ的调整](#22204-つ的调整)
-    - [2:24:33 えんどれす (endless) 的调整](#22433-えんどれす-endless-的调整)
-    - [2:27:09 さいのはあて的调整](#22709-さいのはあて的调整)
-    - [2:27:30 こんな的调整](#22730-こんな的调整)
-    - [2:29:33 crazy nonsense music 的调整](#22933-crazy-nonsense-music-的调整)
-    - [2:31:05 が的调整](#23105-が的调整)
-    - [2:32:08 ける的调整](#23208-ける的调整)
   - [2:33:09 调整 TIMING，从更细节的地方调整发音](#23309-调整-timing从更细节的地方调整发音)
   - [2:37:40 调整 PITCH](#23740-调整-pitch)
 
@@ -79,12 +67,12 @@ tags:
 下载方式：
 
 1. 进入 A.I.VOICE 的支持网站，在右侧登录账号（如果没有账号，请点下面的「新規登録」注册一个账号）；
-   [![login to aivoice support website](NEUTRINO-101/aivoice-support-website.png)](NEUTRINO-101/aivoice-support-website.png)
+   ![login to aivoice support website](aivoice-support-website.png)](aivoice-support-website.png)
 2. 点击「製品情報」，检查账号中是否有「A.I.VOICE 琴葉 茜・葵」；
-   [![check product info](NEUTRINO-101/aivoice-check-product-info.png)](NEUTRINO-101/aivoice-check-product-info.png)
+   ![check product info](aivoice-check-product-info.png)](aivoice-check-product-info.png)
 3. 点击「ダウンロード」，跳转到下载页面；
 4. 点击特典切换到特典页，然后找到最新的「琴葉 茜（NEUTRINO-Library）」与「琴葉 葵（NEUTRINO-Library）」，点击链接下载。
-   [![download library in aivoice download page](NEUTRINO-101/aivoice-download-page.png)](NEUTRINO-101/aivoice-download-page.png)
+   ![download library in aivoice download page](aivoice-download-page.png)](aivoice-download-page.png)
    <!-- - 注：但是现在 A.I.VOICE 的特典页有 bug，点击链接后，地址栏会一闪而过下载链接，然后**直接回退到特典页，而且并不会启动下载**。如果一直没法复制到下载链接，可以试试通过下列两个链接直接下载：
     <https://aivoice.jp/member/downloads/extra/241>（琴葉 葵（NEUTRINO-Library）_v1.2.0.zip）
     <https://aivoice.jp/member/downloads/extra/242>（琴葉 茜（NEUTRINO-Library）_v1.2.0.zip）
@@ -102,7 +90,7 @@ tags:
 1. 进入 NEUTRINO 調声支援ツール的 Releases 页，往下滚动找到当前最新的版本；
 2. 点击 Assets 旁边的箭头展开发布文件列表，点击 .zip 文件下载。
 
-[![how to download neutrino tuning support tool](NEUTRINO-101/download-neutrino-tuning-support-tool.png)](NEUTRINO-101/download-neutrino-tuning-support-tool.png)
+![how to download neutrino tuning support tool](download-neutrino-tuning-support-tool.png)
 
 #### ＜乐曲数据＞
 
@@ -147,11 +135,11 @@ tags:
 
 双击 NEUTRINOTyouseiSienTool.exe 运行。在如图所示的位置点击，打开设置页面。
 
-[![open neutrino tuning support tool](NEUTRINO-101/open-neutrino-tuning-support-tool.png)](NEUTRINO-101/open-neutrino-tuning-support-tool.png)
+![open neutrino tuning support tool](open-neutrino-tuning-support-tool.png)
 
 点击右侧文件夹图标，指定 NEUTRINO 引擎所在的位置（即上述 program structure 显示的 NEUTRINO 文件夹所在路径）。
 
-[![set neutrino folder path](NEUTRINO-101/set-neutrino-folder-path.png)](NEUTRINO-101/set-neutrino-folder-path.png)
+![set neutrino folder path](set-neutrino-folder-path.png)
 
 调声工具支持英语或日语。如有需要可切换为另一种语言。
 
@@ -164,7 +152,7 @@ tags:
 将 `Jam-SongData` 下的 `TrackA` 或 `TrackB` 拖入调声工具中。现在应该能在乐曲的开头看见调号、拍号以及曲速，在第 14 小节附近看见已填好词的音符。但点击屏幕上的播放按钮或按空格播放时，是没有声音的，TIMING 等参数也处于不可编辑的状态。
 点击 NEUTRINO 选项卡，选择 NEUTRINO Control Panel 选项，调出 NEUTRINO 控制面板。
 
-[![open neutrino control panel](NEUTRINO-101/open-neutrino-control-panel.png)](NEUTRINO-101/open-neutrino-control-panel.png)
+![open neutrino control panel](open-neutrino-control-panel.png)
 
 Parameter Estimation（参数估算）下唯一的选项 NEUTRINO 将会使用选择的模型（歌手），根据乐谱估算音高、声质、颤音，并生成中间文件以备合成。
 Synthesis（合成）下提供了两种合成声音的选项：
@@ -172,11 +160,12 @@ Synthesis（合成）下提供了两种合成声音的选项：
 - WORLD 选项会根据中间文件合成声音。运行完 NEUTRINO 后在调声界面的试听使用的音频即为该模式生成的音频。
 - NSF 选项同样根据中间文件合成声音，不过它使用了神经网络，质量更高、更自然，但需要支持 CUDA 的 GPU 和至少 3GB 的显存，导出所需的时间也更长。
 
-[![neutrino control panel](NEUTRINO-101/neutrino-control-panel.png)](NEUTRINO-101/neutrino-control-panel.png)
+![neutrino control panel](neutrino-control-panel.png)
 
 点击 NEUTRINO 选项，在 Model 中选择一位歌手（默认为 MERROW），然后点击 Run NEUTRINO 开始估算。
 
-[![parameter estimation neutrino](NEUTRINO-101/parameter-estimation-neutrino.png)](NEUTRINO-101/parameter-estimation-neutrino.png)
+![parameter estimation neutrino](parameter-estimation-neutrino.png)
+
 
 待 Run Process 窗口的进度条显示 Completed 时，点击 Close 关闭窗口，回到调声界面。此时调声工具应在左下角显示 Run WORLD 并自动开始运行 WORLD。等这行字消失后，于第 14 小节附近点击灰色的小节栏，将光标移至乐谱的开头，然后点击屏幕上的播放按钮，或按下空格，播放音频。若听到选择的歌手唱出《Jam》的歌词，说明 NEUTRINO 引擎和调声工具都已配置完成并处于正常运行的状态。
 
@@ -184,11 +173,11 @@ Synthesis（合成）下提供了两种合成声音的选项：
 
 创建一个新的项目。随便起个名。
 
-[![create new project](NEUTRINO-101/create-new-project.png)](NEUTRINO-101/create-new-project.png)
+![create new project](create-new-project.png)
 
 将光标移至开头，在小节栏上右击。右键菜单从上到下依次是曲速、节拍以及调号的添加选项。根据需要修改。调声工具会在**光标所在位置**插入修改后的设置。
 
-[![add tempo](NEUTRINO-101/add-tempo.png)](NEUTRINO-101/add-tempo.png)
+![add tempo](add-tempo.png)
 
 工具栏中有四个工具，从左到右依次为选择工具 (Select)、画笔工具 (Draw)、擦除工具 (Eraser) 与粘合工具（Glue，原意是胶水）。
 
@@ -201,7 +190,7 @@ Synthesis（合成）下提供了两种合成声音的选项：
 
 切换到画笔，在钢琴窗上点击并拖动，画一些音符。
 
-[![draw scale](NEUTRINO-101/draw-scale.png)](NEUTRINO-101/draw-scale.png)
+![draw scale](draw-scale.png)
 
 画笔工具移动到音符内时可以通过单击并拖拽的方式移动音符；移动到音符边缘变为 ↔ 的形状时，可以通过单击并左右拖拽的方式调整音符长度。
 调出 NEUTRINO 控制面板运行 NEUTRINO，就能听到效果。
@@ -213,11 +202,11 @@ Synthesis（合成）下提供了两种合成声音的选项：
 
 音符重叠时，重叠的音符颜色会变浅。
 
-[![note overlap](NEUTRINO-101/note-overlap.png)](NEUTRINO-101/note-overlap.png)
+![note overlap](note-overlap.png)
 
 切换到 TIMING、PITCH 或 DYNAMICS 页，勾选旁边的复选框，可以叠加显示参数。
 
-[![show timing, pitch dynamics](NEUTRINO-101/show-timing-pitch-dynamics.png)](NEUTRINO-101/show-timing-pitch-dynamics.png)
+![show timing, pitch dynamics](show-timing-pitch-dynamics.png)
 
 （中间这段时间大概是有人问为什么按照设置走了，但还是听不到 Akane 和 Aoi 的声音，只能听到钢琴声。两个人思考了一下，给出的答案大概是检查一下声库和引擎版本。）
 
@@ -227,11 +216,11 @@ Synthesis（合成）下提供了两种合成声音的选项：
 使用选择工具批量选择待填入歌词的音符；或是选择一个音符，然后按住 <kbd>Shift</kbd> 键，然后选择另一个音符，来批量选择音符。
 在音符上右键，然后选择 Pouring Lyrics（灌入歌词）。这将会从选择的音符开始填入歌词。
 
-[![pouring lyrics](NEUTRINO-101/pouring-lyrics.png)](NEUTRINO-101/pouring-lyrics.png)
+![pouring lyrics](pouring-lyrics.png)
 
 例如，从第一个音符处填入「おねえちゃんかわい」，然后点击确定。
 
-[![pouring lyrics 2](NEUTRINO-101/pouring-lyrics-2.png)](NEUTRINO-101/pouring-lyrics-2.png)
+![pouring lyrics 2](pouring-lyrics-2.png)
 
 重新生成后应该能听到这样的声音：
 
@@ -250,19 +239,19 @@ Synthesis（合成）下提供了两种合成声音的选项：
 
 选择待转换的工程文件，导入到网站中。
 
-[![utaformatix select file](NEUTRINO-101/utaformatix-select-file.png)](NEUTRINO-101/utaformatix-select-file.png)
+![utaformatix select file](utaformatix-select-file.png)
 
 下拉，找到 MusicXml 一项，点击。
 
-[![utaformatix select format](NEUTRINO-101/utaformatix-select-format.png)](NEUTRINO-101/utaformatix-select-format.png)
+![utaformatix select format](utaformatix-select-format.png)
 
 确认设置后点击下一步。
 
-[![utaformatix setting](NEUTRINO-101/utaformatix-setting.png)](NEUTRINO-101/utaformatix-setting.png)
+![utaformatix setting](utaformatix-setting.png)
 
 点击导出，下载打包好的 .musicxml 文件。
 
-[![utaformatix export](NEUTRINO-101/utaformatix-export.png)](NEUTRINO-101/utaformatix-export.png)
+![utaformatix export](utaformatix-export.png)
 
 #### 0:50:41 CeVIO
 
@@ -272,7 +261,7 @@ Synthesis（合成）下提供了两种合成声音的选项：
 
 使用「导出MusicXML」一项便可以把当前轨道导出为 .musicxml 文件。
 
-[![CeVIO](NEUTRINO-101/cevio.png)](NEUTRINO-101/cevio.png)
+![CeVIO](cevio.png)
 
 （栗田一直在说缘兔可爱hhh）
 
@@ -297,9 +286,9 @@ CeVIO AI 与 CS 版本均有此功能。
 
 中场休息：《じゃむ。》
 
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
     <iframe src="//player.bilibili.com/player.html?bvid=BV1jg411X7yn&high_quality=1"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
-</div>
+</div> -->
 
 ---
 
@@ -316,12 +305,12 @@ CeVIO AI 与 CS 版本均有此功能。
 
 首先第一句，あまがみしないで处的 `ない`，Akane 唱成了 na i。按日语的唱法来说应该唱成连贯的 nai。观察波形和音高可以注意到，Akane 在这里甚至刻意用了点力。这并不是我们想要的。
 
-[![score editing nai](NEUTRINO-101/score-editing-nai.png)](NEUTRINO-101/score-editing-nai.png)
+![score editing nai](score-editing-nai.png)
 
 选择粘合工具（快捷键 <kbd>4</kbd>），点击 `な`，将后面的 `い` 与其合并。连续点击的话，会以点击的音符为首，一直合并后面的音符。
 合并后的效果需要重新用 NEUTRINO 生成才能听到。重新生成后的波形和音高就变成了下图所示的样子。断连感消失了。
 
-[![score editing nai-2](NEUTRINO-101/score-editing-nai-2.png)](NEUTRINO-101/score-editing-nai-2.png)
+![score editing nai-2](score-editing-nai-2.png)
 
 遗憾的是目前调声工具没有分割工具。要把合到一起的音符拆开——比如还是这个 `ない`——目前只能先缩减原音符的时长，用画笔工具画一个新音符，然后双击原音符，把歌词中的 `い` 复制到新音符中。可能以后会有吧（
 
@@ -329,14 +318,14 @@ CeVIO AI 与 CS 版本均有此功能。
 
 撤销的快捷键为 <kbd>Ctrl+Z</kbd>。重做的快捷键为 <kbd>Ctrl+Shift+Z</kbd>。在 Menu 中可以查看操作历史记录。
 
-[![editing history](NEUTRINO-101/edit-history.png)](NEUTRINO-101/edit-history.png)
+![editing history](edit-history.png)
 
 #### 1:22:01 音符的右键菜单：设置与取消换气
 
 在音符上右击可以调出音符的右键菜单。选中一个音符后再右击，可以使用右键菜单的所有功能。
 请注意，选中某个音符时，不管在哪里按右键（即使是在别的音符上），调出的右键菜单也只会作用于选中的音符上。【请看96 州 1:22:43 起的错误示范（逃）】
 
-[![note right-click menu](NEUTRINO-101/note-right-click-menu.png)](NEUTRINO-101/note-right-click-menu.png)
+![note right-click menu](note-right-click-menu.png)
 
 设置换气（Set Breath）与取消换气（Unset Breath）用于手动指定歌手的换气。一般而言，歌手会自动在音符间的间隔之间换气，如果有想让歌手在音符中途换气的地方，就可以用这个功能来强制让歌手换气。
 （NEUTRINO 不像 CeVIO 那样自动生成呼吸音，要添加呼吸音的话还是得用 exVOICE 或者百搭音。）
@@ -345,7 +334,7 @@ CeVIO AI 与 CS 版本均有此功能。
 示例：
 原本的乐谱：
 
-[![unset breath](NEUTRINO-101/unset-breath.png)](NEUTRINO-101/unset-breath.png)
+![unset breath](unset-breath.png)
 
 <audio controls="TrackA-unset-breath">
   <source type="audio/wav" src="TrackA-unset-breath.wav"></source>
@@ -354,7 +343,7 @@ CeVIO AI 与 CS 版本均有此功能。
 
 手动指定换气后：
 
-[![set breath](NEUTRINO-101/set-breath.png)](NEUTRINO-101/set-breath.png)
+![set breath](set-breath.png)
 
 <audio controls="TrackA-set-breath">
   <source type="audio/wav" src="TrackA-set-breath.wav"></source>
@@ -385,20 +374,20 @@ CeVIO AI 与 CS 版本均有此功能。
 由于修改 TIMING 会影响 NEUTRINO 对 PITCH 与 DYNAMICS 推算的结果，所以优先建议修改 TIMING。如果先前有 CeVIO 的调声经验的话应该对 TIMING 不陌生（可以直接跳过这节）。
 NEUTRINO 使用的音素表请从它的 Google Drive 下载。
 
-[![phoneme](NEUTRINO-101/phoneme.png)](NEUTRINO-101/phoneme.png)
+![phoneme](phoneme.png)
 
 每条蓝线代表一个音素实际发声位置的开始。例如开头的 `a` 代表着「あ」开始发声的位置；`m` 和 `a` 分别代表了「ま」中「m」和「a」开始发声的位置。结合波形可以看得更清楚。
 在蓝线上左右拖拽可以调整发音的起始位置。同样，需要调用 NEUTRINO 重新生成才能看到效果。注意到调声助手已经自动勾选了「Hold the timing (use the edited timing) 」【维持时间（使用已编辑的时间）】一项。
 
-[![phoneme](NEUTRINO-101/edited-timing-generate.png)](NEUTRINO-101/edited-timing-generate.png)
+![phoneme](edited-timing-generate.png)
 
 修改后的效果：
 
-[![phoneme](NEUTRINO-101/edited-timing-generate-2.png)](NEUTRINO-101/edited-timing-generate-2.png)
+![phoneme](edited-timing-generate-2.png)
 
 之前讲到的“手动指定换气”里，停顿的时间就可以用 TIMING 细调。
 
-有个规则：想强调哪个音，就把它的辅音(比如「ま」的「m」）稍微往前拉长一点。
+有个规则：想强调哪个音，就把它的辅音（比如「ま」的「m」）稍微往前拉长一点。
 另外，比如说，像上图的「が」，它的「a」开始的位置并不是严格踩在音符「が」开始的位置，而是稍微往后一点。在日本那边有个词叫「後ノリ」，用来形容这种稍稍滞后于节奏的情况。与之相对应的词叫「前ノリ」，就是稍微前一点的情况。
 
 TIMING 的调声风格因人而异。请根据你的喜好调整 TIMING。
@@ -407,7 +396,7 @@ TIMING 的调声风格因人而异。请根据你的喜好调整 TIMING。
 
 > 96 州：这是最有意思的地方。真的，是最有意思的地方。
 
-[![tools for editing pitch](NEUTRINO-101/pitch-tools.png)](NEUTRINO-101/pitch-tools.png)
+![tools for editing pitch](pitch-tools.png)
 
 PITCH 包含了许多工具，从左到右依次为：
 
@@ -424,23 +413,23 @@ PITCH 包含了许多工具，从左到右依次为：
 颤音工具可以细调选择范围内的颤音深度 (Depth) 与频率 (Frequence) 。调整后，按 <kbd>Enter</kbd> 就能直接将颤音应用到音高上；或者按 <kbd>Esc</kbd> 放弃更改。
 这个工具另带一个参数设置。点击工具栏旁边的齿轮，就能调节振幅 (Amplitude) 与频率 (Frequence) 的极值，以及频率的初始值。
 
-[![edit vibrato](NEUTRINO-101/pitch-vibrato-tool.png)](NEUTRINO-101/pitch-vibrato-tool.png)
+![edit vibrato](pitch-vibrato-tool.png)
 
 画笔工具可以直接在钢琴窗上绘制音高。原始音高会以褐色显示。
 
-[![draw pitch](NEUTRINO-101/pitch-draw-tool.png)](NEUTRINO-101/pitch-draw-tool.png)
+![draw pitch](pitch-draw-tool.png)
 
 平滑工具可以将音高线变得更为平滑。鼠标向下拖动为平滑，拽得越下平滑度越高；向上拖动为回复原本的曲线。
 
-[![make the pitch smoother](NEUTRINO-101/pitch-smooth-tool.png)](NEUTRINO-101/pitch-smooth-tool.png)
+![make the pitch smoother](pitch-smooth-tool.png)
 
 升降工具可以上下移动音高。选择范围内的音高大部分为平行移动，但在选择范围的边缘处，音高会自动与范围外的音高连接。
 
-[![pitch down](NEUTRINO-101/pitch-updown-tool.png)](NEUTRINO-101/pitch-updown-tool.png)
+![pitch down](pitch-updown-tool.png)
 
 机械音工具可以将音高的连接方式变成直上直下的连接。这种音高线发出的声音会如同机器人般机械。名字来源于青蛙叫声的 SFX。
 
-[![make the pitch kerokero](NEUTRINO-101/pitch-kerokero-tool.png)](NEUTRINO-101/pitch-kerokero-tool.png)
+![make the pitch kerokero](pitch-kerokero-tool.png)
 
 <audio controls="TrackA-kerokero-tool">
   <source type="audio/wav" src="TrackA-kerokero-tool.wav"></source>
@@ -449,14 +438,14 @@ PITCH 包含了许多工具，从左到右依次为：
 
 如果在机械音工具后接着再使用平滑工具，能得到非常平滑的音高曲线。再配合颤音工具，就能画出非常漂亮的音高转换。
 
-[![a beautiful pitch](NEUTRINO-101/pitch-kerokero-+-smooth-tool.png)](NEUTRINO-101/pitch-kerokero-+-smooth-tool.png)
+![a beautiful pitch](pitch-kerokero-+-smooth-tool.png)
 
 ### 2:05:20 DYNAMICS 页的操作
 
 这里可以调整音量。实际的音量显示为浅蓝色；原本的音量显示为深蓝色。
 （过于简单甚至两句话就带过去了）
 
-[![dynamics](NEUTRINO-101/dynamics.png)](NEUTRINO-101/dynamics.png)
+![dynamics](dynamics.png)
 
 ## 第四部分 调声
 
@@ -470,52 +459,52 @@ PITCH 包含了许多工具，从左到右依次为：
 
 音高不同的音符合并后，别忘了回 PITCH 页面重新画一下音高线。
 
-#### 2:13:19 めんどうくさいや的调整
+2:13:19 めんどうくさいや的调整
 
 Akane 这里唱着像 mendoukusa iya，有停顿感。96 州打算把这个 sa iya 处理一下，变成更平滑的 saiya。
 处理方法是把 `さ` `い` 合成一个音符。但这样会带来音高的改变：`い` 原本的音高是 E4，跟 `さ` 一合并，就都变成 G#4 了，跟原来的音高不一样了，后面要去 PITCH 窗口画音高线把音高修正回来。
 
-#### 元音无声化（清化）
+元音无声化（清化）
 
-#### 2:17:39 其他行的无声化处理
+2:17:39 其他行的无声化处理
 
 不止 sa 行，其他行也能做无声化处理。
 一个稍稍特殊的用法是 `たい`，Akane 经常会出现发 ta i 而不是 tai 的情况（栗田：就像一个个字蹦出来的那种感觉）。把 `たい` 换成たゆ，然后用 `’` 将元音无声化变成 `たゆ’`（tay）。`たゆ’` 的话，听起来就像是省略的 tay，就出来 tai 的感觉了。替换成 ya/yo 同理。
 > 栗田：前面的あまがみしないで的ない也可以换成 nay，对吗
 > 96 州：对的
 
-#### 2:20:22 きゅう的调整
+2:20:22 きゅう的调整
 
 Akane 在这里的发音很违和。为了更平滑，把 `きゅ` 和 `う` 合并后，直接删掉 `う`，只留 `きゅ` 的音。
 毕竟 Akane 在唱きゅう的时候会唱成 kyu u，所以这时候就不需要う来体现长音了；取而代之的是拉长きゅ，用拉长音符的方式体现きゅう的长音效果。
 > “きゅう是长音但是 Akane 发不好，所以干脆改成短音然后用拉长音符的方式让她发长一点”
 > ——译者语
 
-#### 2:20:56 ちょ与きゅ间的调整
+2:20:56 ちょ与きゅ间的调整
 
 把 `ちょ` 拉长后后面加一个 `っ`。因为 `ちょ` 和 `きゅ` 中间有音符的空白部分，于是就拉长音符填补空白增加流畅度，但是ちょ不是长音所以加了促音符号补上停顿。
 
-#### 2:22:04 つ的调整
+2:22:04 つ的调整
 
 这段没什么大问题。但如果其他地方的つ发音有问题的话，可以选择把 `つ` 的元音无声化。这里 96 州建议可以试试与前面的 `に` 接起来变成 `につ’`，可能会更加顺滑（他自己没试过）。
 在其他地方的话与后面的 `め` 接起来填成 `つ’め` 也是可以的。但这里如果让他本人来说哪个更好点儿的话，他更倾向于与前面的 `に` 接起来，因为这里的 `め` 正好处在音符的开始位置，填成 `つ’め` 的话感觉就不对了。音符的切入时机也是很重要的。[^1]
 
-#### 2:24:33 えんどれす (endless) 的调整
+2:24:33 えんどれす (endless) 的调整
 
 `え` 和 `ん` 合并。因为是日文歌，所以留着日式英语的发音。`ど` 不做处理也行。要让发音更像英文的话,就用 `えんど’れす’` 。
 这里调完后还得去 TIMING 页里细调发音时机。
 
-#### 2:27:09 さいのはあて的调整
+2:27:09 さいのはあて的调整
 
 `さ` 和 `い` 合并。`は` 和 `あ` 合并后删掉 `あ`。
 
 跟前面さい与きゅう的处理思路差不多。
 
-#### 2:27:30 こんな的调整
+2:27:30 こんな的调整
 
 直接删掉 `ん`。这里听着太长了，把 `ん` 删去，拉长 `こ`，能够构成更不错的听感。而且因为な里已经有个 `n` 了，这种なにぬねの前还有ん的情况有时听着会有种音太多的感觉，这时把ん删了也是一种调声方法。[^2]
 
-#### 2:29:33 crazy nonsense music 的调整
+2:29:33 crazy nonsense music 的调整
 
 删掉く原先的音符，与れい合到一起；な和せ分别与后面的ん合并。す可以选择留着原本的音（因为是日语歌所以留点日语发音也无所谓）music 的 /zɪk/ 通过じく’来实现。
 く’れい　じ　なん　せん　す　みゅ　じく’
@@ -528,11 +517,11 @@ Akane 在这里的发音很违和。为了更平滑，把 `きゅ` 和 `う` 合
 
 （是抽卡呢（抽卡呢
 
-#### 2:31:05 が的调整
+2:31:05 が的调整
 
 通常来说，想唱得平滑的话，应该把が拉长后后面加一个っ。但 96 州这里选择放置不动，因为他想突出后边的い长音（Onega-i-)，而不是像平常说话的语调（Onegai）。这是音乐中的表现了，看个人选择。
 
-#### 2:32:08 ける的调整
+2:32:08 ける的调整
 
 两个合并然后删掉る的元音。这里是る的无声化。
 
