@@ -10,6 +10,16 @@ tags:
 - NEUTRINO
 ---
 
+请配合《第１回 A.I.VOICE 生放送 技術部》（[YouTube 本家](https://youtu.be/38Xt4uvxwnM)；[哔哩哔哩搬运](https://www.bilibili.com/video/BV15t4y1j7f1/)）观看。
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+  <iframe src="https://www.youtube-nocookie.com/embed/38Xt4uvxwnM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+</div>
+
+<!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?bvid=BV15t4y1j7f1&high_quality=1"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+</div> -->
+
 ---
 
 **目录**
@@ -53,13 +63,13 @@ tags:
 
 #### ＜NEUTRINO 本体＞
 
-从 NEUTRINO 官方网站下载最新版：<https://studio-neutrino.com>
+从 NEUTRINO 官方网站下载最新版：[NEUTRINO - NEURAL SINGING SYNTHESIZER](https://studio-neutrino.com)
 
-- NEUTRINO 和它的大部分声库都通过 Google Drive 配布，引擎大小接近 2G。请自备梯子。
+- NEUTRINO 和它的大部分声库都通过 Google Drive 配布。光引擎大小就接近 2G。请自备梯子。
 
 #### ＜NEUTRINO 琴葉 茜・葵＞
 
-从 A.I.VOICE 支持网站下载最新版：<https://aivoice.jp/member/>
+从 A.I.VOICE 支持网站下载最新版：[A.I.VOICE™  ユーザーサポートサイト](https://aivoice.jp/member/)
 ※必须预先注册 A.I.VOICE 琴葉 茜・葵
 
 - 没有买的话，用 AI 切蒲英、Merrow 等 NEUTRINO 的其他声库也能跟完这个教程，但不同声库的效果可能会有所不同。
@@ -67,12 +77,13 @@ tags:
 下载方式：
 
 1. 进入 A.I.VOICE 的支持网站，在右侧登录账号（如果没有账号，请点下面的「新規登録」注册一个账号）；
-   ![login to aivoice support website](aivoice-support-website.png)](aivoice-support-website.png)
+   ![login to aivoice support website](aivoice-support-website.png)
 2. 点击「製品情報」，检查账号中是否有「A.I.VOICE 琴葉 茜・葵」；
-   ![check product info](aivoice-check-product-info.png)](aivoice-check-product-info.png)
+   ![check product info](aivoice-check-product-info.png)
 3. 点击「ダウンロード」，跳转到下载页面；
 4. 点击特典切换到特典页，然后找到最新的「琴葉 茜（NEUTRINO-Library）」与「琴葉 葵（NEUTRINO-Library）」，点击链接下载。
-   ![download library in aivoice download page](aivoice-download-page.png)](aivoice-download-page.png)
+   ![download library in aivoice download page](aivoice-download-page.png)
+   
    <!-- - 注：但是现在 A.I.VOICE 的特典页有 bug，点击链接后，地址栏会一闪而过下载链接，然后**直接回退到特典页，而且并不会启动下载**。如果一直没法复制到下载链接，可以试试通过下列两个链接直接下载：
     <https://aivoice.jp/member/downloads/extra/241>（琴葉 葵（NEUTRINO-Library）_v1.2.0.zip）
     <https://aivoice.jp/member/downloads/extra/242>（琴葉 茜（NEUTRINO-Library）_v1.2.0.zip）
@@ -80,7 +91,7 @@ tags:
 
 #### ＜NEUTRINO 調声支援ツール（NEUTRINO 调声支援工具）＞
 
-从 GitHub 下载最新版：<https://github.com/sigprogramming/tyouseisientool/releases>
+从 GitHub 下载最新版：[Releases · sigprogramming/tyouseisientool](https://github.com/sigprogramming/tyouseisientool/releases)
 
 - 直播时最新的版本为 1.7.4.6。只需下载当前最新的版本即可，不需要用跟视频里一样的版本。
 - 注意：不要下载版本号后跟 `-beta` 的 beta 版。beta 版有出 bug 的可能。
@@ -101,15 +112,24 @@ tags:
 
 #### 放置文件
 
-解压下载好的所有文件。NEUTRINO 本体、NEUTRINO 调声支援工具和乐曲数据的位置随意。为了方便操作，建议放在同一个文件夹下。
+解压下载好的所有文件。NEUTRINO 本体、NEUTRINO 调声支援工具和乐曲数据的位置随意，但为了方便操作，建议放在同一个文件夹下。
 
 将 `琴葉 茜（NEUTRINO-Library）` 文件夹内的 `AKANE` 移动到 `\NEUTRINO\model` 文件下。对 `琴葉 葵（NEUTRINO-Library）` 文件夹内的 `AOI` 做同样的操作。
 
-全部完成后，文件夹结构应该类似下列的 program structure：
+假设文件夹名为 `NeuKOTONOHA`。全部完成后，文件夹结构应该类似下列的 program structure（已省略部分本次讲座中未涉及的文件与文件夹）：
 
-```txt
-.
+```powershell
+$ tree NeuKOTONOHA
+卷 Local Disk 的文件夹 PATH 列表
+卷序列号为 0000000A C2BE:6ACA
+C:\...\NEUKOTONOHA
 ├─Jam-SongData
+│      jam Inst_2mix4816_BPM165.wav
+│      jam Inst_mastered4816_BPM165.wav
+│      readme.txt
+│      TrackA.xml
+│      TrackB.xml
+│
 ├─NEUTRINO
 │  ├─bin
 │  ├─LICENSE
@@ -122,8 +142,8 @@ tags:
 │  │  ├─label
 │  │  └─musicxml
 │  └─settings
-│      └─dic
 └─NEUTRINOTyouseiSienTool
+    │  NEUTRINOTyouseiSienTool.exe
     ├─Backup
     ├─bin
     ├─ja-JP
@@ -286,15 +306,15 @@ CeVIO AI 与 CS 版本均有此功能。
 
 中场休息：《じゃむ。》
 
-<!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
     <iframe src="//player.bilibili.com/player.html?bvid=BV1jg411X7yn&high_quality=1"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
-</div> -->
+</div>
 
 ---
 
 ## 1:08:07 第三部分 学习操作
 
-> 96 州：选曲固然重要，但在曲子之外也要想象这两个歌姬在场这首歌的时候会带着怎么样的情感。
+> 96 州：选曲固然重要，但在曲子之外也要想象这两个歌姬在唱这首歌的时候会带着怎么样的情感。
 > 栗田：也就是在唱某句的时候怎么样演绎会更好一点。
 
 重新打开 TrackA，用 Akane 的 model 运行一遍 NEUTRINO。接下来的第三与第四部分都将让 Akane 来做示范。
@@ -362,12 +382,16 @@ CeVIO AI 与 CS 版本均有此功能。
 
 （正式开始在1:36:00，中间这几分钟两人聊上头了）
 
-> 栗田：在作曲者的角度要（把 SCORE）调到“好，她唱出来了”之后再开始调整其他内容。
-> 栗田：（调整其他内容的过程）就像是，琴叶姐妹进录音现场录了一段唱歌内容之后，如果（在调整之后）让她们重新唱一遍的话，之前的那个感觉就会消失掉。
-> 96 州：因此，至少在让她们唱过一遍之后再去调整其余部分。
-> 96 州：使用 SCORE 制作曲谱后让她们唱的过程就像是去录音，之后调整 PITCH 之类的过程就相当于是让她们去重唱，因此和调整之前的感觉会不同。
-> 96 州：所以一般来讲是先调整 SCORE 到“好，挺完美的了，只要（对声音）稍加调整就完全能用了”的这种状态之后再去调整 PITCH 之类的内容。
-> 栗田 & 96 州：也就是说，不要把她们当作软件音源，而是要把她们当作就在你身边唱歌的人来对待，把调音当作请她们唱歌一样对待，这种态度很重要。
+> 栗田：每次执行 NEUTRINO 的时候，其实都像是直接操作琴叶姐妹的 NEUTRINO 大脑来重新唱一遍。与此相对的，跟作曲比，我们的调声就像是拿鸡毛掸子扫灰一样。想象出来的话，就像是琴叶姐妹进了录音室录了一段歌之后，我们做了调整，让她们再唱的时候，之前的那个感觉就会消失掉。因此，至少在让她们唱过一遍之后再去调声。
+> 96 州：对，因为在 SCORE 页制作乐谱让她们唱以及调整 TIMING 的过程就像是去录音；之后调整 PITCH 之类的过程就相当于是让她们去重唱，因此和调整之前的感觉会不同。让 NEUTRINO 的 Akane 唱的时候，基本上来说，一般来讲是先调整（SCORE 和 TIMING）到“好，挺完美的了，只要（对声音）稍加调整就完全能用了”的这种状态之后再去调整 PITCH 之类的内容。
+> 栗田：懂了懂了。也就是说，不要把她们想成软件音源，而是“琴叶姐妹就在这里”，这种态度很重要。
+> 96 州：她们活起来了。（笑）
+> 栗田：（笑）活着呢！她们就在你身边唱歌呢！绝对别忘了！
+> 96 州：所以说大家不要弄错了，其实就是琴叶姐妹在唱，不是什么软件在唱。
+> 栗田：对于这个来说，就像是“诶，再为你唱一次吧”的感觉。
+> 96 州：但是，如果之前已经调整过 PITCH 的话，她们会顶嘴的哦（大概是指编辑过的 PITCH 又变回编辑前的状态吧）。虽然不会真的顶嘴。
+> 栗田：理解了。
+> 96 州：所以说，虽然说了很多次了，对待 NEUTRINO 和人类的（方式）其实没有什么不同。如果能意识到这一点就很不错了。
 
 调声工具左侧的参数排列其实就是推荐的调声步骤：在 TIMING 页调整发声时机→在 PITCH 页调整音高→在 DYNAMICS 页调整音量的动态。
 
@@ -464,7 +488,24 @@ PITCH 包含了许多工具，从左到右依次为：
 Akane 这里唱着像 mendoukusa iya，有停顿感。96 州打算把这个 sa iya 处理一下，变成更平滑的 saiya。
 处理方法是把 `さ` `い` 合成一个音符。但这样会带来音高的改变：`い` 原本的音高是 E4，跟 `さ` 一合并，就都变成 G#4 了，跟原来的音高不一样了，后面要去 PITCH 窗口画音高线把音高修正回来。
 
-元音无声化（清化）
+2:13:47 すき的元音无声化（清化）
+
+这里唱得也有些不连贯。把 `す` 原先所在的音符删掉，拉长前面的 `や`，然后把 `き` 所在的音符的歌词改为 `す’き`。这样发音就从 suki 变成了 ski。
+
+在 NEUTRINO 中，用于执行清化操作的符号为 `’`。
+> ・母音脱落記号「’」を用いた場合、母音の音素が省略され子音の音素のみの発音となります。(例:♪いつ’ؙ  ♪か → ♪i ts / k a、♪ス’カ ♪イ → ♪s k a / i)
+> ——NEUTRINO《ひらがな・音素一覧表》
+
+从日语发音的角度解释：
+
+> 在日语的普通话中，有几个原因在一定条件下只保留元音的口型和舌位而不发声。这就叫“元音的清化”。它有两个原则：
+> ① 5个元音中“い”和“う”容易出现清化，其他则较少；
+> ② 夹在“k（か行）”“s（さ行）”“t（た行）”“h（は行）”“p（ぱ行）”的中间元音，或是含有这些行辅音的音节出现在句尾时，其最后的元音容易发生清化的现象。
+> ——《新中日交流标准日本语》
+
+这是说话的情况。对唱歌来说，当这些字的时值较短（比如 32 分）时，像“キ”、“ク”这些，就可以直接全部无声化。
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">短く瞬間的に発音する「キ・ク・シ・ス・チ・ツ」は母音を消して子音だけ鳴らすと自然に聴こえる<a href="https://twitter.com/hashtag/%E6%96%B0%E4%BA%BA%E3%83%9C%E3%82%AB%E3%83%ADP%E3%81%93%E3%82%8C%E3%81%A0%E3%81%91%E3%81%AF%E3%82%84%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%91?src=hash&amp;ref_src=twsrc%5Etfw">#新人ボカロPこれだけはやっておけ</a></p>&mdash; ノイ (@n0yn0yn0y) <a href="https://twitter.com/n0yn0yn0y/status/1428342860542189572?ref_src=twsrc%5Etfw">August 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 2:17:39 其他行的无声化处理
 
@@ -506,24 +547,23 @@ Akane 在这里的发音很违和。为了更平滑，把 `きゅ` 和 `う` 合
 
 2:29:33 crazy nonsense music 的调整
 
-删掉く原先的音符，与れい合到一起；な和せ分别与后面的ん合并。す可以选择留着原本的音（因为是日语歌所以留点日语发音也无所谓）music 的 /zɪk/ 通过じく’来实现。
+删掉 `く` 原先的音符，与 `れい` 合到一起；`な` 和 `せ` 分别与后面的 `ん` 合并。`す` 可以选择留着原本的音（因为是日语歌所以留点日语发音也无所谓）。music 的 /zɪk/ 通过 `じく’` 来实现。
 く’れい　じ　なん　せん　す　みゅ　じく’
 
 2:30:44
 
-栗田：怎么看你（操作）有种抽卡的感觉
-
-96 州：是抽卡呢，因为现在这样（操作）虽然是在往正确的路上走，但是究竟正不正确还得等最后渲染合成之后才能知道。
+> 栗田：怎么看你（操作）有种抽卡的感觉
+> 96 州：是抽卡呢，因为现在这样（操作）虽然是在往正确的路上走，但是究竟正不正确还得等最后渲染合成之后才能知道。
 
 （是抽卡呢（抽卡呢
 
 2:31:05 が的调整
 
-通常来说，想唱得平滑的话，应该把が拉长后后面加一个っ。但 96 州这里选择放置不动，因为他想突出后边的い长音（Onega-i-)，而不是像平常说话的语调（Onegai）。这是音乐中的表现了，看个人选择。
+通常来说，想唱得平滑的话，应该把 `が` 拉长后后面加一个 `っ`。但 96 州这里选择放置不动，因为他想突出后边的い长音（Onega-i-)，而不是像平常说话的语调（Onegai）。这是音乐中的表现了，看个人选择。
 
 2:32:08 ける的调整
 
-两个合并然后删掉る的元音。这里是る的无声化。
+两个合并然后删掉 `る` 的元音。这里是る的无声化。
 
 ### 2:33:09 调整 TIMING，从更细节的地方调整发音
 
