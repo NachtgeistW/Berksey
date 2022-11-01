@@ -270,7 +270,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><hr />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>请配合《第１回 A.I.VOICE 生放送 技術部》（<a target="_blank" rel="noopener" href="https://youtu.be/38Xt4uvxwnM">YouTube 本家</a>；<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15t4y1j7f1/">哔哩哔哩搬运</a>）观看。</p>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+  <iframe src="https://www.youtube-nocookie.com/embed/38Xt4uvxwnM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+</div>
+<!-- <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?bvid=BV15t4y1j7f1&high_quality=1"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+</div> -->
+<hr />
 <p><strong>目录</strong></p>
 <ul>
 <li><a href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E5%87%86%E5%A4%87">第一部分 准备</a>
@@ -332,12 +339,12 @@
 <h2 id="第一部分-准备"><a class="markdownIt-Anchor" href="#第一部分-准备"></a> 第一部分 准备</h2>
 <h3 id="下载"><a class="markdownIt-Anchor" href="#下载"></a> 下载</h3>
 <h4 id="neutrino-本体"><a class="markdownIt-Anchor" href="#neutrino-本体"></a> ＜NEUTRINO 本体＞</h4>
-<p>从 NEUTRINO 官方网站下载最新版：<a target="_blank" rel="noopener" href="https://studio-neutrino.com">https://studio-neutrino.com</a></p>
+<p>从 NEUTRINO 官方网站下载最新版：<a target="_blank" rel="noopener" href="https://studio-neutrino.com">NEUTRINO - NEURAL SINGING SYNTHESIZER</a></p>
 <ul>
-<li>NEUTRINO 和它的大部分声库都通过 Google Drive 配布，引擎大小接近 2G。请自备梯子。</li>
+<li>NEUTRINO 和它的大部分声库都通过 Google Drive 配布。光引擎大小就接近 2G。请自备梯子。</li>
 </ul>
 <h4 id="neutrino-琴葉-茜葵"><a class="markdownIt-Anchor" href="#neutrino-琴葉-茜葵"></a> ＜NEUTRINO 琴葉 茜・葵＞</h4>
-<p>从 A.I.VOICE 支持网站下载最新版：<a target="_blank" rel="noopener" href="https://aivoice.jp/member/">https://aivoice.jp/member/</a><br />
+<p>从 A.I.VOICE 支持网站下载最新版：<a target="_blank" rel="noopener" href="https://aivoice.jp/member/">A.I.VOICE™  ユーザーサポートサイト</a><br />
 ※必须预先注册 A.I.VOICE 琴葉 茜・葵</p>
 <ul>
 <li>没有买的话，用 AI 切蒲英、Merrow 等 NEUTRINO 的其他声库也能跟完这个教程，但不同声库的效果可能会有所不同。</li>
@@ -365,7 +372,7 @@
 </li>
 </ol>
 <h4 id="neutrino-調声支援ツールneutrino-调声支援工具"><a class="markdownIt-Anchor" href="#neutrino-調声支援ツールneutrino-调声支援工具"></a> ＜NEUTRINO 調声支援ツール（NEUTRINO 调声支援工具）＞</h4>
-<p>从 GitHub 下载最新版：<a target="_blank" rel="noopener" href="https://github.com/sigprogramming/tyouseisientool/releases">https://github.com/sigprogramming/tyouseisientool/releases</a></p>
+<p>从 GitHub 下载最新版：<a target="_blank" rel="noopener" href="https://github.com/sigprogramming/tyouseisientool/releases">Releases · sigprogramming/tyouseisientool</a></p>
 <ul>
 <li>直播时最新的版本为 1.7.4.6。只需下载当前最新的版本即可，不需要用跟视频里一样的版本。</li>
 <li>注意：不要下载版本号后跟 <code>-beta</code> 的 beta 版。beta 版有出 bug 的可能。</li>
@@ -381,10 +388,10 @@
 从 A.I.VOICE 的网站下载：<a target="_blank" rel="noopener" href="https://aivoice.jp/tech/Jam-SongData.zip">https://aivoice.jp/tech/Jam-SongData.zip</a></p>
 <h3 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h3>
 <h4 id="放置文件"><a class="markdownIt-Anchor" href="#放置文件"></a> 放置文件</h4>
-<p>解压下载好的所有文件。NEUTRINO 本体、NEUTRINO 调声支援工具和乐曲数据的位置随意。为了方便操作，建议放在同一个文件夹下。</p>
+<p>解压下载好的所有文件。NEUTRINO 本体、NEUTRINO 调声支援工具和乐曲数据的位置随意，但为了方便操作，建议放在同一个文件夹下。示例用的文件夹名为 <code>NeuKOTONOHA</code>。</p>
 <p>将 <code>琴葉 茜（NEUTRINO-Library）</code> 文件夹内的 <code>AKANE</code> 移动到 <code>\NEUTRINO\model</code> 文件下。对 <code>琴葉 葵（NEUTRINO-Library）</code> 文件夹内的 <code>AOI</code> 做同样的操作。</p>
-<p>全部完成后，文件夹结构应该类似下列的 program structure：</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├─Jam-SongData</span><br><span class="line">├─NEUTRINO</span><br><span class="line">│  ├─bin</span><br><span class="line">│  ├─LICENSE</span><br><span class="line">│  ├─model</span><br><span class="line">│  │  ├─AKANE</span><br><span class="line">│  │  ├─AOI</span><br><span class="line">│  │  └─MERROW</span><br><span class="line">│  ├─output</span><br><span class="line">│  ├─score</span><br><span class="line">│  │  ├─label</span><br><span class="line">│  │  └─musicxml</span><br><span class="line">│  └─settings</span><br><span class="line">│      └─dic</span><br><span class="line">└─NEUTRINOTyouseiSienTool</span><br><span class="line">    ├─Backup</span><br><span class="line">    ├─bin</span><br><span class="line">    ├─ja-JP</span><br><span class="line">    ├─log</span><br><span class="line">    └─temp</span><br></pre></td></tr></table></figure>
+<p>全部完成后，文件夹结构应该类似下列的 program structure（已省略部分本次讲座中未涉及的文件与文件夹）：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> tree NeuKOTONOHA</span><br><span class="line">卷 Local Disk 的文件夹 PATH 列表</span><br><span class="line">卷序列号为 <span class="number">0000000</span>A C2BE:<span class="number">6</span>ACA</span><br><span class="line">C:\...\NEUKOTONOHA</span><br><span class="line">├─Jam<span class="literal">-SongData</span></span><br><span class="line">│      jam Inst_2mix4816_BPM165.wav</span><br><span class="line">│      jam Inst_mastered4816_BPM165.wav</span><br><span class="line">│      readme.txt</span><br><span class="line">│      TrackA.xml</span><br><span class="line">│      TrackB.xml</span><br><span class="line">│</span><br><span class="line">├─NEUTRINO</span><br><span class="line">│  ├─bin</span><br><span class="line">│  ├─LICENSE</span><br><span class="line">│  ├─model</span><br><span class="line">│  │  ├─AKANE</span><br><span class="line">│  │  ├─AOI</span><br><span class="line">│  │  └─MERROW</span><br><span class="line">│  ├─output</span><br><span class="line">│  ├─score</span><br><span class="line">│  │  ├─label</span><br><span class="line">│  │  └─musicxml</span><br><span class="line">│  └─settings</span><br><span class="line">└─NEUTRINOTyouseiSienTool</span><br><span class="line">    │  NEUTRINOTyouseiSienTool.exe</span><br><span class="line">    ├─Backup</span><br><span class="line">    ├─bin</span><br><span class="line">    ├─ja<span class="literal">-JP</span></span><br><span class="line">    ├─log</span><br><span class="line">    └─temp</span><br></pre></td></tr></table></figure>
 <h4 id="配置-neutrino-调声支援工具"><a class="markdownIt-Anchor" href="#配置-neutrino-调声支援工具"></a> 配置 NEUTRINO 调声支援工具</h4>
 <p>双击 NEUTRINOTyouseiSienTool.exe 运行。在如图所示的位置点击，打开设置页面。</p>
 <p><img src="open-neutrino-tuning-support-tool.png" alt="open neutrino tuning support tool" /></p>
