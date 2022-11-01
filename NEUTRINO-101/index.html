@@ -388,9 +388,9 @@
 从 A.I.VOICE 的网站下载：<a target="_blank" rel="noopener" href="https://aivoice.jp/tech/Jam-SongData.zip">https://aivoice.jp/tech/Jam-SongData.zip</a></p>
 <h3 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h3>
 <h4 id="放置文件"><a class="markdownIt-Anchor" href="#放置文件"></a> 放置文件</h4>
-<p>解压下载好的所有文件。NEUTRINO 本体、NEUTRINO 调声支援工具和乐曲数据的位置随意，但为了方便操作，建议放在同一个文件夹下。示例用的文件夹名为 <code>NeuKOTONOHA</code>。</p>
+<p>解压下载好的所有文件。NEUTRINO 本体、NEUTRINO 调声支援工具和乐曲数据的位置随意，但为了方便操作，建议放在同一个文件夹下。</p>
 <p>将 <code>琴葉 茜（NEUTRINO-Library）</code> 文件夹内的 <code>AKANE</code> 移动到 <code>\NEUTRINO\model</code> 文件下。对 <code>琴葉 葵（NEUTRINO-Library）</code> 文件夹内的 <code>AOI</code> 做同样的操作。</p>
-<p>全部完成后，文件夹结构应该类似下列的 program structure（已省略部分本次讲座中未涉及的文件与文件夹）：</p>
+<p>假设文件夹名为 <code>NeuKOTONOHA</code>。全部完成后，文件夹结构应该类似下列的 program structure（已省略部分本次讲座中未涉及的文件与文件夹）：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> tree NeuKOTONOHA</span><br><span class="line">卷 Local Disk 的文件夹 PATH 列表</span><br><span class="line">卷序列号为 <span class="number">0000000</span>A C2BE:<span class="number">6</span>ACA</span><br><span class="line">C:\...\NEUKOTONOHA</span><br><span class="line">├─Jam<span class="literal">-SongData</span></span><br><span class="line">│      jam Inst_2mix4816_BPM165.wav</span><br><span class="line">│      jam Inst_mastered4816_BPM165.wav</span><br><span class="line">│      readme.txt</span><br><span class="line">│      TrackA.xml</span><br><span class="line">│      TrackB.xml</span><br><span class="line">│</span><br><span class="line">├─NEUTRINO</span><br><span class="line">│  ├─bin</span><br><span class="line">│  ├─LICENSE</span><br><span class="line">│  ├─model</span><br><span class="line">│  │  ├─AKANE</span><br><span class="line">│  │  ├─AOI</span><br><span class="line">│  │  └─MERROW</span><br><span class="line">│  ├─output</span><br><span class="line">│  ├─score</span><br><span class="line">│  │  ├─label</span><br><span class="line">│  │  └─musicxml</span><br><span class="line">│  └─settings</span><br><span class="line">└─NEUTRINOTyouseiSienTool</span><br><span class="line">    │  NEUTRINOTyouseiSienTool.exe</span><br><span class="line">    ├─Backup</span><br><span class="line">    ├─bin</span><br><span class="line">    ├─ja<span class="literal">-JP</span></span><br><span class="line">    ├─log</span><br><span class="line">    └─temp</span><br></pre></td></tr></table></figure>
 <h4 id="配置-neutrino-调声支援工具"><a class="markdownIt-Anchor" href="#配置-neutrino-调声支援工具"></a> 配置 NEUTRINO 调声支援工具</h4>
 <p>双击 NEUTRINOTyouseiSienTool.exe 运行。在如图所示的位置点击，打开设置页面。</p>
@@ -534,12 +534,15 @@ Synthesis（合成）下提供了两种合成声音的选项：</p>
 <h3 id="13238-timing-页的操作"><a class="markdownIt-Anchor" href="#13238-timing-页的操作"></a> 1:32:38 TIMING 页的操作</h3>
 <p>（正式开始在1:36:00，中间这几分钟两人聊上头了）</p>
 <blockquote>
-<p>栗田：在作曲者的角度要（把 SCORE）调到“好，她唱出来了”之后再开始调整其他内容。<br />
-栗田：（调整其他内容的过程）就像是，琴叶姐妹进录音现场录了一段唱歌内容之后，如果（在调整之后）让她们重新唱一遍的话，之前的那个感觉就会消失掉。<br />
+<p>栗田：每次执行 NEUTRINO 的时候，都像是让琴叶姐妹的 NEUTRINO 大脑来重唱一遍</p>
+</blockquote>
+<blockquote>
+<p>在作曲者的角度要（把 SCORE）调到“好，她唱出来了”之后再开始调整其他内容。（调整其他内容的过程）就像是，琴叶姐妹进录音现场录了一段唱歌内容之后，如果（在调整之后）让她们重新唱一遍的话，之前的那个感觉就会消失掉。<br />
 96 州：因此，至少在让她们唱过一遍之后再去调整其余部分。<br />
 96 州：使用 SCORE 制作曲谱后让她们唱的过程就像是去录音，之后调整 PITCH 之类的过程就相当于是让她们去重唱，因此和调整之前的感觉会不同。<br />
 96 州：所以一般来讲是先调整 SCORE 到“好，挺完美的了，只要（对声音）稍加调整就完全能用了”的这种状态之后再去调整 PITCH 之类的内容。<br />
-栗田 &amp; 96 州：也就是说，不要把她们当作软件音源，而是要把她们当作就在你身边唱歌的人来对待，把调音当作请她们唱歌一样对待，这种态度很重要。</p>
+栗田：也就是说，不要把她们想成软件音源，而是“琴叶姐妹就在这里”要把她们当作就在你身边唱歌的人来对待，把调音当作请她们唱歌一样对待，这种态度很重要。<br />
+96 州：所以说大家不要弄错了，其实就是琴叶姐妹在唱，不是什么软件在唱。</p>
 </blockquote>
 <p>调声工具左侧的参数排列其实就是推荐的调声步骤：在 TIMING 页调整发声时机→在 PITCH 页调整音高→在 DYNAMICS 页调整音量的动态。</p>
 <p>由于修改 TIMING 会影响 NEUTRINO 对 PITCH 与 DYNAMICS 推算的结果，所以优先建议修改 TIMING。如果先前有 CeVIO 的调声经验的话应该对 TIMING 不陌生（可以直接跳过这节）。<br />
@@ -605,7 +608,20 @@ NEUTRINO 使用的音素表请从它的 Google Drive 下载。</p>
 <p>2:13:19 めんどうくさいや的调整</p>
 <p>Akane 这里唱着像 mendoukusa iya，有停顿感。96 州打算把这个 sa iya 处理一下，变成更平滑的 saiya。<br />
 处理方法是把 <code>さ</code> <code>い</code> 合成一个音符。但这样会带来音高的改变：<code>い</code> 原本的音高是 E4，跟 <code>さ</code> 一合并，就都变成 G#4 了，跟原来的音高不一样了，后面要去 PITCH 窗口画音高线把音高修正回来。</p>
-<p>元音无声化（清化）</p>
+<p>2:13:47 すき的元音无声化（清化）</p>
+<p>这里唱得也有些不连贯。把 <code>す</code> 原先所在的音符删掉，拉长前面的 <code>や</code>，然后把 <code>き</code> 所在的音符的歌词改为 <code>す’き</code>。这样发音就从 suki 变成了 ski。</p>
+<p>在 NEUTRINO 中，用于执行清化操作的符号为 <code>’</code>。</p>
+<blockquote>
+<p>・母音脱落記号「’」を用いた場合、母音の音素が省略され子音の音素のみの発音となります。(例:♪いつ’ؙ  ♪か → ♪i ts / k a、♪ス’カ ♪イ → ♪s k a / i)</p>
+</blockquote>
+<p>从日语发音的角度解释：</p>
+<blockquote>
+<p>在日语的普通话中，有几个原因在一定条件下只保留元音的口型和舌位而不发声。这就叫“元音的清化”。它有两个原则：<br />
+① 5个元音中“い”和“う”容易出现清化，其他则较少；<br />
+② 夹在“k（か行）”“s（さ行）”“t（た行）”“h（は行）”“p（ぱ行）”的中间元音，或是含有这些行辅音的音节出现在句尾时，其最后的元音容易发生清化的现象。<br />
+——《新中日交流标准日本语》</p>
+</blockquote>
+<p>这是说话的情况。如果是在唱歌的话，那么当这些字的时值较短时，</p>
 <p>2:17:39 其他行的无声化处理</p>
 <p>不止 sa 行，其他行也能做无声化处理。<br />
 一个稍稍特殊的用法是 <code>たい</code>，Akane 经常会出现发 ta i 而不是 tai 的情况（栗田：就像一个个字蹦出来的那种感觉）。把 <code>たい</code> 换成たゆ，然后用 <code>’</code> 将元音无声化变成 <code>たゆ’</code>（tay）。<code>たゆ’</code> 的话，听起来就像是省略的 tay，就出来 tai 的感觉了。替换成 ya/yo 同理。</p>

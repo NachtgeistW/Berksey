@@ -378,8 +378,6 @@
     
     <category term="algorithm" scheme="https://nachtgeistw.github.io/Berksey/tags/algorithm/"/>
     
-    <category term="HDU" scheme="https://nachtgeistw.github.io/Berksey/tags/HDU/"/>
-    
     <category term="动态规划" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
     <category term="回溯" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%9B%9E%E6%BA%AF/"/>
@@ -391,6 +389,8 @@
     <category term="剪枝" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%89%AA%E6%9E%9D/"/>
     
     <category term="0-1背包" scheme="https://nachtgeistw.github.io/Berksey/tags/0-1%E8%83%8C%E5%8C%85/"/>
+    
+    <category term="HDU" scheme="https://nachtgeistw.github.io/Berksey/tags/HDU/"/>
     
   </entry>
   
@@ -414,11 +414,11 @@
     
     <category term="algorithm" scheme="https://nachtgeistw.github.io/Berksey/tags/algorithm/"/>
     
+    <category term="HDU" scheme="https://nachtgeistw.github.io/Berksey/tags/HDU/"/>
+    
     <category term="排列" scheme="https://nachtgeistw.github.io/Berksey/tags/%E6%8E%92%E5%88%97/"/>
     
     <category term="分治与递归" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%88%86%E6%B2%BB%E4%B8%8E%E9%80%92%E5%BD%92/"/>
-    
-    <category term="HDU" scheme="https://nachtgeistw.github.io/Berksey/tags/HDU/"/>
     
   </entry>
   
@@ -489,9 +489,9 @@
     
     <category term="algorithm" scheme="https://nachtgeistw.github.io/Berksey/tags/algorithm/"/>
     
-    <category term="HDU" scheme="https://nachtgeistw.github.io/Berksey/tags/HDU/"/>
-    
     <category term="动态规划" scheme="https://nachtgeistw.github.io/Berksey/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="HDU" scheme="https://nachtgeistw.github.io/Berksey/tags/HDU/"/>
     
     <category term="递推" scheme="https://nachtgeistw.github.io/Berksey/tags/%E9%80%92%E6%8E%A8/"/>
     
