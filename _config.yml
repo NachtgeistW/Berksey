@@ -30,7 +30,8 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+## 跳过渲染
+skip_render: README.md
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -152,3 +153,16 @@ giscus:
   lang: en
   # Available value: anonymous
   crossorigin: anonymous
+
+# Post wordcount display settings
+# Dependencies: https://github.com/theme-next/hexo-symbols-count-time
+# enable _config.yml setting in NexT is not enough, you also need to set it in here FIRST...
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+  awl: 2
+  wpm: 275
+  suffix: "mins."
