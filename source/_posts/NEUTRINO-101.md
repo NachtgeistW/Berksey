@@ -2,7 +2,7 @@
 title: 笔记 from《【A.I.VOICE生技术部】第1回：NEUTRINO入门 讲师：くろ州＝多刀流P》
 description: 96 州的亲妈喂饭级 NEUTRINO 101 课程
 date: 2022-10-30 16:17:01
-updated: 2022-11-2
+updated: 2022-11-3
 author: 
 - 夜輪風超絶技巧変奏曲@没抽中 AI 社送的琴叶姐妹周边
 - （听译与翻译协力们）天才美少女夏木爱琳，RichadoWonosas，天堂麻弥
@@ -26,6 +26,8 @@ tags:
 什么是 A.I.VOICE 生放送技術部？
 
 - “A.I.VOICE 生放送技術部”（AIV 生放送技术部）是 AI 社不定期举办的讲座，主题为与 A.I.VOICE 相关的技术性内容，通过 YouTube 和 niconico 直播。目前仅直播了一次，主题为 NEUTRINO 入门（也就是本篇笔记记录的内容），讲解了 NEUTRINO 与 NEUTRINO 调声助手的使用方法，以及 NEUTRINO 琴葉 茜・葵的调声技巧。主讲为[くろ州（多刀流P）](https://twitter.com/96s_kM4osM)，主持为[栗田圭奈](https://twitter.com/metal_bouquet)。
+
+![cover](cover.png)
 
 ---
 
@@ -177,7 +179,7 @@ C:\...\NEUKOTONOHA
 
 ### 检查配置
 
-将 `Jam-SongData` 下的 `TrackA` 或 `TrackB` 拖入调声工具中。现在应该能在乐曲的开头看见调号、拍号以及曲速，在第 14 小节附近看见已填好词的音符。但点击屏幕上的播放按钮或按空格播放时，是没有声音的，TIMING 等参数也处于不可编辑的状态。
+将 `Jam-SongData` 下的 `TrackA.xml` 拖入调声工具中。现在应该能在乐曲的开头看见调号、拍号以及曲速，在第 14 小节附近看见已填好词的音符。但点击屏幕上的播放按钮或按空格播放时，是没有声音的，TIMING 等参数也处于不可编辑的状态。
 点击 NEUTRINO 选项卡，选择 NEUTRINO Control Panel 选项，调出 NEUTRINO 控制面板。
 
 ![open neutrino control panel](open-neutrino-control-panel.png)
@@ -193,7 +195,6 @@ Synthesis（合成）下提供了两种合成声音的选项：
 点击 NEUTRINO 选项，在 Model 中选择一位歌手（默认为 MERROW），然后点击 Run NEUTRINO 开始推算。
 
 ![parameter estimation neutrino](parameter-estimation-neutrino.png)
-
 
 待 Run Process 窗口的进度条显示 Completed 时，点击 Close 关闭窗口，回到调声界面。此时调声工具应在左下角显示 Run WORLD 并自动开始运行 WORLD。等这行字消失后，于第 14 小节附近点击灰色的小节栏，将光标移至乐谱的开头，然后点击屏幕上的播放按钮，或按下空格，播放音频。若听到选择的歌手唱出《Jam》的歌词，说明 NEUTRINO 引擎和调声工具都已配置完成并处于正常运行的状态。
 
@@ -430,7 +431,7 @@ TIMING 的调声风格因人而异。请根据你的喜好调整 TIMING。
 
 ![tools for editing pitch](pitch-tools.png)
 
-PITCH 包含了许多工具，从左到右依次为：
+PITCH 页包含了许多工具，从左到右依次为：
 
 - 选择工具 (Select)：在这个窗口里没啥用（
 - 颤音工具 (Vibrato)：为选择范围内的音高添加颤音。允许做更进一步的设置。
@@ -540,7 +541,7 @@ Akane 在这里的发音很违和。为了更平滑，把 `きゅ` 和 `う` 合
 
 2:24:33 えんどれす (endless) 的调整
 
-`え` 和 `ん` 合并。因为是日文歌，所以留着日式英语的发音。`ど` 不做处理也行。要让发音更像英文的话,就用 `えんど’れす’` 。
+`え` 和 `ん` 合并。因为是日文歌，所以留着日式英语的发音，`ど` 不做处理也行。要让发音更像英文的话,就用 `えんど’れす’` 。
 这里调完后还得去 TIMING 页里细调发音时机。
 
 2:27:09 さいのはあて的调整
@@ -603,6 +604,12 @@ Akane 在这里的发音很违和。为了更平滑，把 `きゅ` 和 `う` 合
   <p>Your browser does not support the audio element.</p>
 </audio>
 
+調声 & Mix 晒し：
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?bvid=BV1Xe4y1s7u6&high_quality=1"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+</div>
+
 自己的感想：
 这个四小时的讲座跟下来，收获真的非常大。因为自己有 CeVIO 啊 SV 啊其他引擎的调声基础了，所以自己重点在看第三和第四部分。过完之后学到了很多调声技巧，比如利用音符的歌词大幅提升流畅度的处理，TIMING 发声时间对人声的影响之类。
 他们在讲解 TIMING 页前的那段对话让我挺感动的。“她们是活着的人，而不是什么软件。”这才是真的当作搭档在看待她们的人啊……
@@ -612,8 +619,8 @@ Akane 在这里的发音很违和。为了更平滑，把 `きゅ` 和 `う` 合
 
 A.I.VOICE 生技术部真的是好东西。希望第 2 回快点来。
 
-关于作者：
-就，AI 社在 B 站搞了个抽奖嘛，抽到的都是中国的 vro 同好。
+关于作者名：
+就，AI 社在 B 站搞了个抽奖嘛。写这篇笔记的时候刚好 AI 社开奖了，抽到的都是中国的 vro 同好。
 
 ![抽奖](Snipaste_2022-11-03_00-54-39.png)
 
