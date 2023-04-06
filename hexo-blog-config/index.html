@@ -218,14 +218,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>310</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -243,6 +243,14 @@
 <p>先通过 npm 安装「hexo-generator-feed」插件。<br />
 接着在 <code>_config.yml</code> 里添加 feed 的配置。我用的是下列配置：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># RSS</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">atom</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">atom.xml</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">20</span></span><br><span class="line">  <span class="attr">hub:</span></span><br><span class="line">  <span class="attr">content:</span></span><br><span class="line">  <span class="attr">content_limit:</span> <span class="number">140</span></span><br><span class="line">  <span class="attr">content_limit_delim:</span> <span class="string">&#x27; &#x27;</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">icon.png</span></span><br><span class="line">  <span class="attr">autodiscovery:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">template:</span></span><br></pre></td></tr></table></figure>
+<p>最后在 <code>next\_config.yml</code> 的 <code>menu</code> 里加上一行：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="comment">#（中略）</span></span><br><span class="line">  <span class="attr">RSS:</span> <span class="string">/atom.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-rss</span></span><br></pre></td></tr></table></figure>
+<h2 id="接入-giscus"><a class="markdownIt-Anchor" href="#接入-giscus"></a> 接入 giscus</h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/giscus/giscus">giscus</a> 是一个新兴的评论系统，借助 GitHub Discussion 系统驱动。因为 giscus 比原来的评论系统 gitalk 更漂亮，同样支持 GitHub 账号评论，且允许按时间排序；以及想将 issues 归还给它应有的作用，因此将评论系统从 gitalk 迁移到 giscus。</p>
+<h2 id="页脚"><a class="markdownIt-Anchor" href="#页脚"></a> 页脚</h2>
+<p>起始年份是 2018。页脚 icon 改成了代码的 icon。<br />
+（18 年暑假在腾讯云上自建了博客，后来迁移到 GitHub Pages。）</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">footer:</span></span><br><span class="line">  <span class="comment"># Specify the date when the site was setup. If not defined, current year will be used.</span></span><br><span class="line">  <span class="attr">since:</span> <span class="number">2018</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Icon between year and copyright info.</span></span><br><span class="line">  <span class="attr">icon:</span></span><br><span class="line">    <span class="comment"># Icon name in Font Awesome. See: https://fontawesome.com/icons</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">fa</span> <span class="string">fa-code</span></span><br><span class="line">    <span class="comment"># If you want to animate the icon, set it to true.</span></span><br><span class="line">    <span class="attr">animated:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># Change the color of icon, using Hex Code.</span></span><br><span class="line">    <span class="attr">color:</span> <span class="string">&quot;#999999&quot;</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -276,7 +284,10 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/Berksey/mkdocs-i18n/" rel="prev" title="设置 MkDocs 文档的多语言支持">
+      <i class="fa fa-chevron-left"></i> 设置 MkDocs 文档的多语言支持
+    </a></div>
       <div class="post-nav-item">
     <a href="/Berksey/NEUTRINO-101/" rel="next" title="笔记 from《【A.I.VOICE生技术部】第1回：NEUTRINO入门 讲师：くろ州＝多刀流P》">
       笔记 from《【A.I.VOICE生技术部】第1回：NEUTRINO入门 讲师：くろ州＝多刀流P》 <i class="fa fa-chevron-right"></i>
@@ -360,7 +371,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rss"><span class="nav-number">1.</span> <span class="nav-text"> RSS</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rss"><span class="nav-number">1.</span> <span class="nav-text"> RSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%85%A5-giscus"><span class="nav-number">2.</span> <span class="nav-text"> 接入 giscus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E8%84%9A"><span class="nav-number">3.</span> <span class="nav-text"> 页脚</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -376,7 +387,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Berksey/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -389,7 +400,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/Berksey/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">41</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -403,6 +414,9 @@
       </span>
       <span class="links-of-author-item">
         <a href="https://twitter.com/Nightwheel_C" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Nightwheel_C" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/berksey" title="Telegrm Channel → https:&#x2F;&#x2F;t.me&#x2F;berksey" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegrm Channel</a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
@@ -464,7 +478,7 @@
 <div class="copyright">
   
   &copy; 2018 – 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-code"></i>
   </span>
@@ -473,12 +487,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">77k</span>
+    <span title="站点总字数">85k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:21</span>
+    <span title="站点阅读时长">2:34</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
