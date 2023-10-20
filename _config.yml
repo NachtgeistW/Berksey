@@ -11,7 +11,7 @@ author: NachtgeistW
 language: 
   - zh-CN
   - en
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -110,6 +110,25 @@ deploy:
   branch: gh-pages
   token: $GH_TOKEN
 
+# RSS
+feed:
+  enable: true
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
+
 # giscus
 giscus:
   enable: true
@@ -129,4 +148,3 @@ giscus:
   lang: en
   # Available value: anonymous
   crossorigin: anonymous
-

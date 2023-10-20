@@ -6,7 +6,6 @@ author:
 - 夜輪風超絶技巧変奏曲
 category: 
 - 调声
-- CeVIO
 tags:
 - CeVIO
 - A.I.VOICE
