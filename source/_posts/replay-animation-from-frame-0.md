@@ -93,7 +93,7 @@ private void OnHitNoteEvent()
 
 但是，写完后发现了一个问题：当再次从 ObjectPool 里复用的时候，音符光效还是保持在动画的最后一帧，保持着光效已经播放完毕的样子，而不是我希望的“回到未被击中”的第一帧的状态。
 
-[![音符光效还是保持在动画的最后一帧](post-poblem-on-create-and-update-time/1.jpg)](post-poblem-on-create-and-update-time/1.jpg)
+![音符光效还是保持在动画的最后一帧](1.jpg)
 
 猜测大概是因为每次回收音符后没有对 Animator 做复原处理。
 

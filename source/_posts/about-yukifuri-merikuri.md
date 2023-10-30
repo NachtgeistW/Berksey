@@ -20,12 +20,12 @@ B站没有原版，可以自己开个播放器听。
 讲点有的没的创作故事。只讲我参与了的部分。
 
 1. Sayonarawoiwazuni是华牧狸在最开始的时候给我的demo曲之一。华牧狸在八月的尾声邀请我加入了鸽游愚人节企划。他给我发消息的时候我正坐在从纽卡到伦敦的LNER上，在两天后告别英国，结束一年的留学之旅。大概因为戳中了什么，我在之后很长一段时间内都在loop这首歌。22年快结束的时候回头一看，这歌给我听成了Apple Music年度第四。
-![Sayonarwoiwazuni](/public/about-yukifuri-merikuri/Screenshot_20230405_021315.jpg)
-1. 加群的时候华牧狸和AiSS已经定下来曲子是雪降了。大概是在八月头定下来的。所以说哪里有什么“愚人节选曲规律”，都是曲师觉得哪首好听就去找原曲师要个授权然后就开始remix了（
-2. 另一首Demo曲是《そらのサカナ》。
+![Sayonarwoiwazuni](/about-yukifuri-merikuri/Screenshot_20230405_021315.jpg)
+2. 加群的时候华牧狸和AiSS已经定下来曲子是雪降了。大概是在八月头定下来的。所以说哪里有什么“愚人节选曲规律”，都是曲师觉得哪首好听就去找原曲师要个授权然后就开始remix了（
+3. 另一首Demo曲是《そらのサカナ》。
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=432576&auto=0&height=66"></iframe>
-3. 那天我们聊了一下午的ボカコレ2022秋，往届优胜啊stem配布啊椎名もた啊keeno啊这类的。
-4. 最开始的时候华牧狸和AiSS想让可不来唱。后来聊了会儿。
+4. 那天我们聊了一下午的ボカコレ2022秋，往届优胜啊stem配布啊椎名もた啊keeno啊这类的。
+5. 最开始的时候华牧狸和AiSS想让可不来唱。后来聊了会儿。
    > 我：而且选歌手的话也得配合着曲子的感觉和她们的性格来选。AI歌手各个都有她们的想法，所以选歌很重要，选到不适合的就是霸王硬上弓。
    > 华牧狸（听六兆年的stem文件中）：我在听六兆年。太牛了，那个年代，这种质量的曲子。
    > 我：哦对六兆年。cevio的IA就唱不了六兆年了，因为lia唱不了快歌所以cevio的IA也唱不了了。这算是她的性格之一。
@@ -33,14 +33,14 @@ B站没有原版，可以自己开个播放器听。
    > 华牧狸：这样子好了 不一定要kafu 听了demo再决定
 
    于是选歌手的权利就全权交给我了。
-5. 华牧狸修改了群名称为“4536五声音阶打铁钢琴”
-6. AiSS给前半段定下的感情基调是“很二次元的很催泪的Pop”。做出前半段demo后我让结月缘、IA、琴叶葵和星尘inf都试过。都是能唱出很温柔的声音的歌手，不过感觉钢琴比较亮，再配合曲子氛围，就选了声音比较低沉温柔的缘兔。而且缘兔的声库和exVOICE很多，后续也能做出更多变化。
-7. 选择的时候考虑了很多因素，比如要上鸽游，前半段的效果……如果这是我自己的曲子的话那我会直接选IA，根本没有其他歌手的事情了，毕竟我是IA推（
-8. 定好歌手后：
+6. 华牧狸修改了群名称为“4536五声音阶打铁钢琴”
+7. AiSS给前半段定下的感情基调是“很二次元的很催泪的Pop”。做出前半段demo后我让结月缘、IA、琴叶葵和星尘inf都试过。都是能唱出很温柔的声音的歌手，不过感觉钢琴比较亮，再配合曲子氛围，就选了声音比较低沉温柔的缘兔。而且缘兔的声库和exVOICE很多，后续也能做出更多变化。
+8. 选择的时候考虑了很多因素，比如要上鸽游，前半段的效果……如果这是我自己的曲子的话那我会直接选IA，根本没有其他歌手的事情了，毕竟我是IA推（
+9. 定好歌手后：
    >我：反正缘兔也不是没有狂气的曲子，里曲发疯也是可以的，表曲温柔抒情里曲发狂
-   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=422094957&auto=0&height=66"></iframe>
+   ><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=422094957&auto=0&height=66"></iframe>
 
-   >![sticker](/public/about-yukifuri-merikuri/Chururira%20Chururira%20Daddadda!.jpg)
+   >![sticker](/about-yukifuri-merikuri/Chururira%20Chururira%20Daddadda!.jpg)
    >华牧狸：兔 狂气
    >AiSS：那还真选对歌手了，这就是我的预想
 9. 一开始就打算把缘的exVOICE和所有声库都用上。
