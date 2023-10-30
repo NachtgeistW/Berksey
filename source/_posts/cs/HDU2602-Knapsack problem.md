@@ -1,5 +1,6 @@
 ﻿---
 title: HDU 2602 Bone Collector——0-1背包问题的多种解法
+description: 0-1 背包有三种解法你知道吗？
 date: 2019/12/31
 updated: 2019/12/31
 category: 
@@ -14,9 +15,8 @@ tag:
 - 剪枝
 - 0-1背包
 - HDU
+mathjax: true
 ---
-
-**0-1 背包有三种解法你知道吗？**
 
 题目：给定背包的体积 V，N 个骨头的体积和价值，求能装进背包的骨头的最大价值。
 
