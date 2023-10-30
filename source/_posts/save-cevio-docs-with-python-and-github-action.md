@@ -151,13 +151,13 @@ with:
 
 ## 实际运行
 
-[![运行效果](/source/_posts/Mist/save-cevio-docs-with-python-and-github-action/Snipaste_2023-10-27_17-38-34.png)](Snipaste_2023-10-27_17-38-34.png)
+[![运行效果](Snipaste_2023-10-27_17-38-34.png)](Snipaste_2023-10-27_17-38-34.png)
 
 效果挺不错的，更改清晰可见。
 
 唯一的问题是它在没有更改的时候会运行失败，然后 GitHub 就会给我发邮件；而成功的时候就不会（理所当然）。
 
-![运行失败时的 action](save-cevio-docs-with-python-and-github-action/Snipaste_2023-10-27_17-40-02.png)
+![运行失败时的 action](Snipaste_2023-10-27_17-40-02.png)
 
 这反而跟我想要的效果（有更改时发邮件，无更改时没有）反过来了。留待日后改进。
 
