@@ -3,6 +3,7 @@ title: 2020 年总结
 date: 2021/1/6
 updated: 2021/1/6
 category: 
+- 随笔
 - Memoir
 tag: 
 - Memoir

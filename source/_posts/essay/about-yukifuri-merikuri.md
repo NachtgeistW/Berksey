@@ -5,7 +5,8 @@ date: 2023-04-06 08:42:56
 author: 
 - 夜輪風超絶技巧変奏曲
 category: 
-- 调声
+- 随笔
+- Memoir
 tags:
 - CeVIO
 - A.I.VOICE
@@ -19,7 +20,7 @@ B站没有原版，可以自己开个播放器听。
 讲点有的没的创作故事。只讲我参与了的部分。
 
 1. Sayonarawoiwazuni是华牧狸在最开始的时候给我的demo曲之一。华牧狸在八月的尾声邀请我加入了鸽游愚人节企划。他给我发消息的时候我正坐在从纽卡到伦敦的LNER上，在两天后告别英国，结束一年的留学之旅。大概因为戳中了什么，我在之后很长一段时间内都在loop这首歌。22年快结束的时候回头一看，这歌给我听成了Apple Music年度第四。
-![Sayonarwoiwazuni](Screenshot_20230405_021315.jpg)
+![Sayonarwoiwazuni](/public/about-yukifuri-merikuri/Screenshot_20230405_021315.jpg)
 1. 加群的时候华牧狸和AiSS已经定下来曲子是雪降了。大概是在八月头定下来的。所以说哪里有什么“愚人节选曲规律”，都是曲师觉得哪首好听就去找原曲师要个授权然后就开始remix了（
 2. 另一首Demo曲是《そらのサカナ》。
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=432576&auto=0&height=66"></iframe>
@@ -39,7 +40,7 @@ B站没有原版，可以自己开个播放器听。
    >我：反正缘兔也不是没有狂气的曲子，里曲发疯也是可以的，表曲温柔抒情里曲发狂
    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=422094957&auto=0&height=66"></iframe>
 
-   >![sticker](Chururira%20Chururira%20Daddadda!.jpg)
+   >![sticker](/public/about-yukifuri-merikuri/Chururira%20Chururira%20Daddadda!.jpg)
    >华牧狸：兔 狂气
    >AiSS：那还真选对歌手了，这就是我的预想
 9. 一开始就打算把缘的exVOICE和所有声库都用上。

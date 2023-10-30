@@ -3,10 +3,11 @@ title: 节奏游戏速成班
 date: 2021/6/02
 updated: 2021/6/02
 category: 
-- translation
+- GameDev
+- 译文
 tag: 
-- translation
-- Rhythm Games
+- 译文
+- 音游
 - Unity3D
 ---
 

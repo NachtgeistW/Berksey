@@ -3,7 +3,8 @@ title: 网易互娱游戏运营管理面试
 date: 2020/4/16
 updated: 2020/4/16
 category: 
-- interview
+- Mist
+- 面试
 tag: 
 - 面试
 - 网易

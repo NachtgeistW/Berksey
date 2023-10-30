@@ -3,10 +3,11 @@ title: 背景音频
 date: 2021/10/12
 updated: 2021/10/12
 category: 
-- translation
+- GameDev
+- 译文
 tag: 
-- translation
-- Rhythm Games
+- 译文
+- 音游
 - Unity3D
 ---
 

@@ -1,11 +1,12 @@
 ﻿---
-title: HDU2709 Sumsets（和集）
+title: HDU 2709 Sumsets（和集）
 date: 2019/12/3
 updated: 2019/12/3
 category: 
-- algorithm
+- Computer Science
+- 算法
 tag: 
-- algorithm
+- 算法
 - 动态规划
 - 递推
 - HDU

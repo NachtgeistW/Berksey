@@ -7,6 +7,7 @@ author:
 - 夜輪風超絶技巧変奏曲@没抽中 AI 社送的琴叶姐妹周边
 - （听译与翻译协力们）天才美少女夏木爱琳，RichadoWonosas，天堂麻弥
 category: 
+- 随笔
 - 调声
 - NEUTRINO
 tags:

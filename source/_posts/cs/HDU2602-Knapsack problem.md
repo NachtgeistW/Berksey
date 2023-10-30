@@ -3,9 +3,10 @@ title: HDU 2602 Bone Collector——0-1背包问题的多种解法
 date: 2019/12/31
 updated: 2019/12/31
 category: 
-- algorithm
+- Computer Science
+- 算法
 tag: 
-- algorithm
+- 算法
 - 动态规划
 - 回溯
 - 分支限界法
