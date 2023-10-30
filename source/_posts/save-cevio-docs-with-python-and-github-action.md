@@ -151,7 +151,7 @@ with:
 
 ## 实际运行
 
-![运行效果](save-cevio-docs-with-python-and-github-action/Snipaste_2023-10-27_17-38-34.png)
+[![运行效果](/source/_posts/Mist/save-cevio-docs-with-python-and-github-action/Snipaste_2023-10-27_17-38-34.png)](Snipaste_2023-10-27_17-38-34.png)
 
 效果挺不错的，更改清晰可见。
 
