@@ -3,6 +3,7 @@ title: 哔哩哔哩 1024 安全挑战赛解题思路（前篇）
 date: 2020/10/24
 updated: 2020/10/24
 category: 
+- Mist
 - CTF
 tag: 
 - CTF
@@ -22,11 +23,11 @@ tag:
 
 打开之后页面长这样。
 
-[![](image/2020-10-24-bilibili-ctf/2020-10-25_14-12-20.png)
+![](image/2020-10-24-bilibili-ctf/2020-10-25_14-12-20.png)
 
 二话不说 <kbd>F12</kbd> 调出控制台开始看源码。翻开 `<head>...</head>`，看到里面有两个奇怪的 `<script>...</script>`。展开，有一串数值 `values="flag1" value="22c9e7f7-1e0bf6d2-2adc392b-5d79aeff"`。
 
-[![](image/2020-10-24-bilibili-ctf/2020-10-25_14-14-25.png)
+![](image/2020-10-24-bilibili-ctf/2020-10-25_14-14-25.png)
 
 这个大概就是我们要的答案了。
 

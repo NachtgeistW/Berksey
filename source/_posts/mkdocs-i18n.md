@@ -2,7 +2,12 @@
 title: 设置 MkDocs 文档的多语言支持
 description: Setting up the multi-language support for MkDocs
 date: 2022-11-21 13:59:29
-tags:
+category: 
+- Mist
+- CeVIO Docs
+tags: 
+- MkDocs
+- CeVIO
 ---
 
 记录为 CeVIO AI 用户指南添加多语言支持的过程。

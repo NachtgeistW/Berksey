@@ -3,10 +3,11 @@ title: Perm 算法
 date: 2019/12/24
 updated: 2019/12/24
 category: 
-- algorithm
+- Computer Science
+- 算法
 tag: 
 - C++
-- algorithm
+- 算法
 - 排列
 - 分治与递归
 ---

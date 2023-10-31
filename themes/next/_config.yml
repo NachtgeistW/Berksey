@@ -37,9 +37,9 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 #scheme: Gemini
 
 # Dark Mode
@@ -97,10 +97,28 @@ open_graph:
 # External url should start with http:// or https://
 menu:
   home: / || fa fa-home
-  about: /about/ || fa fa-user
-  tags: /tags/ || fa fa-tags
-  categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
+  categories: /categories/ || fa fa-th
+  tags: /tags/ || fa fa-tags
+  笔记: 
+    default: /notes/ || fa fa-pen-to-square
+    Godot: /godot.html || fa fa-robot
+    Unity: /unity.html|| fa fa-cube
+    GameDev: /gamedev.html || fa fa-gamepad
+    C#: /csharp.html || fa fa-laptop-code
+    Computer Science: /computerscience.html || fa fa-computer
+    Tools: /tools.html || fa fa-screwdriver-wrench
+    Tips: /tips.html || fa fa-rocket
+  日常:
+    default: /essay/ || fa fa-icons
+    读书: 
+      default: /books/ || fa fa-book
+      书单: /list.html || fa fa-lines-leaning
+      读书笔记: /notes.html || fa fa-feather-pointed
+    艺术: /arts.html || fa fa-icons
+    脑洞: /xmind.html || fa fa-lightbulb
+    待办事项: /todo.html || fa fa-list-check
+  about: /about/ || fa fa-user
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
@@ -109,7 +127,7 @@ menu:
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
-  badges: false
+  badges: true
 
 
 # ---------------------------------------------------------------
@@ -119,8 +137,8 @@ menu_settings:
 
 sidebar:
   # Sidebar Position.
-  #position: left
-  position: right
+  position: left
+  #position: right
 
   # Manual define the sidebar width. If commented, will be default for:
   # Muse | Mist: 320
@@ -181,6 +199,7 @@ links:
   Deemo 全曲 AC 巨佬蜗壳 er 盐酸妹妹的 blog: https://chlorie.github.io/ChloroBlog/
   Xecus的个人小站: https://blog.xecus.cc
   律动喵喵的小站: https://qwq.re/
+  ATMOSPHERE: https://blog.awa.moe
   OI Wiki: https://oi-wiki.org/
 
 # Table of Contents in the Sidebar
@@ -257,12 +276,12 @@ post_meta:
     enable: true
     another_day: true
   categories: true
-
+  
 # Post wordcount display settings
 # Dependencies: https://github.com/next-theme/hexo-word-counter
 symbols_count_time:
   separated_meta: true
-  item_text_total: false
+  item_text_total: true
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
@@ -565,7 +584,7 @@ math:
   every_page: false
 
   mathjax:
-    enable: false
+    enable: true
     # Available values: none | ams | all
     tags: none
 
@@ -591,7 +610,7 @@ fancybox: false
 # Medium Zoom is a JavaScript library for zooming images like Medium.
 # Warning: Do not enable both `fancybox` and `mediumzoom`.
 # For more information: https://medium-zoom.francoischalifour.com
-mediumzoom: false
+mediumzoom: true
 
 # Vanilla JavaScript plugin for lazyloading images.
 # For more information: https://apoorv.pro/lozad.js/demo/
@@ -629,7 +648,7 @@ quicklink:
 # For more information: https://animate.style
 motion:
   enable: true
-  async: false
+  async: true
   transition:
     # All available transition variants: https://theme-next.js.org/animate/
     menu_item: fadeInDown

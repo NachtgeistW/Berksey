@@ -3,10 +3,10 @@ title: 从 Jekyll 迁移到 hexo 时的博客创建和更新日期问题
 date: 2022/09/12
 updated: 2022/09/12
 category: 
-- blog
-- hexo
+- Mist
+- Blog
 tag: 
-- hexo
+- Hexo
 - Jekyll
 - PowerShell
 ---

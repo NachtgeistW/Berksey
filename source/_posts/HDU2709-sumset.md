@@ -1,14 +1,16 @@
 ﻿---
-title: HDU2709 Sumsets（和集）
+title: HDU 2709 Sumsets（和集）
 date: 2019/12/3
 updated: 2019/12/3
 category: 
-- algorithm
+- Computer Science
+- 算法
 tag: 
-- algorithm
+- 算法
 - 动态规划
 - 递推
 - HDU
+mathjax: true
 ---
 
 题目：给出一个整数 n，将其分解成 $2^i$ 相加的形式，求共有多少种分法。

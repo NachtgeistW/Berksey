@@ -3,14 +3,17 @@ title: HDU 1007 Quoit Design（套圈设计）
 date: 2019/12/24
 updated: 2019/12/24
 category: 
-- algorithm
+- Computer Science
+- 算法
 tag: 
 - C++
-- algorithm
+- 算法
 - 排列
 - 分治与递归
 - HDU
+mathjax: true
 ---
+
 ## 题目
 
 求点对最近距离。

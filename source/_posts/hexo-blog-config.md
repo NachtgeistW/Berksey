@@ -2,10 +2,11 @@
 title: hexo-blog-config
 date: 2022-11-12 13:00:14
 category: 
-- blog
-- hexo
+- Mist
+- Blog
 tags:
-- hexo
+- Hexo
+- NexT
 ---
 
 记录一些对博客做的个性化配置。

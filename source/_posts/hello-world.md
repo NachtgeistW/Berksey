@@ -2,7 +2,9 @@
 title: Hello World.
 date: 2019/8/25
 updated: 2019/8/25
-category: Memoir
+category: 
+- 随笔
+- Memoir
 ---
 ```C++
 #include<iostream>
