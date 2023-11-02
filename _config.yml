@@ -160,3 +160,9 @@ symbols_count_time:
   exclude_codeblock: false
   wpm: 300
   suffix: "mins."
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
