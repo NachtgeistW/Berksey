@@ -4,7 +4,13 @@ date: 2023-10-27 22:26:42
 description: the best open-source game engine
 ---
 
+收集一些关于 Godot 的资料与笔记。
+
 默认语言为 C#，引擎是 Godot 4。
+
+## Shader
+
+{% img /notes/godot/godot-shader-cheat-sheet.png 500 godot-shader-cheat-sheet %}
 
 ## 为变量添加了 `[Export]` 但检查器里找不到它
 

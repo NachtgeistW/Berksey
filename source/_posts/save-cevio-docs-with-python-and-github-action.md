@@ -139,7 +139,7 @@ on:
 
 整体分为四步：设置 Python → 安装依赖 → 运行 bash 文件 → 推送到仓库。
 
-不过最后一步推送的 action，GitHub 自己没有封装，所以我用的是一个第三方的高星 action [ad-m/github-push-action](https://github.com/ad-m/github-push-action)。注意的是要提前配置好 `github_token`。配置的过程之前也写过（见[《配合 Action 在 GitHub Pages 上部署 MkDocs 的坑》](/Berksey/deploy-mkdocs)）。分支选择 `main` 就行了。
+不过最后一步推送的 action，GitHub 自己没有封装，所以我用的是一个第三方的高星 action [ad-m/github-push-action](https://github.com/ad-m/github-push-action)。注意的是要提前配置好 `github_token`。配置的过程之前也写过（见[《配合 Action 在 GitHub Pages 上部署 MkDocs 的坑》](/deploy-mkdocs)）。分支选择 `main` 就行了。
 
 ```yml
 - name: GitHub Push
