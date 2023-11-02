@@ -2,6 +2,7 @@
 title: Hexo 博客 + NexT 主题个性化配置（NexT 8 版）
 draft: true
 date: 2023-10-31 15:26:22
+update: 2023-11-2 16:14:13
 categories:
 - Mist
 - Blog
@@ -51,11 +52,10 @@ timezone: 'Asia/Shanghai'
 
 ```yml NexT 设置文件
 # Schemes
-#scheme: Muse
-#scheme: Mist
-scheme: Pisces
-#scheme: Gemini
-
+#scheme: Muse # 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白
+#scheme: Mist # Muse 的紧凑版本，整洁有序的单栏外观
+scheme: Pisces # 双栏 Scheme，小家碧玉似的清新
+#scheme: Gemini # 类似 Pisces
 ```
 
 选择喜欢的一种样式去掉前面的 `#`，然后给其他主题前加上 `#`。
@@ -187,6 +187,16 @@ npm install hexo-generator-searchdb --save
 ```
 
 在 `_config.next.yml` 中搜索 `local_search` ，将 `enable` 改为 `true`。
+
+然后在 `_config.yml` 的末尾添加下列代码（这是为了防止炸导航栏的渲染）：
+
+```Hexo 设置文件
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+```
 
 什么都不用做，导航栏最下面就会自动出现“搜索”一项。
 
