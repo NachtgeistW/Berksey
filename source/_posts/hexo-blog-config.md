@@ -1,5 +1,5 @@
 ---
-title: hexo-blog-config
+title: Hexo 博客 + NexT 主题个性化配置
 date: 2022-11-12 13:00:14
 category: 
 - Mist
@@ -10,6 +10,7 @@ tags:
 ---
 
 记录一些对博客做的个性化配置。
+
 <!-- more -->
 
 ## RSS
