@@ -1,0 +1,5 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://blog.juanertu.com/sitemap.xml

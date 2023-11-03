@@ -5,8 +5,8 @@
 # Site
 title: Berksey
 subtitle: '98-74 Ocean Street, Sky Height'
-description: ''
-keywords:
+description: '算法，技术，游戏开发'
+keywords: 开发者, 程序猿, 极客, 编程, 代码,开源, IT网站, Developer, Programmer, Coder, Geek, Unity3D, Unity, Godot
 author: NachtgeistW
 language: 
   - zh-CN
@@ -166,3 +166,15 @@ search:
   field: post
   format: html
   limit: 10000
+
+# sitemap
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  template: ./sitemap_template.xml
+  template_txt: ./sitemap_template.txt
+  rel: false
+  tags: false
+  categories: false
+  
