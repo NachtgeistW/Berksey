@@ -1,4 +1,4 @@
-﻿---
+---
 title: 在 Android 里如何设置 imageView 的图片自适应
 date: 2020/5/18
 updated: 2020/5/18

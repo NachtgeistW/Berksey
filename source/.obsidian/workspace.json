@@ -1,0 +1,220 @@
+{
+  "main": {
+    "id": "a3cf38feaec93000",
+    "type": "split",
+    "children": [
+      {
+        "id": "025c5cc5eb7f853c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8d4f5065c2b62026",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/godot.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8acd1eb0a1b5f1a5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/NEUTRINO-101.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "66e87a4f8d9ca572",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f264f890862beab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9f5e8eaf49a303c3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "11c81271e5e468c7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#OAuth",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1bbc12fb2b278f36",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5ab600aa8f5d1642",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ccdbbfe88a3d2ab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8ac9e8b5f7d7d0d8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "notes/godot.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "60c81555f05609b2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "notes/godot.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d21690d304288deb",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "d6c804f4bda5fb9c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "notes/godot.md"
+              }
+            }
+          },
+          {
+            "id": "6b2181a65770bb55",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 369.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "8d4f5065c2b62026",
+  "lastOpenFiles": [
+    "_drafts/build-unity-from-cli-2-ios",
+    "_drafts/build-unity-from-cli-1-android",
+    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_003200.976.jpg",
+    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_003134.238.jpg",
+    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_002837.464.jpg",
+    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_002832.756.jpg",
+    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_001808.092.jpg",
+    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E18.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_001122.359.jpg",
+    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E18.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_001035.090.jpg",
+    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E18.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_001022.569.jpg",
+    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E18.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_000909.090.jpg",
+    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E18.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_000907.384.jpg",
+    "_drafts/books-in-the-lord-of-losers",
+    "_drafts/books-in-the-lord-of-losers.md",
+    "_drafts/build-unity-from-cli-2-ios.md",
+    "_drafts/build-unity-from-powershell-1-android.md",
+    "_drafts/Entity-Component-System-FAQ.md",
+    "notes/tools.md",
+    "notes/tips.md",
+    "notes/index.md",
+    "notes/computerscience.md",
+    "notes/csharp.md",
+    "notes/godot.md",
+    "notes/gamedev.md",
+    "notes/tools",
+    "_posts/books-in-the-lord-of-losers.md",
+    "_posts/NEUTRINO-101.md",
+    "essay/books/index.md",
+    "_posts/books-in-the-lord-of-losers",
+    "_posts/破事精英[全24集][国语音轨+简繁英字幕].The.Lord.of.Losers.2022.V2.WEB-DL.4k.H265.AAC-XiaoTV",
+    "_posts/2020-summary.md",
+    "_drafts/about-unity-anchors.md",
+    "_drafts/The World of Yesterday.md",
+    "essay/arts.md",
+    "essay/books/list.md",
+    "_posts/Entity-Component-System-FAQ.md",
+    "_posts/build-unity-from-powershell-1-android.md",
+    "_posts/build-unity-from-cli-2-ios.md",
+    "_posts/deploy-mkdocs.md",
+    "_posts/build-unity-from-cli-1-android",
+    "_drafts/hello-world.md",
+    "_drafts/实体组件系统常见问题（Entity Component System FAQ）.md",
+    "_posts/Entity-Component-System-FAQ-1",
+    "_posts/Entity-Component-System-FAQ",
+    "image/2020-10-24-bilibili-ctf",
+    "image",
+    "未命名.canvas"
+  ]
+}

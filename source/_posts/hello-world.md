@@ -1,4 +1,4 @@
-﻿---
+---
 title: Hello World.
 date: 2019/8/25
 updated: 2019/8/25

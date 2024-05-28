@@ -12,6 +12,12 @@ description: the best open-source game engine
 
 {% img /notes/godot/godot-shader-cheat-sheet.png 500 godot-shader-cheat-sheet %}
 
+## Physics Cheat Sheet
+
+[Godot 3D Vector/Physics Cheat-Sheet: - Godot Forums](https://godotforums.org/d/18480-godot-3d-vector-physics-cheat-sheet)
+
+[Sizes in 3D Enviroment (and relations to real-world sizes) - Godot Engine - Q&A](https://ask.godotengine.org/46858/sizes-in-3d-enviroment-and-relations-to-real-world-sizes)
+
 ## 为变量添加了 `[Export]` 但检查器里找不到它
 
 `[Export]` 相当于 Unity 里的 `[SerializeField]`。但是这东西在脚本里加了之后，得手动 Build Project 一次，变量才会出现在检查器里。如果为变量添加了 `[Export]` 但它没出现，先试试重新 build 一下项目吧。
@@ -41,3 +47,4 @@ if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.IsPress
     GD.Print("Mouse Click/Unclick at: ", eventMouseButton.Position);
 }
 ```
+
