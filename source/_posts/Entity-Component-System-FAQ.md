@@ -32,10 +32,11 @@ I'm the author of [Flecs](https://github.com/SanderMertens/flecs), an Entity Com
   - [什么是 ECS？](#什么是-ecs)
   - [什么才算是 ECS？](#什么才算是-ecs)
   - [为什么要使用 ECS？](#为什么要使用-ecs)
-  - [Who is using ECS?](#who-is-using-ecs)
-  - [How is ECS different from OOP?](#how-is-ecs-different-from-oop)
-  - [How is ECS different from Entity-Component frameworks?](#how-is-ecs-different-from-entity-component-frameworks)
+  - [谁在使用 ECS？](#谁在使用-ecs)
+  - [ECS 与 OOP 的不同点在哪？](#ecs-与-oop-的不同点在哪)
+  - [ECS 与实体-组件框架有何不同？](#ecs-与实体-组件框架有何不同)
   - [Is ECS hard to learn?](#is-ecs-hard-to-learn)
+  - [ECS 难学吗？](#ecs-难学吗)
   - [Is ECS a lower level of abstraction?](#is-ecs-a-lower-level-of-abstraction)
   - [Does ECS require writing more code?](#does-ecs-require-writing-more-code)
   - [Is ECS good for low level code?](#is-ecs-good-for-low-level-code)
@@ -207,28 +208,17 @@ ECS 设计模式通常需要通过框架来实现。术语 "Entity Component Sys
 如果一个框架允许你向实体添加“东西”，而且想查询实体拥有某些东西但没有其他东西时，它也有提供一种方法，那通常认为它是 ECS。
 
 ### 为什么要使用 ECS？
-There are a number of reasons why ECS is gaining popularity amongst game developers:
-
-- ECS can typically support larger numbers of game objects
-- ECS code tends to be more reusable 
-- ECS code is easier to extend with new features
-- ECS allows for a more dynamic coding style
-
-为什么要使用 ECS？
 
 ECS 在游戏开发者中日益流行的原因有下列几点：
 
-- ECS 通常能够支持更多的游戏对象。
-- ECS 代码往往更具可重用性。
-- ECS 代码更容易通过新功能进行扩展。
-- ECS 允许更动态的编码风格。
+- ECS 通常能支持更多的游戏对象。
+- ECS 代码往往更具复用性。
+- ECS 代码更容易扩展新功能。
+- ECS 允许更动态的代码风格。
 
-### Who is using ECS?
-A number of commercial projects and engines today use or have used ECS. If you know of other projects that uses ECS, let me know!
+### 谁在使用 ECS？
 
-谁在使用 ECS？
-
-许多商业项目和引擎正在用 ECS，或是以前用过。如果你知道其他使用 ECS 的项目，请告诉我！
+许多商业项目和引擎已经用上了 ECS，或是以前用过。如果你知道其他使用 ECS 的项目，请告诉我！
 
 - [Unity DOTS](https://unity.com/dots) (Engine)
 - [Unreal (Sequencer)](https://www.unrealengine.com/en-US/tech-blog/performance-at-scale-sequencer-in-unreal-engine-4-26) (Engine)
@@ -256,58 +246,24 @@ A number of commercial projects and engines today use or have used ECS. If you k
 - [Bebylon](https://bebylon.world/) (Game, uses Flecs)
 - [Sol Survivor](https://nicok.itch.io/sol-survivor-demo) (Game, uses Flecs)
 
-### How is ECS different from OOP?
-ECS is often described as an alternative to Object Oriented Programming. While ECS and OOP overlap, there are differences that impact how applications are designed:
+### ECS 与 OOP 的不同点在哪？
 
-- Inheritance is a 1 st class citizen in OOP, composition is a 1 st class citizen in ECS.
-- OOP encourages encapsulation of data, ECS encourages exposed POD (plain old data) objects.
-- OOP colocates data with behavior, ECS separates data from behavior.
-- OOP Object instances are of a single static type, ECS entities can have multiple, dynamically changing components
+ECS 通常描述成面向对象编程（OOP）的一种替代方法。尽管 ECS 和 OOP 有重合之处，但二者的确有影响到应用的设计方式的差异：
 
-It should be noted that some have argued that ECS fits the characterisics of _Object Oriented Design_ (see https://www.gamedev.net/blogs/entry/2265481-oop-is-dead-long-live-oop/ ) and should therefore be considered a subset. 
-
-However, in practice the design process of an ECS application is sufficiently different from that of what most people would recognize as OOP. As such it is at least useful to approach it as a separate approach towards design.
-
-ECS 与 OOP 的不同点在哪？
-
-ECS 通常描述成面向对象编程（OOP）的一种替代方法。尽管 ECS 和 OOP 有一些重叠之处，但存在一些影响应用程序设计的差异：
-
-- 在 OOP 中，继承是第一等公民，而在 ECS 中，组合是第一等公民。
-- OOP 鼓励数据的封装，而 ECS 鼓励使用暴露的 POD（plain old data）对象。
-- OOP 将数据与行为放在一起，而 ECS 将数据与行为分离。
-- 在 OOP 中，对象实例是单一静态类型的，而在 ECS 中，实体可以具有多个、动态变化的组件。
+- 在 OOP 中，继承是一等公民，而在 ECS 中，组合是一等公民。
+- OOP 鼓励封装数据，而 ECS 鼓励暴露 POD 对象。
+- OOP 将数据与行为放在一起，而 ECS 将数据从行为分离。
+- 在 OOP 中，对象实例是单一静态类型的，而在 ECS 中，实体可以拥有多个、动态变化的组件。
 
 值得注意的是，有人认为 ECS 符合*面向对象设计*的特征（请参阅[本文](https://www.gamedev.net/blogs/entry/2265481-oop-is-dead-long-live-oop/)），因此应该被视为其子集。
 
-然而，在实践中，ECS 应用程序的设计过程与大多数人认识的 OOP 设计过程显著不同。因此，将其视为一种独立的设计方法起码有点用。
+然而，在实践中，ECS 应用的设计过程与大多数人认识的 OOP 设计过程有显著差异。因此，将其视为一种独立的设计方法，起码还是有用的。
 
-### How is ECS different from Entity-Component frameworks?
-Confusingly, ECS and Entity-Component frameworks (EC) are not the same. EC frameworks, as typically found in game engines, are similar to ECS in that they allow for the creation of entities and the composition of components. However, in an EC framework, components are classes that contain both data and behavior, and behavior is executed directly on the component.
+### ECS 与实体-组件框架有何不同？
 
-A simple EC framework would look something like this:
+ECS 和实体-组件框架（Entity-Component，EC）不一样。这点经常把人搞懵。一般来说，游戏引擎里找得到的 EC 框架基本都与 ECS 类似，都允许创建实体和组合组件。然而，在 EC 框架中，组件是包含数据和行为的类，行为直接在组件上执行。
 
-```cpp
-class IComponent {
-public:
-    virtual void update() = 0;
-};
-
-class Entity {
-    vector<IComponent*> components;
-public:
-    void addComponent(IComponent *component);
-    void removeComponent(IComponent *component);
-    void updateComponents();
-};
-```
-
-Building features in an EC framework generally means inheriting from an `IComponent` interface, and composing entities from multiple components. An example of EC in practice is Unity's `GameObject` system.
-
-ECS 与实体-组件框架有何不同？
-
-令人困惑的是，ECS 和实体-组件框架（Entity-Component，EC）并不相同。通常在游戏引擎中找到的 EC 框架与 ECS 类似，都允许创建实体和组合组件。然而，在 EC 框架中，组件是包含数据和行为的类，行为直接在组件上执行。
-
-一个简单的 EC 框架可能如下所示：
+一个简单的 EC 框架可能长这样：
 
 ```cpp
 class IComponent {
@@ -324,26 +280,16 @@ public:
 };
 ```
 
-在 EC 框架中构建功能通常意味着从 `IComponent` 接口继承，并从多个组件组合实体。实际生产中的一个 EC 实例是 Unity 的 `GameObject` 系统。
+在 EC 框架中构建功能通常意味着继承 `IComponent` 接口，并从多个组件组合实体。Unity 的 `GameObject` 系统就是 EC 在实践中的一个例子。
 
+### ECS 难学吗？
 
-### Is ECS hard to learn?
-The small number of concepts and rules of an ECS are generally easy to learn. Applying them correctly however can take practice. Some aspects of ECS design go against intuition, especially when coming from an OOP background.
+ECS 的概念和规则相对较少，一般比较好学。但是，需要多加练习才能正确应用这些概念和规则。ECS 设计的某些方面与直觉相悖，尤其是在 OOP 背景下。
 
-Anecdotally, users have reported that once ECS "clicked", it made it easier to write, reuse and scale code.
+不过也有人说一旦跟 ECS 对上电波后，编写、复用和扩展代码都会变得更简单。
+### ECS 是更低级别的抽象吗？
 
-ECS 难学吗？
-
-ECS 的概念和规则相对较少，通常比较好学。但是，正确地去应用可能需要一些实践。ECS 设计的某些方面与直觉相悖，特别是对于那些有 OOP 背景的人。
-
-不过也有人说一旦理解了 ECS，就能更容易地编写、重用和扩展代码。
-
-### Is ECS a lower level of abstraction?
-Not necessarily. While some ECS designs can leverage low-level machine optimizations, the code written for an ECS is not necessarily lower or higher level than other approaches.
-
-ECS 是更低级别的抽象吗？
-
-不一定。虽然一些 ECS 设计可以更充分地利用低级别的机器，但为 ECS 编写的代码不一定比其他方法更低级或更高级。
+不一定。虽然一些 ECS 设计可以更充分地利用低级的机器，但为 ECS 编写的代码不一定比其他方法更低级或更高级。
 
 ### Does ECS require writing more code?
 There is not a single answer to this, and highly depends on the ECS framework and engine that is used. 
@@ -354,123 +300,64 @@ When ECS is not integrated with an engine, the additional glue-code to bridge be
 
 Having said that, the time spent on writing ECS code is offset by time savings as the result of a more maintainable code base.
 
-ECS 是否会增加代码编写量？
+### ECS 会增加代码编写量吗？
 
 不一定，取决于所使用的 ECS 框架和引擎。
 
-当 ECS 框架与引擎集成时，可以产生相当紧凑而简练的代码，甚至可能比非 ECS 的替代方案更为简短。Bevy、Amethyst 和 Our Machinery 是一些集成了 ECS 的引擎的例子。
+当 ECS 框架集成到引擎里时，写出来的代码可能相当简短又简练，甚至可能比非 ECS 的替代方案还短。Bevy、Amethyst 和 Our Machinery 是一些 ECS 与引擎集成的例子。
 
-而当 ECS 未集成到引擎里时，为了在原生引擎类型和 ECS 之间桥接，可能需要编写额外的胶水代码，从而导致需要为应用程序编写更多代码。
+而当 ECS 未集成到引擎里时，需要额外写胶水代码来桥接原生引擎类型和 ECS，也就是说可能需要为应用程序写更多代码。
 
-尽管如此，花费在编写 ECS 代码上的时间会因得到更易于维护的代码库而得以弥补，从而节省时间。
+话虽如此，花费在编写 ECS 代码上的时间会省回来，因为代码库维护起来更容易了。
 
-### Is ECS good for low level code?
-Low level engine code such as rendering and physics may want to use advanced features of the underlying hardware such as vectorization, while optimizing cache locality. Some ECS frameworks are better suited for this than others. 
-
-Generally speaking, when an ECS provides access to raw component arrays, it lends itself better towards low-level optimizations. Another deciding factor, especially in modern games, is how easy it is to multithread such systems.
-
-ECS 是否适用于低级代码？
+### ECS 适用于低级代码吗？
 
 对于低级引擎代码，如渲染和物理，可能希望利用底层硬件的高级特性——比如矢量化——的同时优化缓存局部性。一些 ECS 框架相对于其他框架更适合这种需求。
 
 一般来说，当一个 ECS 框架提供对原始组件数组的访问时，它更适合进行低级优化。另一个决定性因素是系统多线程化的难易程度，这点在现代游戏中尤为重要。
 
+### 什么语言都能实现 ECS 吗？
 
-### Can ECS be implemented in any language?
-Yes.
+都能。
 
-ECS 能用任意语言实现吗？
+### 我要不要写一个自己的 ECS？
 
-对。
+构建一个功能齐全的 ECS 并不难，毕竟概念和规则都只有三言两语。建一个自己的 ECS 有许多好处，比如说你可以自由添加新功能，还能仅构建实际需要的功能。
 
-### Should I write my own ECS?
+但是，自己去写实现的话，应该提前打好“它可能比不过已有的实现”的预防针。随着时间的发展，早有许多技巧发明了出来，以在 ECS 操作中提供平衡的性能。要保持对新发展的掌握，需要不断地学习、尝试和迭代。
 
-Because of its small set of concepts and rules, building a functional ECS is not hard. There are many benefits to building your own, like the freedom to add new features, and only building features that you really need.
+学会编写一个 ECS 很容易，但难以精通，跟很多事情都一样。
+### ECS 快吗？
 
-If you write your own implementation however, you should fully expect that it will not outperform established implementations. There are a lot of tricks that have been invented over time to provide a balanced performance across ECS operations. It requires constant education, experimentation and iteration to stay on top of new developments.
+通常是对的，虽然这肯定会取决于你在测什么和 ECS 的实现。不同的实现会做出不同的权衡，因此，在一个框架中非常快的操作，换到另一个框架可能就相当慢了。
 
-As is the case with many things, writing an ECS is easy to learn, but hard to master.
+ECS 实现一般擅长以线性查询和遍历实体集，或是在运行时动态更改组件。它们通常不擅长需要高度专业化数据结构的查询或操作，比如二叉树或空间结构。了解一个实现的权衡并充分利用其设计，可以确保从 ECS 中获得最佳的性能。
 
-我应该自己写一个 ECS 吗？
+### ECS 的代码是不是更方便复用？
 
-由于其简短的概念和规则集，构建一个功能齐全的 ECS 并不难。建一个自己的 ECS 有许多好处，比如可以自由添加新功能，以及仅构建实际需要的功能。
+没错。原因在于行为在 ECS 中是与一组组件相匹配的，而不像 OOP，行为与类紧密耦合。一些影响随之而来。
 
-然而，如果你自己去写实现，你应该充分预料到“它可能比不过已有的实现”。随着时间的发展，早有许多技巧发明了出来，以在 ECS 操作中提供平衡的性能。要保持对新发展的掌握，需要不断地学习、尝试和迭代。
+第一个显而易见。因为行为不与单个类绑定，所以它可以在不同类的实体之间重复使用。典例是一个"Move" 系统，能匹配任何具有 "Position" 和 "Velocity" 组件的实体。
 
-就像许多事物一样，学会编写一个 ECS 很容易，但难以精通。
+其他更像 OOP 风格的设计中也可以实现这种功能，但这通常依赖于基于类的继承。继承的问题众所周知，比如难以重构类层次结构，或是底层基类随时间推移积累废弃代码之类。
 
+然而，EC 框架也可以提供类似的可重用性水平，只需把组件添加到游戏实体中即可。 (参见 [ECS 与实体-组件框架有何不同](#how-is-ecs-different-from-entity-component-frameworks))。
 
-### Is ECS fast?
+ECS 在这里的巨大优势是，可以在开发的任何阶段引入新的系统，且无论旧的新的实体，只要拥有正确的组件，系统就会自动与之匹配。这就促进了设计：把系统开发成单一责任的小型功能单元，进而轻松地部署到不同项目中。
 
-Generally yes, though this of course depends on what is being measured, and the ECS implementation. Different implementations make different tradeoffs, and as such an operation that is really fast in one framework is quite slow in another. 
+### ECS 适用于多线程吗？
 
-Things that ECS implementations are generally good at are querying and iterating sets of entities linearly, or dynamically changing components at runtime. Things that ECS implementations are generally not good at are queries or operations that require highly specialized data structures, such as binary trees or spatial structures. Knowing the tradeoffs of an implementation and levering its design ensure you get the most performance out of an ECS.
+一般来说是的。数据和行为的分离使得识别个体系统、它们的依赖关系以及调度方式更为容易。因 ECS 实现不同，多线程的处理方法可能有所不同，但大多数都会让多线程代码更容易实现。
 
-通常是对的，虽然这肯定会取决于正在测量的内容和 ECS 的实现。不同的实现会做出不同的权衡，因此在一个框架中非常快的操作在另一个框架中可能会相当慢。
+### ECS 能用在游戏外吗？
 
-ECS 实现通常擅长的是线性查询和迭代实体集，或是在运行时动态更改组件。它们通常不擅长的是需要高度专业化数据结构的查询或操作，比如二叉树或空间结构。了解一个实现的权衡并充分利用其设计，可以确保从 ECS 中获得最佳的性能。
+可以。它可以用于（也已用于）游戏外的项目了。
 
+### 我要怎么开始使用 ECS？
 
-### Is ECS code more reusable?
+我特别推荐去读跟 ECS 有关的已有资源，并去试一下里边描述的方法。阅读示例 ECS 项目的代码也是快速了解 ECS 应用程序编写方式的好方法。
 
-Yes. The reason for this is that behavior in an ECS is matched with a set of components, vs. For example being tightly coupled with a class in OOP. This has a couple of implications.
-
-The first one is obvious. Because behavior is not tied to a single class, it can be reused across entities of different classes. The typical example is that of a "Move" system that is matched with any entity that has a "Position" and "Velocity" component.
-
-This is not impossible to achieve in other, more OOP-style designs, but this often relies on class-based inheritance. Inheritance has well-known problems, such as how difficult it can be to refactor a class hierarchy, or how low-level base classes tend to accumulate bloat over time.
-
-However, EC frameworks can provide similar levels of reusability, where components are simply added to game entities. (see [How is ECS different from Entity-Component frameworks?](#how-is-ecs-different-from-entity-component-frameworks)).
-
-The big advantage of ECS here however, is that new systems can be introduced at any stage of development, and will automatically get matched with any existing and new entities that have the right components. This promotes a design where systems are developed as single-responsibility, small units of functionality that can be easily deployed across different projects.
-
-ECS 的代码更能重复利用吗？
-
-是的。这是因为在 ECS 中，行为与一组组件匹配，而不像在 OOP 中与类紧密耦合。这产生了一些影响。
-
-第一个显而易见。因为行为不与单个类绑定，所以它可以在不同类的实体之间重复使用。典型的例子是与具有 "Position" 和 "Velocity" 组件的任何实体匹配的 "Move" 系统。
-
-这在其他更像 OOP 风格的设计中并非不可能实现，但这通常依赖于基于类的继承。继承有众所周知的问题，比如它是怎样难以重构类层次结构的，或者底层基类是怎样随时间推移积累废弃代码的。
-
-然而，EC 框架可以提供类似的可重用性水平，只需要把组件添加到游戏实体中。 (参见 [ECS 是如何与 EC 框架作出区分的？](#how-is-ecs-different-from-entity-component-frameworks))。
-
-ECS 在这里的巨大优势在于，可以在开发的任何阶段引入新的系统，并且将自动与具有正确组件的所有现有和新实体相匹配。这促使了一种把系统开发为单一职责、功能单元，以轻松部署到不同项目中的设计。
-
-### Is ECS good for multithreading?
-
-Generally yes. The separation of data and behavior makes it easier to identify individual systems, what their dependencies are, and how they should be scheduled. The approach towards multithreading differs between different ECS implementations, but most approaches make it easier to multithread code.
-
-ECS 适用于多线程吗？
-
-一般来说是的。数据和行为的分离使得识别个体系统，它们的依赖关系以及调度方式更为容易。在不同的 ECS 实现之间，多线程的处理方法可能有所不同，但大多数都会让多线程代码更容易实现。
-
-
-### Can ECS be used outside of gaming?
-Yes. It can be (and has been) used for projects outside of gaming.
-
-是的。它可以用于（也已用于）游戏外的项目了。
-
-### How do I start with ECS?
-
-I highly recommend reading existing resources on ECS and experimenting with the approaches they describe. Reading the code of example ECS projects can also be a good way to fast-track your understanding of how ECS applications are written.
-
-我要怎么开始使用 ECS？
-
-我强烈建议阅读有关 ECS 的现有资源，并尝试实验其中描述的方法。阅读示例 ECS 项目的代码也是快速了解 ECS 应用程序编写方式的好方法。
-
-### How do I design for ECS?
-
-Designing an ECS application starts with creating the components (data structures) that contain the game data. Important things to take into account are:
-
-- How many instances of the data will exist
-- How often is data accessed
-- How often is the data mutated
-- When does data need to be accessed/mutated
-- Which data is accessed/mutated together
-- What is the cardinality of the data
-
-It is good practice to design components and systems to have a single responsibility. This makes them easier to reuse across projects, and makes it easier to refactor code.
-
-如何为 ECS 进行设计？ 
+### 如何设计 ECS ？ 
 
 设计一个 ECS 应用程序始于创建包含游戏数据的组件（数据结构）。需要考虑的重要事项包括：
 - 数据的实体数量 
@@ -480,73 +367,36 @@ It is good practice to design components and systems to have a single responsibi
 - 哪些数据一起被访问/更改
 - 数据的基数是多少
 
-设计组件和系统具有单一责任是良好的实践。这使得它们更容易在项目之间重用，并使得代码重构更加容易。
+设计单一责任的组件和系统是良好的实践。这使得它们更容易在项目之间重用，并使得代码重构更加容易。
 
-### What are the different ways to implement an ECS?
-There are many different ways in which to implement an ECS, each with different tradeoffs. This non exhaustive list contains some of the more popular approaches:
-#### Archetypes (aka "Dense ECS" or "Table based ECS")
-An archetype ECS stores entities in tables, where components are columns and entities are rows. Archetype implementations are fast to query and iterate.
+### 实现 ECS 的方法有哪些？
 
-Examples of archetype implementations are [Flecs](https://github.com/SanderMertens/flecs), [Our Machinery](https://ourmachinery.com/), [Unity DOTS](https://unity.com/dots), [Unreal Sequencer](https://www.unrealengine.com/en-US/tech-blog/performance-at-scale-sequencer-in-unreal-engine-4-26), [Unreal Mass](https://docs.unrealengine.com/5.0/en-US/overview-of-mass-entity-in-unreal-engine/), [Bevy ECS](https://bevyengine.org/), [Legion](https://github.com/amethyst/legion) and [Hecs](https://github.com/Ralith/hecs).
-#### Sparse set ECS (aka "Sparse ECS")
-A sparse set based ECS stores each component in its own sparse set which is has the entity id as key. Sparse set implementations allow for fast add/remove operations.
+实现 ECS 的方式多种多样，每种都各有权衡。这个不完全列表列举了一些比较流行的实现：
 
-Examples of sparse set implementations are [EnTT](https://github.com/skypjack/entt) and [Shipyard](https://github.com/leudz/shipyard).
-#### Bitset based ECS
-A bitset-based ECS stores components in arrays where the entity id is used as index, and uses a bitset to indicate if an entity has a specific component. Different flavors of bitset-based approaches exist. One approach is to have an array for each component with an accompanying bitset to indicate which entities have the component. Another approach uses the [hibitset](#hibitset) data structure (see link).
+#### 原型（又称“密集型 ECS”或“基于表的 ECS”）
 
-Examples of bitset implementations are [EntityX](https://github.com/alecthomas/entityx) and [Specs](https://github.com/amethyst/specs).
-
-#### Reactive ECS
-A reactive ECS uses signals resulting from entity mutations to keep track of which entities match systems/queries.
-
-An example of a reactive ECS is [Entitas](https://github.com/sschmid/Entitas-CSharp).
-
-实现 ECS 的方式多种多样，每种都各有权衡。这个不完全列表包括了一些比较流行的实现：
-
-#### 原型（又名“密集型 ECS”或“基于表的 ECS”）
-
-原型 ECS 将实体存储在表里，其中组件是列，实体是行。原型实现可以快速查找、遍历。
+原型 ECS （Archetypes ECS）将实体存储在表里，其中组件是列，实体是行。原型实现可以快速查找、遍历。
 
 原型实现的例子有 [Flecs](https://github.com/SanderMertens/flecs)、[Our Machinery](https://ourmachinery.com/)、[Unity DOTS](https://unity.com/dots)、[Unreal Sequencer](https://www.unrealengine.com/en-US/tech-blog/performance-at-scale-sequencer-in-unreal-engine-4-26)、[Unreal Mass](https://docs.unrealengine.com/5.0/en-US/overview-of-mass-entity-in-unreal-engine/)、[Bevy ECS](https://bevyengine.org/)、[Legion](https://github.com/amethyst/legion) 和 [Hecs](https://github.com/Ralith/hecs)。
 
 #### 稀疏集 ECS（又称“稀疏 ECS”）
 
-基于稀疏集的 ECS 将每个组件存储在自己的稀疏集中，实体 ID 是稀疏集的键。稀疏集实现可以快速添加/删除。
+基于稀疏集的 ECS（Sparse set ECS）将每个组件存储在自己的稀疏集中，实体 ID 是稀疏集的键。稀疏集实现可以快速添加/删除。
 
 稀疏集实现的例子有 [EnTT](https://github.com/skypjack/entt) 和 [Shipyard](https://github.com/leudz/shipyard)。
-#### 比特集 ECS
+#### 位集 ECS
 
-基于比特集的 ECS 将组件存储在数组中，其中实体 ID 用作索引，并使用比特集表明实体是否具有特定组件。基于位集的实现有多种版本。一种方法是让每个组件都持有一个数组，外带一个比特集，以指示哪些实体拥有该组件。另一种方法是使用 [hibitset](#hibitset) 数据结构（见链接）。
+基于位集的 ECS（Bitset based ECS）将组件存储在数组中，将实体 ID 用作索引，并使用一个位集表明实体是否具有特定组件。基于位集的实现有多种版本。一种方法是让每个组件都持有一个数组，外加一个位集来指示哪些实体拥有该组件。另一种方法是使用 [hibitset](#hibitset) 数据结构（见链接）。
 
-比特集实现的例子有 [EntityX](https://github.com/alecthomas/entityx) 和 [Specs](https://github.com/amethyst/specs)。
+位集实现的例子有 [EntityX](https://github.com/alecthomas/entityx) 和 [Specs](https://github.com/amethyst/specs)。
 
 #### 响应式 ECS
 
-响应式 ECS 使用由实体变化产生的信号来追踪哪些实体与系统/查询匹配。
+响应式 ECS（reactive ECS）使用由实体变化产生的信号来追踪哪些实体与系统/查询匹配。
 
 响应式 ECS 的例子是 [Entitas](https://github.com/sschmid/Entitas-CSharp)。
 
-### How are components modified?
-There are usually two ways in which an ECS allows for modifying a component, which is either by modifying the component on a single entity, or modifying the component values of many entities in a system.
-
-An example of the first approach:
-```cpp
-entity. Set<Position>({10, 20});
-```
-
-An example of the second approach:
-```cpp
-system<Position, Velocity>(). Each (
-    [](entity e, Position& p, Velocity & v) {
-        p.x += v.x;
-        p.y += v.y;
-    });
-```
-
-The second approach is generally faster as it requires less lookups, and can take advantage of efficient component storage methods.
-
-怎样修改组件
+### 组件是如何修改的 ？
 
 通常，ECS 允许以两种方式修改组件，一种是修改单个实体上的组件，另一种是通过系统修改许多实体的组件值。
 
@@ -564,41 +414,22 @@ system<Position, Velocity>(). Each (
     });
 ```
 
-第二种方法通常更快，因为它查找数更少，还能利用高效的组件存储方法。
+第二种方法通常更快，因为它查找数更少，还能从高效的组件存储方法中受益。
 
-### How are entities matched with systems?
-There are three popular ways of implementing this.
-
-1. In an archetype-based ECS a query stores a list of matched tables, where a table can contain many entities. This approach has as advantage that as tables stabilize quickly, query evaluation overhead is reduced to zero on average.
-
-2. In a sparse set ECS a query iterates all entities in one of the queried for components (usually the one with the least entities) and tests for each subsequent component if the entity has it. Bitset-based ECS implementations use a similar approach.
-
-3. In a reactive ECS a system collects entities that have the right set of components by listening for signals that could cause an entity to match.
-
-实体如何与系统匹配？
+### 实体是怎么与系统匹配的 ？
 
 有三种常用的实现方法。
 
-在原型 ECS 中，查询会存储一个匹配表的列表（一个表可以包含许多实体）。这种方法的优点是，由于表很快就会稳定下来，查询评估开销平均会降至零。
+1. 在原型 ECS 中，查询会存储一个匹配表的列表（一个表可以包含许多实体）。这种方法的优点是，由于表很快就会稳定下来，查询评估开销平均会降至零。
+2. 在稀疏集 ECS 中，查询会遍历所查询的一个组件（通常是实体最少的组件）中的所有实体，并测试每个后续组件中是否有实体。位集 ECS 也使用类似的方法。
+3. 在响应式 ECS 中，系统通过监听可能让实体匹配的信号，收集拥有正确组件集的实体。
 
-在稀疏集 ECS 中，查询会遍历所查询的一个组件（通常是实体最少的组件）中的所有实体，并测试随后的每个组件中是否有实体。比特集 ECS 也使用类似的方法。
+### 什么是实体关系 ？
 
-在反应式 ECS 中，系统通过监听可能让实体匹配的信号，收集拥有正确组件集的实体。
-### What are entity relationships?
-Entity relationships are an extension to the ECS model where in addition to adding components, a pair of things can be added to an entity. A simple example of a relationship might look like this:
-
-```c
-alice. Add<Likes>(bob);
-```
-
-In this example "Likes, bob" is the pair, "Likes" is a relationship kind and "bob" is the relationship target. Both "alice" and "bob" are regular entities. For more information on entity relationships, see [this article](https://ajmmertens.medium.com/building-games-in-ecs-with-entity-relationships-657275ba2c6c).
-
-什么是实体关系？
-
-实体关系是 ECS 模型的扩展，除了添加组件外，还可以将一对事物添加到一个实体中。一个简单的关系示例可能长这样：
+实体关系（entity relationships）是 ECS 模型的扩展，除了添加组件外，还可以将一对事物添加到一个实体中。一个简单的关系示例可能长这样：
 
 ```c
-alice. Add<Likes>(bob);
+alice.Add<Likes>(bob);
 ```
 
 在这个例子中，"likes, bob" 是一对关系，"Likes" 是关系种类，"bob" 是关系目标。"Alice" 和 "bob" 都是普通实体。有关实体关系的更多信息，请参阅[本文](https://ajmmertens.medium.com/building-games-in-ecs-with-entity-relationships-657275ba2c6c)。
@@ -634,7 +465,9 @@ An approach that works especially well if an application just needs to iterate a
 
 Archetype ECS frameworks may allow splitting up subtrees across different tables. Tables/subtrees can be sorted according to their depth. This has as advantage that iteration is fast, and that sorting is infrequent. The disadvantage of this approach is that it can create a lot of small tables, which can degrade performance.
 
-如何在 ECS 里实现层次结构？
+## 如何
+
+### 如何在 ECS 里实现层次结构？
 
 在 ECS 中实现层次结构有好几种方法，应用程序使用哪种方法取决于 ECS 的实现。一种方法是在组件中存储层次结构，它在任何实现中都适用，如下所示：
 
@@ -657,7 +490,7 @@ Struct ChildList {
 };
 ```
 
-这种方法的缺点是依赖于组件查找，这会降低遍历层次结构的系统的运行速度。尽管它很灵活，但对于应用变换等低级系统来说并不是最优解。
+这种方法的缺点是依赖于组件查找，这会降低遍历层次结构的系统的运行速度。尽管它很灵活，但对于低级系统（比如应用变换）来说并不是最优解。
 
 如果应用只需要自上而下地遍历层次结构的话，有一种方法特别有效，就是根据实体在层次结构中的深度进行排序。这种方法的优点是迭代速度快。缺点是需要频繁排序。
 
