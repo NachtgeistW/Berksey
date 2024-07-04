@@ -1,4 +1,4 @@
-﻿---
+---
 title: 使用 C++ 从零实现 Twitter 的 OAuth1.0a 验证
 date: 2020/12/08
 updated: 2020/12/08

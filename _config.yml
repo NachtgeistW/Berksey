@@ -99,6 +99,9 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+  - "_obsidian/*"
+  - ".obsidian/*"
+  - ".trash/*"
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/

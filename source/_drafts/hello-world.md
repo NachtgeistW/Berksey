@@ -1,4 +1,4 @@
-﻿---
+---
 title: Hello World
 date: 2022/09/10
 updated: 2022/09/10
