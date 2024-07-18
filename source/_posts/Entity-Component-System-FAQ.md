@@ -35,33 +35,31 @@ I'm the author of [Flecs](https://github.com/SanderMertens/flecs), an Entity Com
   - [谁在使用 ECS？](#谁在使用-ecs)
   - [ECS 与 OOP 的不同点在哪？](#ecs-与-oop-的不同点在哪)
   - [ECS 与实体-组件框架有何不同？](#ecs-与实体-组件框架有何不同)
-  - [Is ECS hard to learn?](#is-ecs-hard-to-learn)
   - [ECS 难学吗？](#ecs-难学吗)
-  - [Is ECS a lower level of abstraction?](#is-ecs-a-lower-level-of-abstraction)
+  - [ECS 是更低级别的抽象吗？](#ecs-是更低级别的抽象吗)
   - [Does ECS require writing more code?](#does-ecs-require-writing-more-code)
-  - [Is ECS good for low level code?](#is-ecs-good-for-low-level-code)
-  - [Can ECS be implemented in any language?](#can-ecs-be-implemented-in-any-language)
-  - [Should I write my own ECS?](#should-i-write-my-own-ecs)
-  - [Is ECS fast?](#is-ecs-fast)
-  - [Is ECS code more reusable?](#is-ecs-code-more-reusable)
-  - [Is ECS good for multithreading?](#is-ecs-good-for-multithreading)
-  - [Can ECS be used outside of gaming?](#can-ecs-be-used-outside-of-gaming)
-  - [How do I start with ECS?](#how-do-i-start-with-ecs)
-  - [How do I design for ECS?](#how-do-i-design-for-ecs)
-  - [What are the different ways to implement an ECS?](#what-are-the-different-ways-to-implement-an-ecs)
-    - [Archetypes (aka "Dense ECS" or "Table based ECS")](#archetypes-aka-dense-ecs-or-table-based-ecs)
-    - [Sparse set ECS (aka "Sparse ECS")](#sparse-set-ecs-aka-sparse-ecs)
-    - [Bitset based ECS](#bitset-based-ecs)
-    - [Reactive ECS](#reactive-ecs)
-    - [原型（又名“密集型 ECS”或“基于表的 ECS”）](#原型又名密集型-ecs或基于表的-ecs)
+  - [ECS 会增加代码编写量吗？](#ecs-会增加代码编写量吗)
+  - [ECS 适用于低级代码吗？](#ecs-适用于低级代码吗)
+  - [什么语言都能实现 ECS 吗？](#什么语言都能实现-ecs-吗)
+  - [我要不要写一个自己的 ECS？](#我要不要写一个自己的-ecs)
+  - [ECS 快吗？](#ecs-快吗)
+  - [ECS 的代码是不是更方便复用？](#ecs-的代码是不是更方便复用)
+  - [ECS 适用于多线程吗？](#ecs-适用于多线程吗)
+  - [ECS 能用在游戏外吗？](#ecs-能用在游戏外吗)
+  - [我要怎么开始使用 ECS？](#我要怎么开始使用-ecs)
+  - [如何设计 ECS ？](#如何设计-ecs-)
+  - [实现 ECS 的方法有哪些？](#实现-ecs-的方法有哪些)
+    - [原型（又称“密集型 ECS”或“基于表的 ECS”）](#原型又称密集型-ecs或基于表的-ecs)
     - [稀疏集 ECS（又称“稀疏 ECS”）](#稀疏集-ecs又称稀疏-ecs)
-    - [比特集 ECS](#比特集-ecs)
+    - [位集 ECS](#位集-ecs)
     - [响应式 ECS](#响应式-ecs)
-  - [How are components modified?](#how-are-components-modified)
-  - [How are entities matched with systems?](#how-are-entities-matched-with-systems)
-  - [What are entity relationships?](#what-are-entity-relationships)
+  - [组件是如何修改的 ？](#组件是如何修改的-)
+  - [实体是怎么与系统匹配的 ？](#实体是怎么与系统匹配的-)
+  - [什么是实体关系 ？](#什么是实体关系-)
 - [How-to](#how-to-1)
   - [How to create a hierarchy in ECS?](#how-to-create-a-hierarchy-in-ecs)
+- [如何](#如何)
+  - [如何在 ECS 里实现层次结构？](#如何在-ecs-里实现层次结构)
   - [How to store spatial data in ECS?](#how-to-store-spatial-data-in-ecs)
 - [Data Oriented Design](#data-oriented-design)
   - [What is Data Oriented Design](#what-is-data-oriented-design)
@@ -189,6 +187,7 @@ The current list includes both open and closed source ECS implementations, and e
 ## 一般性问题
 
 ### 什么是 ECS？
+
 ECS（"Entity Component System"）描述了一种设计方法，它分离数据和行为，以促进代码复用性。数据通常存储成缓存友好的方式，从而提高性能。ECS 具有以下特征：
 
 - 它有实体（entity），这些实体是唯一的标识符。
@@ -287,6 +286,7 @@ public:
 ECS 的概念和规则相对较少，一般比较好学。但是，需要多加练习才能正确应用这些概念和规则。ECS 设计的某些方面与直觉相悖，尤其是在 OOP 背景下。
 
 不过也有人说一旦跟 ECS 对上电波后，编写、复用和扩展代码都会变得更简单。
+
 ### ECS 是更低级别的抽象吗？
 
 不一定。虽然一些 ECS 设计可以更充分地利用低级的机器，但为 ECS 编写的代码不一定比其他方法更低级或更高级。
@@ -308,7 +308,7 @@ Having said that, the time spent on writing ECS code is offset by time savings a
 
 而当 ECS 未集成到引擎里时，需要额外写胶水代码来桥接原生引擎类型和 ECS，也就是说可能需要为应用程序写更多代码。
 
-话虽如此，花费在编写 ECS 代码上的时间会省回来，因为代码库维护起来更容易了。
+话虽如此，花费在编写 ECS 代码上的时间会省回来，因为代码库会更容易维护。
 
 ### ECS 适用于低级代码吗？
 
@@ -327,6 +327,7 @@ Having said that, the time spent on writing ECS code is offset by time savings a
 但是，自己去写实现的话，应该提前打好“它可能比不过已有的实现”的预防针。随着时间的发展，早有许多技巧发明了出来，以在 ECS 操作中提供平衡的性能。要保持对新发展的掌握，需要不断地学习、尝试和迭代。
 
 学会编写一个 ECS 很容易，但难以精通，跟很多事情都一样。
+
 ### ECS 快吗？
 
 通常是对的，虽然这肯定会取决于你在测什么和 ECS 的实现。不同的实现会做出不同的权衡，因此，在一个框架中非常快的操作，换到另一个框架可能就相当慢了。
@@ -357,12 +358,13 @@ ECS 在这里的巨大优势是，可以在开发的任何阶段引入新的系�
 
 我特别推荐去读跟 ECS 有关的已有资源，并去试一下里边描述的方法。阅读示例 ECS 项目的代码也是快速了解 ECS 应用程序编写方式的好方法。
 
-### 如何设计 ECS ？ 
+### 如何设计 ECS ？
 
 设计一个 ECS 应用程序始于创建包含游戏数据的组件（数据结构）。需要考虑的重要事项包括：
-- 数据的实体数量 
-- 数据被访问的频率 
-- 数据发生变化的频率 
+
+- 数据的实体数量
+- 数据被访问的频率
+- 数据发生变化的频率
 - 什么时候需要访问/更改数据
 - 哪些数据一起被访问/更改
 - 数据的基数是多少
@@ -384,6 +386,7 @@ ECS 在这里的巨大优势是，可以在开发的任何阶段引入新的系�
 基于稀疏集的 ECS（Sparse set ECS）将每个组件存储在自己的稀疏集中，实体 ID 是稀疏集的键。稀疏集实现可以快速添加/删除。
 
 稀疏集实现的例子有 [EnTT](https://github.com/skypjack/entt) 和 [Shipyard](https://github.com/leudz/shipyard)。
+
 #### 位集 ECS
 
 基于位集的 ECS（Bitset based ECS）将组件存储在数组中，将实体 ID 用作索引，并使用一个位集表明实体是否具有特定组件。基于位集的实现有多种版本。一种方法是让每个组件都持有一个数组，外加一个位集来指示哪些实体拥有该组件。另一种方法是使用 [hibitset](#hibitset) 数据结构（见链接）。
@@ -401,11 +404,13 @@ ECS 在这里的巨大优势是，可以在开发的任何阶段引入新的系�
 通常，ECS 允许以两种方式修改组件，一种是修改单个实体上的组件，另一种是通过系统修改许多实体的组件值。
 
 第一种方法的示例：
+
 ```cpp
 entity. Set<Position>({10, 20});
 ```
 
 第二种方法的示例：
+
 ```cpp
 system<Position, Velocity>(). Each (
     [](entity e, Position& p, Velocity & v) {
@@ -433,7 +438,6 @@ alice.Add<Likes>(bob);
 ```
 
 在这个例子中，"likes, bob" 是一对关系，"Likes" 是关系种类，"bob" 是关系目标。"Alice" 和 "bob" 都是普通实体。有关实体关系的更多信息，请参阅[本文](https://ajmmertens.medium.com/building-games-in-ecs-with-entity-relationships-657275ba2c6c)。
-
 
 ## How-to
 
@@ -495,6 +499,7 @@ Struct ChildList {
 如果应用只需要自上而下地遍历层次结构的话，有一种方法特别有效，就是根据实体在层次结构中的深度进行排序。这种方法的优点是迭代速度快。缺点是需要频繁排序。
 
 原型 ECS 框架允许在不同的表中拆分子树。表/子树可以根据其深度进行排序。这种方法的优点是迭代速度快，排序不频繁。缺点是会产生大量小表，从而降低性能。
+
 ### How to store spatial data in ECS?
 Spatial data structures like quadtrees and octrees are usually not directly stored in an ECS, as their layout does not match well with the typical ECS layout.
 

@@ -4,18 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "025c5cc5eb7f853c",
+        "id": "c76384dbb0418e70",
         "type": "tabs",
         "children": [
           {
-            "id": "8d4f5065c2b62026",
+            "id": "a584c8712edf71f7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/Entity-Component-System-FAQ.md",
+                "file": "_posts/understand-class-inheritance.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
           }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/Entity-Component-System-FAQ.md",
+                "file": "_posts/understand-class-inheritance.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/Entity-Component-System-FAQ.md",
+                "file": "_posts/understand-class-inheritance.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -122,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/Entity-Component-System-FAQ.md"
+                "file": "_posts/understand-class-inheritance.md"
               }
             }
           },
@@ -154,10 +154,35 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "8d4f5065c2b62026",
+  "active": "a584c8712edf71f7",
   "lastOpenFiles": [
-    "_posts/git-and-github-common-opers.md",
+    "_posts/understand-class-inheritance/Pastedimage20240718160138.png",
+    "_posts/understand-class-inheritance.md",
+    "_posts/understand-class-inheritance/Pastedimage20240718172406.png",
+    "_posts/understand-class-inheritance/Pastedimage20240718170711.png",
+    "_posts/understand-class-inheritance/Pastedimage20240718160549.png",
+    "_posts/post-poblem-about-time.md",
+    "_posts/hexo-blog-config-2.md",
+    "_posts/Pasted.md",
+    "_posts/set-proxy-for-cli.md",
+    "_posts/save-cevio-docs-with-python-and-github-action.md",
+    "_posts/rhythm-game-crash-course.md",
+    "_posts/understand-class-inheritance/Pastedimage20240718160911.png",
+    "_posts/understand-class-inheritance",
+    "_drafts/understand-class-inheritance.md",
+    "_posts/understand-class-inheritance/Pastedimage20240718171304.png",
+    "_drafts/attachments/Pasted image 20240718155515.png",
+    "_drafts/attachments",
+    "_drafts/_2020-9-23-gh-cli-usage.md",
+    "_drafts/books-in-the-lord-of-losers.md",
+    "_drafts/build-unity-from-cli-2-ios.md",
+    "_drafts/build-unity-from-powershell-1-android.md",
+    "_drafts/The World of Yesterday.md",
+    "_drafts/Implement-Twitter-OAuth-1.0a-in-Cpp.md",
+    "_posts/未命名.md",
+    "_drafts/understand-class-heiraty",
     "_posts/Entity-Component-System-FAQ.md",
+    "_posts/git-and-github-common-opers.md",
     "notes/godot.md",
     "_drafts/Entity-Component-System-FAQ.md",
     "_posts/NEUTRINO-101.md",
@@ -166,42 +191,16 @@
     "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_003200.976.jpg",
     "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_003134.238.jpg",
     "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_002837.464.jpg",
-    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_002832.756.jpg",
-    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_001808.092.jpg",
-    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E18.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_001122.359.jpg",
-    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E18.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_001035.090.jpg",
-    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E18.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_001022.569.jpg",
-    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E18.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_000909.090.jpg",
-    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E18.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_000907.384.jpg",
     "_drafts/books-in-the-lord-of-losers",
-    "_drafts/books-in-the-lord-of-losers.md",
-    "_drafts/build-unity-from-cli-2-ios.md",
-    "_drafts/build-unity-from-powershell-1-android.md",
     "notes/tools.md",
     "notes/tips.md",
     "notes/index.md",
     "notes/computerscience.md",
     "notes/csharp.md",
-    "notes/gamedev.md",
     "notes/tools",
-    "_posts/books-in-the-lord-of-losers.md",
-    "essay/books/index.md",
     "_posts/books-in-the-lord-of-losers",
     "_posts/破事精英[全24集][国语音轨+简繁英字幕].The.Lord.of.Losers.2022.V2.WEB-DL.4k.H265.AAC-XiaoTV",
-    "_posts/2020-summary.md",
-    "_drafts/about-unity-anchors.md",
-    "_drafts/The World of Yesterday.md",
-    "essay/arts.md",
-    "essay/books/list.md",
-    "_posts/build-unity-from-powershell-1-android.md",
-    "_posts/build-unity-from-cli-2-ios.md",
-    "_posts/deploy-mkdocs.md",
     "_posts/build-unity-from-cli-1-android",
-    "_drafts/hello-world.md",
-    "_drafts/实体组件系统常见问题（Entity Component System FAQ）.md",
-    "_posts/Entity-Component-System-FAQ-1",
-    "_posts/Entity-Component-System-FAQ",
-    "image/2020-10-24-bilibili-ctf",
     "未命名.canvas"
   ]
 }
