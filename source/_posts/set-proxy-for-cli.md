@@ -3,6 +3,7 @@ title: Windows 下为各类 CLI 设置代理
 date: 2020/9/26
 updated: 2020/9/26
 category: 
+- Mist
 - proxy
 tag: 
 - proxy

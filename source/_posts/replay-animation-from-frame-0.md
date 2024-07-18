@@ -2,13 +2,14 @@
 title: 从 ObjectPool 复用 GameObject 时从头开始播放 Animation
 date: 2022/09/10
 updated: 2022/09/10
-category: 
-- Unity3D
-tag: 
-- Unity3D
-- C#
-- Animator
-- Animation
+category:
+	- GameDev
+	- Unity3D
+tags:
+	- Unity3D
+	- Animator
+	- Animation
+	- CSharp
 ---
 
 我在写音游里的一个功能。

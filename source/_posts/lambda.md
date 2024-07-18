@@ -3,9 +3,10 @@ title: 盐酸的C++基础知识小讲堂——lambda表达式入门
 date: 2019/12/22
 updated: 2019/12/22
 category: 
-- C++
+- Computer Science
+- CPP
 tag: 
-- C++
+- CPP
 - lambda表达式
 - Python
 ---

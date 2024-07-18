@@ -6,7 +6,7 @@ category:
 - Computer Science
 - 算法
 tag: 
-- C++
+- CPP
 - 算法
 - 排列
 - 分治与递归
