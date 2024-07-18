@@ -1,4 +1,4 @@
-﻿---
+---
 title: HDU 2602 Bone Collector——0-1背包问题的多种解法
 description: 0-1 背包有三种解法你知道吗？
 date: 2019/12/31

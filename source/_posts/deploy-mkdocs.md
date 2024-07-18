@@ -3,6 +3,7 @@ title: 配合 Action 在 GitHub Pages 上部署 MkDocs 的坑
 date: 2022/05/13
 updated: 2022/05/13
 category: 
+- Mist
 - GitHub
 tag: 
 - GitHub Action

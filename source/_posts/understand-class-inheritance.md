@@ -2,7 +2,12 @@
 title: 理一下 C# 和 Kotlin 的泛型
 draft: false
 date: 2024-07-18 15:05:59
+category: 
+- Computer Science
+- CSharp
 tags:
+- CSharp
+- Kotlin
 ---
 > JVM 这泛型比不上模板一点，连 C# 的都不如
 > ——残像

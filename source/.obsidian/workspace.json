@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/understand-class-inheritance.md",
+                "file": "_posts/set-proxy-for-cli.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "25ad521a4ab007a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/HDU1007-Quoit-Design.md",
                 "mode": "source",
                 "source": true
               }
@@ -48,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#OAuth",
+                "query": "tag:C++",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/understand-class-inheritance.md",
+                "file": "_posts/set-proxy-for-cli.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/understand-class-inheritance.md",
+                "file": "_posts/set-proxy-for-cli.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -122,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/understand-class-inheritance.md"
+                "file": "_posts/set-proxy-for-cli.md"
               }
             }
           },
@@ -156,15 +168,24 @@
   },
   "active": "a584c8712edf71f7",
   "lastOpenFiles": [
-    "_posts/understand-class-inheritance/Pastedimage20240718160138.png",
+    "_posts/deploy-mkdocs.md",
+    "_posts/git-and-github-common-opers.md",
+    "_posts/mkdocs-i18n.md",
+    "_posts/lambda.md",
+    "_posts/HDU1007-Quoit-Design.md",
     "_posts/understand-class-inheritance.md",
+    "_posts/replay-animation-from-frame-0.md",
+    "_drafts/Implement-Twitter-OAuth-1.0a-in-Cpp.md",
+    "_posts/prem-algorithm.md",
+    "_posts/HDU2602-Knapsack problem.md",
+    "_posts/set-proxy-for-cli.md",
+    "_posts/understand-class-inheritance/Pastedimage20240718160138.png",
     "_posts/understand-class-inheritance/Pastedimage20240718172406.png",
     "_posts/understand-class-inheritance/Pastedimage20240718170711.png",
     "_posts/understand-class-inheritance/Pastedimage20240718160549.png",
     "_posts/post-poblem-about-time.md",
     "_posts/hexo-blog-config-2.md",
     "_posts/Pasted.md",
-    "_posts/set-proxy-for-cli.md",
     "_posts/save-cevio-docs-with-python-and-github-action.md",
     "_posts/rhythm-game-crash-course.md",
     "_posts/understand-class-inheritance/Pastedimage20240718160911.png",
@@ -178,25 +199,18 @@
     "_drafts/build-unity-from-cli-2-ios.md",
     "_drafts/build-unity-from-powershell-1-android.md",
     "_drafts/The World of Yesterday.md",
-    "_drafts/Implement-Twitter-OAuth-1.0a-in-Cpp.md",
     "_posts/未命名.md",
     "_drafts/understand-class-heiraty",
     "_posts/Entity-Component-System-FAQ.md",
     "_posts/git-and-github-common-opers.md",
     "notes/godot.md",
     "_drafts/Entity-Component-System-FAQ.md",
-    "_posts/NEUTRINO-101.md",
     "_drafts/build-unity-from-cli-2-ios",
     "_drafts/build-unity-from-cli-1-android",
     "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_003200.976.jpg",
     "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_003134.238.jpg",
     "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_002837.464.jpg",
     "_drafts/books-in-the-lord-of-losers",
-    "notes/tools.md",
-    "notes/tips.md",
-    "notes/index.md",
-    "notes/computerscience.md",
-    "notes/csharp.md",
     "notes/tools",
     "_posts/books-in-the-lord-of-losers",
     "_posts/破事精英[全24集][国语音轨+简繁英字幕].The.Lord.of.Losers.2022.V2.WEB-DL.4k.H265.AAC-XiaoTV",
