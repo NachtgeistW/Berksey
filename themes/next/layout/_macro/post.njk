@@ -23,8 +23,6 @@
       <meta itemprop="description" content="{{ page.description }}">
     </span>
 
-    {{ partial('_partials/post/google/header-ads.njk') }}
-
     {%- if post.header !== false %}
       <header class="post-header">
         <{% if is_index %}h2{% else %}h1{% endif %} class="post-title{% if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="name headline">
@@ -152,6 +150,9 @@
         {%- endif %}
 
       {%- endif %}
+
+      {{ partial('_partials/post/google/header-ads.njk') }}
+
     </footer>
   </article>
 </div>
