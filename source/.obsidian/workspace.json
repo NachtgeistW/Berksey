@@ -4,31 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "c76384dbb0418e70",
+        "id": "c6fc352f0c4dbc72",
         "type": "tabs",
         "children": [
           {
-            "id": "a584c8712edf71f7",
+            "id": "99073671fafc4427",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/set-proxy-for-cli.md",
+                "file": "_posts/cookie-config-4-karakeep-crawler.md",
                 "mode": "source",
                 "source": true
-              }
+              },
+              "icon": "lucide-file",
+              "title": "cookie-config-4-karakeep-crawler"
             }
           },
           {
-            "id": "25ad521a4ab007a1",
+            "id": "46cdb3f0701628da",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/HDU1007-Quoit-Design.md",
+                "file": "_posts/deploy-mkdocs.md",
                 "mode": "source",
                 "source": true
-              }
+              },
+              "icon": "lucide-file",
+              "title": "deploy-mkdocs"
             }
           }
         ]
@@ -50,8 +54,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -66,7 +73,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -74,7 +83,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -97,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/set-proxy-for-cli.md",
+                "file": "_posts/cookie-config-4-karakeep-crawler.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +116,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "cookie-config-4-karakeep-crawler 的反向链接列表"
             }
           },
           {
@@ -114,10 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/set-proxy-for-cli.md",
+                "file": "_posts/cookie-config-4-karakeep-crawler.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "cookie-config-4-karakeep-crawler 的出链列表"
             }
           },
           {
@@ -125,7 +140,9 @@
             "type": "leaf",
             "state": {
               "type": "empty",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           },
           {
@@ -134,8 +151,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/set-proxy-for-cli.md"
-              }
+                "file": "_posts/cookie-config-4-karakeep-crawler.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "cookie-config-4-karakeep-crawler 的大纲"
             }
           },
           {
@@ -145,8 +167,12 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
-              }
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           }
         ],
@@ -163,58 +189,58 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "bases:创建新数据库": false
     }
   },
-  "active": "a584c8712edf71f7",
+  "active": "9f5e8eaf49a303c3",
   "lastOpenFiles": [
+    "_posts/karakeep-xiaohongshu-cookie.png.md",
+    "_posts/cookie-config-4-karakeep-crawler.md",
+    "_posts/cookie-config-4-karakeep-crawler/karakeep-xiaohongshu-cookie.png",
+    "_posts/attachments",
+    "_posts/cookie-config-4-karakeep-crawler/karakeep-xiaohongshu-cookie.png",
+    "_posts/cookie-config-4-karakeep-crawler/Pasted image 20251016132602.png",
+    "_posts/cookie-config-4-karakeep-crawler/karakeep-xiaohongshu.png",
+    "_posts/attachments/Pasted image 20251016131922.png",
+    "_posts/cookie-config-4-karakeep-crawler/karakeep-tieba-2.png",
+    "_posts/cookie-config-4-karakeep-crawler/Pasted image 20251016125747.png",
+    "_posts/cookie-config-4-karakeep-crawler/edit-this-cookie.png",
+    "_posts/cookie-config-4-karakeep-crawler/edit-this-cookie.png",
+    "_posts/cookie-config-4-karakeep-crawler/karakeep-tieba-cookie-1.png",
+    "_posts/Pasted.md",
+    "_posts/books-in-the-lord-of-losers.md",
+    "_posts/cookie-config-4-karakeep-crawler",
     "_posts/deploy-mkdocs.md",
+    "_posts/bilibili-ctf-prequel.md",
+    "_posts/backing-track.md",
+    "_drafts/_2020-9-23-gh-cli-usage.md",
+    "_drafts/Implement-Twitter-OAuth-1.0a-in-Cpp.md",
+    "_drafts/The World of Yesterday.md",
+    "_posts/bilibili-dynamic-to-twitter.md",
+    "_drafts/build-unity-from-powershell-1-android.md",
+    "_drafts/build-unity-from-cli-2-ios.md",
+    "_posts/set-proxy-for-cli.md",
     "_posts/git-and-github-common-opers.md",
     "_posts/mkdocs-i18n.md",
     "_posts/lambda.md",
     "_posts/HDU1007-Quoit-Design.md",
     "_posts/understand-class-inheritance.md",
     "_posts/replay-animation-from-frame-0.md",
-    "_drafts/Implement-Twitter-OAuth-1.0a-in-Cpp.md",
     "_posts/prem-algorithm.md",
     "_posts/HDU2602-Knapsack problem.md",
-    "_posts/set-proxy-for-cli.md",
-    "_posts/understand-class-inheritance/Pastedimage20240718160138.png",
-    "_posts/understand-class-inheritance/Pastedimage20240718172406.png",
-    "_posts/understand-class-inheritance/Pastedimage20240718170711.png",
-    "_posts/understand-class-inheritance/Pastedimage20240718160549.png",
     "_posts/post-poblem-about-time.md",
     "_posts/hexo-blog-config-2.md",
-    "_posts/Pasted.md",
     "_posts/save-cevio-docs-with-python-and-github-action.md",
     "_posts/rhythm-game-crash-course.md",
-    "_posts/understand-class-inheritance/Pastedimage20240718160911.png",
     "_posts/understand-class-inheritance",
-    "_drafts/understand-class-inheritance.md",
-    "_posts/understand-class-inheritance/Pastedimage20240718171304.png",
-    "_drafts/attachments/Pasted image 20240718155515.png",
     "_drafts/attachments",
-    "_drafts/_2020-9-23-gh-cli-usage.md",
-    "_drafts/books-in-the-lord-of-losers.md",
-    "_drafts/build-unity-from-cli-2-ios.md",
-    "_drafts/build-unity-from-powershell-1-android.md",
-    "_drafts/The World of Yesterday.md",
-    "_posts/未命名.md",
     "_drafts/understand-class-heiraty",
-    "_posts/Entity-Component-System-FAQ.md",
-    "_posts/git-and-github-common-opers.md",
-    "notes/godot.md",
-    "_drafts/Entity-Component-System-FAQ.md",
     "_drafts/build-unity-from-cli-2-ios",
     "_drafts/build-unity-from-cli-1-android",
-    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_003200.976.jpg",
-    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_003134.238.jpg",
-    "_drafts/books-in-the-lord-of-losers/The.Lord.of.Losers.2022.E21.V2.WEB-DL.4k.H265.AAC-XiaoTV.mp4_002837.464.jpg",
-    "_drafts/books-in-the-lord-of-losers",
+    "_posts/books-in-the-lord-of-losers",
     "notes/tools",
     "_posts/books-in-the-lord-of-losers",
-    "_posts/破事精英[全24集][国语音轨+简繁英字幕].The.Lord.of.Losers.2022.V2.WEB-DL.4k.H265.AAC-XiaoTV",
-    "_posts/build-unity-from-cli-1-android",
     "未命名.canvas"
   ]
 }
