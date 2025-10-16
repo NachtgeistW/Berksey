@@ -130,7 +130,7 @@ docker compose down && docker compose up -d
 
 配置 cookie 后（截图、作者也全都刷新了，比贴吧效果好）（但是小红书没法拉取图片）：
 
-![](karakeep-xiaohongshu-cookie.png.md)
+![](karakeep-xiaohongshu-cookie.png)
 
 ## 未来改进
 
