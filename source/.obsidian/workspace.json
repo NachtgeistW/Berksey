@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "_posts/HDU2602-Knapsack problem.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
@@ -49,8 +49,7 @@
               "title": "unity-shader-bible-note"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -166,13 +165,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/unity-shader-bible-note-ch2.md",
+                "file": "_posts/HDU2602-Knapsack problem.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "unity-shader-bible-note-ch2 的大纲"
+              "title": "HDU2602-Knapsack problem 的大纲"
             }
           },
           {
@@ -208,12 +207,13 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "1aa6ee52c332bd54",
+  "active": "46cdb3f0701628da",
   "lastOpenFiles": [
-    "_posts/unity-shader-bible-note/Pasted image 20251023132018.png",
-    "_posts/unity-shader-bible-note-ch1.md",
-    "_posts/unity-shader-bible-note.md",
     "_posts/unity-shader-bible-note-ch2.md",
+    "_posts/unity-shader-bible-note.md",
+    "_posts/unity-shader-bible-note-ch1.md",
+    "_posts/set-proxy-for-cli.md",
+    "_posts/unity-shader-bible-note/Pasted image 20251023132018.png",
     "_posts/unity-shader-bible-note/Pasted image 20251023125415.png",
     "_posts/unity-shader-bible-note/Pasted image 20251023125335.png",
     "_posts/unity-shader-bible-note/Pasted image 20251023125207.png",
@@ -225,7 +225,6 @@
     "_posts/unity-shader-bible-note/Pasted image 20251022121049.png",
     "_posts/unity-shader-bible-note/Pasted image 20251022120009.png",
     "_posts/unity-shader-bible-note/Pasted image 20251022120001.png",
-    "_posts/unity-shader-bible-note/Pasted image 20251022114334.png",
     "_posts/unity-shader-bible-note",
     "_posts/deploy-mkdocs.md",
     "_posts/2020-summary.md",
@@ -242,7 +241,6 @@
     "_posts/bilibili-dynamic-to-twitter.md",
     "_drafts/build-unity-from-powershell-1-android.md",
     "_drafts/build-unity-from-cli-2-ios.md",
-    "_posts/set-proxy-for-cli.md",
     "_posts/git-and-github-common-opers.md",
     "_posts/mkdocs-i18n.md",
     "_posts/lambda.md",

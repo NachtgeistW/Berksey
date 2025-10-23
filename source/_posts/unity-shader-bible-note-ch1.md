@@ -1,17 +1,18 @@
 ---
-Title: Unity着色器圣经（Unity Shader Bible）笔记（1）
-Date: 2025/10/21
-Updated: 2025/10/23
-Category:
+title: Unity着色器圣经（Unity Shader Bible）笔记（1）
+date: 2025/10/21
+updated: 2025/10/23
+category:
   - GameDev
   - Unity3D
-Tag:
+tag:
   - Unity3D
   - 计算机图形学
   - GameDev
+mathjax: true
 ---
 
-[Site Unreachable](https://zhuanlan.zhihu.com/p/645676077)
+[【翻译】Unity Shader Bible/Unity着色器圣经 全书目录](https://zhuanlan.zhihu.com/p/645676077)第一章的笔记。
 
 <!-- more -->
 
