@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/HDU2602-Knapsack problem.md",
-                "mode": "preview",
+                "file": "_posts/unity-shader-bible-note-ch2.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "HDU2602-Knapsack problem"
+              "title": "unity-shader-bible-note-ch2"
             }
           },
           {
@@ -165,13 +165,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/HDU2602-Knapsack problem.md",
+                "file": "_posts/unity-shader-bible-note-ch2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "HDU2602-Knapsack problem 的大纲"
+              "title": "unity-shader-bible-note-ch2 的大纲"
             }
           },
           {
@@ -194,7 +194,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 369.5
+    "width": 369.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -209,15 +210,16 @@
   },
   "active": "46cdb3f0701628da",
   "lastOpenFiles": [
-    "_posts/unity-shader-bible-note-ch2.md",
-    "_posts/unity-shader-bible-note.md",
+    "_posts/unity-shader-bible-note/Pasted image 20251030181930.png",
     "_posts/unity-shader-bible-note-ch1.md",
+    "_posts/unity-shader-bible-note-ch2.md",
+    "_posts/HDU2602-Knapsack problem.md",
+    "_posts/unity-shader-bible-note.md",
     "_posts/set-proxy-for-cli.md",
     "_posts/unity-shader-bible-note/Pasted image 20251023132018.png",
     "_posts/unity-shader-bible-note/Pasted image 20251023125415.png",
     "_posts/unity-shader-bible-note/Pasted image 20251023125335.png",
     "_posts/unity-shader-bible-note/Pasted image 20251023125207.png",
-    "_posts/HDU2602-Knapsack problem.md",
     "_posts/HDU1007-Quoit-Design.md",
     "_posts/unity-shader-bible-note/Pasted image 20251022132859.png",
     "_posts/unity-shader-bible-note/Pasted image 20251022131354.png",
