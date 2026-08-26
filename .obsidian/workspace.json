@@ -4,15 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3bd379f06b6fccef",
+        "id": "e86906ed77b2b8ee",
         "type": "tabs",
         "children": [
           {
-            "id": "c5e7e584411178a5",
+            "id": "d9c3f6fa1d9ed2c3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/about-yukifuri-merikuri.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "about-yukifuri-merikuri"
             }
           }
         ]
@@ -34,8 +40,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -50,7 +59,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -58,14 +69,27 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          },
+          {
+            "id": "51e6af1b5a7c4c70",
+            "type": "leaf",
+            "state": {
+              "type": "notebook-navigator",
+              "state": {},
+              "icon": "notebook-navigator",
+              "title": "笔记本导航器"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 700.1666870117188
   },
   "right": {
     "id": "84b082a89e993ffd",
@@ -81,6 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "source/_drafts/singlefile-and-n8n-config-4-karakeep.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,7 +113,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
             }
           },
           {
@@ -97,9 +124,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "source/_posts/cookie-config-4-karakeep-crawler.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "cookie-config-4-karakeep-crawler 的出链列表"
             }
           },
           {
@@ -109,8 +139,12 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
-              }
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
@@ -118,7 +152,14 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "source/_posts/cookie-config-4-karakeep-crawler.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "cookie-config-4-karakeep-crawler 的大纲"
             }
           }
         ]
@@ -130,14 +171,63 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "notebook-navigator:笔记本导航器": false
     }
   },
-  "active": "c5e7e584411178a5",
-  "lastOpenFiles": []
+  "active": "d9c3f6fa1d9ed2c3",
+  "lastOpenFiles": [
+    "source/_posts/singlefile-and-n8n-config-4-karakeep.md",
+    "source/_posts/about-yukifuri-merikuri.md",
+    "source/_posts/bilibili-ctf-sequel.md",
+    "source/_posts/singlefile-and-n8n-config-4-karakeep/微博-清洗后-2.png",
+    "source/_posts/singlefile-and-n8n-config-4-karakeep/微博-清洗后-1.png",
+    "source/_posts/singlefile-and-n8n-config-4-karakeep/微博-清洗前-2.png",
+    "source/_posts/singlefile-and-n8n-config-4-karakeep/微博-清洗前-1.png",
+    "source/_posts/singlefile-and-n8n-config-4-karakeep/n8n-http-request-config.png",
+    "source/_posts/singlefile-and-n8n-config-4-karakeep/whole-workflow.png",
+    "source/_posts/singlefile-and-n8n-config-4-karakeep/website-regex.png",
+    "source/_posts/singlefile-and-n8n-config-4-karakeep/simple-n8n-workflow.png",
+    "source/_posts/singlefile-and-n8n-config-4-karakeep/n8n-webhook.png",
+    "source/_posts/singlefile-and-n8n-config-4-karakeep/n8n-switch-simple.png",
+    "source/_posts/singlefile-and-n8n-config-4-karakeep",
+    "source/_drafts/singlefile-and-n8n-config-4-karakeep.md",
+    "source/_drafts/build-unity-from-powershell-1-android.md",
+    "source/_drafts/build-unity-from-cli-2-ios.md",
+    "source/_drafts/The World of Yesterday.md",
+    "node_modules/jsdom/lib/jsdom/living/helpers/colors.js",
+    "node_modules/jsdom/lib/jsdom/living/generated/DOMException.js",
+    "node_modules/jsdom/lib/jsdom/living/generated/DOMRect.js",
+    "node_modules/jsdom/lib/jsdom/living/generated/ElementInternals.js",
+    "node_modules/jsdom/lib/jsdom/living/generated/SubmitEvent.js",
+    "node_modules/jsdom/lib/jsdom/living/generated/DOMRectInit.js",
+    "node_modules/jsdom/lib/jsdom/living/generated/DOMRectReadOnly.js",
+    "node_modules/jsdom/lib/jsdom/living/generated/SubmitEventInit.js",
+    "node_modules/jsdom/lib/jsdom/living/events/SubmitEvent-impl.js",
+    "node_modules/hexo-fs/node_modules/htmlparser2/README.md",
+    "node_modules/hexo-fs/node_modules/hexo-util/README.md",
+    "node_modules/hexo-fs/node_modules/entities/readme.md",
+    "node_modules/hexo-fs/node_modules/domutils/readme.md",
+    "node_modules/hexo-fs/node_modules/domhandler/readme.md",
+    "node_modules/hexo-fs/node_modules/dom-serializer/README.md",
+    "node_modules/hexo-cli/node_modules/domutils/readme.md",
+    "node_modules/marked/man/marked.1.md",
+    "node_modules/@types/trusted-types/README.md",
+    "node_modules/tldts-core/README.md",
+    "node_modules/tldts/README.md",
+    "node_modules/nanoid/README.md",
+    "node_modules/medium-zoom/CHANGELOG.md",
+    "node_modules/math-intrinsics/README.md",
+    "node_modules/hexo-theme-next/README.md",
+    "node_modules/hasown/CHANGELOG.md",
+    "node_modules/hasown/README.md",
+    "node_modules/has-tostringtag/README.md",
+    "node_modules/has-symbols/README.md"
+  ]
 }
